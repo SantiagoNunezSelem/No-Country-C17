@@ -1,12 +1,15 @@
 import React from 'react'
 import Link from "next/link"
+import Image from "next/image";
 
 function NavBar() {
     return (
-    <nav className='flex flex-row w-full py-5'>
-        <div className='flex items-center ml-5'>LOGO</div>
+    <nav className='flex flex-row w-full py-12'>
+        <div id="container-logo" className='flex align-center justify-center'>
+            <Image src={require("../img/logo.png")}></Image>
+        </div>
         <div className='flex justify-end w-full'>
-            <ul className='flex flex-row space-x-10 pr-20 pl-2 py-10'>
+            <ul className='flex flex-row align-center space-x-16 pr-20 pl-2 mt-7'>
                 <Link href="#">Inicio</Link>
                 <Link href="#">Servicios</Link>
                 <Link href="#">Sucursales</Link>
