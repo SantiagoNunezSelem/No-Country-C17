@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -8,7 +7,6 @@ export default function Home() {
       <main className="w-full">
       
         <div id="home-img">
-          <div id="gradient-home"></div>
         </div>
         
 
