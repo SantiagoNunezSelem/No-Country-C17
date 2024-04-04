@@ -59,6 +59,14 @@ nav #container-logo {
   z-index: -2;
 }
 
+#home-h1 {
+  position: absolute;
+  top:40%;
+  left:68%;
+  font-family: koulen;
+  font-size: 60px;
+}
+
 section {
   width:100%;
   height: 400px;

@@ -7,6 +7,7 @@ export default function Home() {
       <main className="w-full">
       
         <div id="home-img">
+          <h1 id="home-h1">TU BARBERIA<br/>PROFESIONAL</h1>
         </div>
         
 
