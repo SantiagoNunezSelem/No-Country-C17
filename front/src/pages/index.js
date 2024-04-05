@@ -10,7 +10,6 @@ export default function Home() {
           <h1 id="home-h1">TU BARBERIA<br/>PROFESIONAL</h1>
         </div>
         
-
         <section className="flex justify-center w-full">
           <div>Otra seccion</div>
         </section>
