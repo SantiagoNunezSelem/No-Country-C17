@@ -7,7 +7,7 @@ import sucursal3 from "@/img/sucursal3.png"
 
 function SucursalesContainer() {
     return (
-    <div className="flex justify-center align-center flex-wrap mb-6">
+    <div className="flex justify-center align-center flex-wrap mb-2">
 
         <Sucursal
             titulo="FLORES"
@@ -26,7 +26,7 @@ function SucursalesContainer() {
             img={sucursal3}
             texto="Bacacay 901, Buenos Aires, Argentina"
         />
-        
+
     </div>
     )
 }
