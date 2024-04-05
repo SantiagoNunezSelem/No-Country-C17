@@ -62,10 +62,12 @@ nav #container-logo {
 #home-h1 {
   position: absolute;
   top:40%;
-  left:68%;
+  left:65%;
   font-family: koulen;
-  font-size: 60px;
+  line-height: 90%;
+  font-size: 90px;
 }
+
 /* borrar prueba despues*/
 #prueba {
   width:100%;
@@ -74,16 +76,14 @@ nav #container-logo {
 /*  */
 
 .section-title {
-  font-size: 30px;
+  font-size: 50px;
   font-family: Koulen;
-  font-weight: 500;
-  margin: 80px 0px;
+  margin: 60px 0px 30px 0px;
   text-align: center;
 }
 
 #sucursal-title {
   font-family: Koulen;
-  font-weight: 500;
   font-size: 30px;
 }
 
