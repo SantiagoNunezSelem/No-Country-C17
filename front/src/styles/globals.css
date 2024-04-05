@@ -42,7 +42,12 @@ header nav {
 
 nav ul{
   font-size: 21px;
+  font-weight: 400;
   align-items: center;
+}
+
+nav ul:nth-child(n) :hover {
+  color:#F84646;
 }
 
 nav #container-logo {
