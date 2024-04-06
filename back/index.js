@@ -1,5 +1,10 @@
-const express = require('express');
-const app = express();
+// const express = require('express');
+// const app = express();
+const server = require("./src/app.js")
+const {conn} = require("./src/db.js")
+const cors = require('cors')
+
+server.use(cors())
 
 // Importa las rutas
 
@@ -8,7 +13,14 @@ const app = express();
 
 
 // Configura el puerto
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
+const port = process.env.PORT || 3001;
+// app.listen(PORT, () => {
+//   console.log(`Servidor corriendo en el puerto ${PORT}`);
+// });
+
+
+conn.sync({ force: false }).then(() => {
+  server.listen(port, () => {
+    console.log(`%s listening at ${port}`); // eslint-disable-line no-console
+  });
 });
