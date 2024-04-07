@@ -43,6 +43,7 @@ header nav {
 nav ul{
   font-size: 21px;
   font-weight: 400;
+  color:white;
   align-items: center;
 }
 
@@ -69,6 +70,7 @@ nav #container-logo {
   top:40%;
   left:65%;
   font-family: koulen;
+  color:white;
   line-height: 90%;
   font-size: 90px;
 }
@@ -76,12 +78,14 @@ nav #container-logo {
 .section-title {
   font-size: 50px;
   font-family: Koulen;
+  color:white;
   margin: 60px 0px 30px 0px;
   text-align: center;
 }
 
 #sucursal-title {
   font-family: Koulen;
+  color:white;
   font-size: 30px;
 }
 

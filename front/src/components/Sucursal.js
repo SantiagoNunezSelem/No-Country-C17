@@ -11,7 +11,7 @@ function Sucursal( {titulo, img, texto} ) {
 
         <Image className="self-center" src={img}/>
 
-        <p className="text-center my-5">{texto}</p>
+        <p className="text-center my-5 text-white">{texto}</p>
 
         <BotonReservarCita/>
 
