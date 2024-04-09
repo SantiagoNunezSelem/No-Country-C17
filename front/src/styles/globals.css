@@ -32,6 +32,11 @@ body {
   }
 }
 
+
+img {
+  display:inline;
+}
+
 header {
   position: relative;
 }
@@ -42,6 +47,7 @@ header nav {
 
 nav ul{
   font-size: 21px;
+
   font-weight: 400;
   color:white;
   align-items: center;
@@ -88,8 +94,3 @@ nav #container-logo {
   color:white;
   font-size: 30px;
 }
-
-
-
-
-

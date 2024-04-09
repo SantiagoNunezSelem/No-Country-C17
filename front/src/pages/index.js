@@ -21,9 +21,7 @@ export default function Home() {
         <section className="flex flex-col justify-center w-full" style={{backgroundColor:"#292929"}}>
           <h1 className="section-title">SUCURSALES</h1>
           <Sucursales/>
-          
         </section>
-       
       </main>
     );
 }
