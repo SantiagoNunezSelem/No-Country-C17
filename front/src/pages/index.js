@@ -1,5 +1,7 @@
+"use client"
 import { Inter } from "next/font/google";
 import Sucursales from "@/components/SucursalesContainer"
+import ServicesContainer from "@/components/servicios/services-container";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,7 +12,12 @@ export default function Home() {
         <div id="home-img">
           <h1 id="home-h1">TU BARBERIA<br/>PROFESIONAL</h1>
         </div>
-
+        <section className="flex flex-col justify-center w-full" style={{backgroundColor:"#292929"}}>
+          <h1 className="section-title">Nuestros Servicios</h1>
+          <ServicesContainer/>
+          
+        </section>
+<hr className=""/>
         <section className="flex flex-col justify-center w-full" style={{backgroundColor:"#292929"}}>
           <h1 className="section-title">SUCURSALES</h1>
           <Sucursales/>

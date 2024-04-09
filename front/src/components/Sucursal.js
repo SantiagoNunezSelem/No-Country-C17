@@ -9,7 +9,7 @@ function Sucursal( {titulo, img, texto} ) {
 
         <h3 id="sucursal-title" className="text-center mb-10">{titulo}</h3>
 
-        <Image className="self-center" src={img}/>
+        <Image className="self-center" src={img} alt=""/>
 
         <p className="text-center my-5 text-white">{texto}</p>
 
