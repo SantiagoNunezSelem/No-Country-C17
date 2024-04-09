@@ -1,5 +1,5 @@
 import React from 'react';
-import Servicios from './services'; // Asegúrate de importar el componente Servicios desde la ubicación correcta
+import Servicios from './services';
 import { servicios } from '@/lib/data';
 import { motion } from 'framer-motion';
 

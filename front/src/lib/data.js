@@ -50,7 +50,7 @@ export  const servicios =[
     {
         title:"Personalizado",
         description: "Sumérgete en el lujo completo con nuestro paquete personalizado que incluye corte de cabello, afeitada, y cuidado experto de barba y bigote.",
-        imagePath:"/personal2.png",
+        imagePath:"/personalizado.png",
         precio: " $ 80",
         alt:"icon communities"
     }
