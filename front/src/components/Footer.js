@@ -28,7 +28,6 @@ function Footer() {
         <div className="text-center mt-7 pb-5">
             <p>© 2024 - Todos los derechos reservados</p>
         </div>
-
     </div>
     )
 }
