@@ -18,4 +18,22 @@ const getAllEmployed = async(req, res, next) => {
     }
 }
 
-module.exports = {getAllEmployed}
+const getOneEmployed = async (req, res, next) => {
+
+}
+
+const AddNewEmployed = async (req, res, next) => {
+    let {name, } = req.body;
+
+
+}
+
+const  updateEmployee = async (req, res, next) => {
+
+}
+
+const  deleteEmployee = async (req, res, next) => {
+
+}
+
+module.exports = {getAllEmployed, getOneEmployed, AddNewEmployed, updateEmployee, deleteEmployee}
