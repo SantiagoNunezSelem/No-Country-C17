@@ -13,11 +13,11 @@ export default function Home() {
         </div>
         
 
-        <section className="flex justify-center w-full">
+        {/* <section className="flex justify-center w-full">
 
-        </section>
-        <StaffBarber/>
+        </section> */}
           <Sucursales/>
+          <StaffBarber/>
       </main>
     );
 }
