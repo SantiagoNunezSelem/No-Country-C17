@@ -11,10 +11,10 @@ export default function Home() {
           <h1 id="home-h1">TU BARBERIA<br/>PROFESIONAL</h1>
         </div>
 
-        <section className="flex flex-col justify-center w-full" style={{backgroundColor:"#292929"}}>
+        {/* <section className="flex flex-col justify-center w-full" style={{backgroundColor:"#292929"}}>
           <h1 className="section-title">SUCURSALES</h1>
+        </section> */}
           <Sucursales/>
-
       </main>
     );
 }
