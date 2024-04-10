@@ -4,7 +4,9 @@ import NavBar from "@/components/NavBar";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
+      <Head>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" />
+      </Head>
       <body>
         <header>
           <NavBar></NavBar>

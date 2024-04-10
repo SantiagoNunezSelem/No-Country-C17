@@ -1,3 +1,4 @@
+import StaffBarber from "@/components/StaffBarber";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -11,7 +12,8 @@ export default function Home() {
         
 
         <section className="flex justify-center w-full">
-          <div>Otra seccion</div>
+          {/* <div>Otra seccion</div> */}
+          <StaffBarber/>
         </section>
 
       </main>

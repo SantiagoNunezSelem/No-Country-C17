@@ -18,12 +18,13 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background-color: #171717;
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
@@ -64,6 +65,18 @@ section {
   height: 400px;
 }
 
+.select-staff{
+  background-color: #292929;
+  color: hsla(0, 0%, 100%, 0.700);
+  padding: 15px;
+  margin: auto;
+  border: solid 1px white;
+}
+
+.select-staff option{
+  font-size: 16px;
+  font-weight: bold;
+}
 
 
 
