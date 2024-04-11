@@ -13,7 +13,8 @@ export default function DatePicker() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DateCalendar
-      disablePast	
+        disablePast
+        disableHighlightToday
         sx={{
           "& .MuiDayCalendar-weekDayLabel": { color: "white" },
           "&.MuiDateCalendar-root": {
@@ -21,11 +22,12 @@ export default function DatePicker() {
             borderRadius: "8px",
           },
           "& .MuiDateCalendar-viewTransitionContainer": {
-            pt:"0.5rem"
+            pt: "0.5rem",
           },
-          "& .MuiPickersDay-root:first-of-type, & .MuiPickersDay-root:last-child": {
-            color: "#7B7B7B", 
-          },
+          "& .MuiPickersDay-root:first-of-type, & .MuiPickersDay-root:last-child":
+            {
+              color: "#7B7B7B",
+            },
         }}
         slotProps={{
           switchViewButton: {
@@ -57,9 +59,9 @@ export default function DatePicker() {
               "&.MuiPickersDay-root": {
                 color: "white",
               },
-              "&.MuiPickersDay-today": {
-                border: "1px solid rgba(255, 255, 255, 0.6)",
-              },
+              //"&.MuiPickersDay-today": {
+                //border: "1px solid rgba(255, 255, 255, 0.6)",
+              //},
             },
           },
         }}
