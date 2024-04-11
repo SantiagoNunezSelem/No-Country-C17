@@ -11,28 +11,33 @@ export default function DatePicker() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DateCalendar
         sx={{
+          "& .MuiDayCalendar-weekDayLabel": {color: "white",},
           "&.MuiDateCalendar-root": {
             border: "1px solid white",
             borderRadius: "8px",
           },
         }}
         slotProps={{
-          switchViewButton: {sx: {
-            color: "white",
-          },},
+          switchViewButton: {
+            sx: {
+              color: "white",
+            },
+          },
           calendarHeader: {
             sx: {
-              textTransform: "uppercase",
-              color: "#F84646",
+              ".MuiPickersCalendarHeader-label": {
+                textTransform: "uppercase",
+                color: "#F84646",
+              },
             },
           },
           previousIconButton: {
             size: "large",
-            sx: { color: "white" },
+            sx: { color: "white" ,},
           },
           nextIconButton: {
             size: "large",
-            sx: { color: "white" },
+            sx: { color: "white" ,},
           },
           day: {
             sx: {
