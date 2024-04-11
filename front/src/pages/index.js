@@ -4,6 +4,7 @@ import Sucursales from "@/components/sucursales/SucursalesContainer"
 import ServicesContainer from "@/components/servicios/services-container";
 import StaffBarber from "@/components/StaffBarber";
 import BotonReservarCita from "@/components/BotonReservarCita";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,8 +30,12 @@ export default function Home() {
         <h1 className="section-title text-white">SUCURSALES</h1>
         <Sucursales />
       </section>
-        <StaffBarber />
-    </main>
+      
+      <StaffBarber />
 
+      <footer>
+        <Footer/>
+      </footer>
+    </main>
   );
 }

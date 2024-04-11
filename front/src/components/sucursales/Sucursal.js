@@ -13,7 +13,7 @@ function Sucursal( {titulo, img, texto} ) {
 
         <p className="text-center my-5 text-white">{texto}</p>
 
-        <BotonReservarCita url="#"/>
+        <BotonReservarCita url="reservarCita1"/>
 
     </div>
     )
