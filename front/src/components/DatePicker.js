@@ -17,6 +17,9 @@ export default function DatePicker() {
           },
         }}
         slotProps={{
+          switchViewButton: {sx: {
+            color: "white",
+          },},
           calendarHeader: {
             sx: {
               textTransform: "uppercase",
