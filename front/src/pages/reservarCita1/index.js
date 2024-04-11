@@ -8,7 +8,7 @@ import BotonSiguiente from '@/components/sitemaCitas/BotonSiguiente';
 
 function reservarCita_1() {
     return (
-    <div class="w-full">
+    <div className="w-full">
         <div id="separador-nav"></div> {/* genera el espacio de la navbar (no responsive por ahoora) */}
 
         <NavBarCitas numPaso={1}/>
