@@ -47,6 +47,9 @@ export default function DatePicker() {
               "&.MuiPickersDay-root": {
                 color: "white",
               },
+              "&.MuiPickersDay-today": {
+                border: "1px solid rgba(255, 255, 255, 0.6)",
+              },
             },
           },
         }}
