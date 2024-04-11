@@ -25,8 +25,9 @@ export default function Home() {
       <section id="service-section" className="flex flex-col justify-center w-full bg-gray-800 bg-opacity-20 py-12">
         <h1 className="section-title text-white">Nuestros Servicios</h1>
         <ServicesContainer />
+        <DatePicker></DatePicker>
       </section>
-
+      
       <section id="sucursales-section" className="flex flex-col justify-center w-full bg-custom-gray py-12">
         <h1 className="section-title text-white">SUCURSALES</h1>
         <Sucursales />
