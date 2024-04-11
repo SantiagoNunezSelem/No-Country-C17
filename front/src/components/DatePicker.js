@@ -13,6 +13,7 @@ export default function DatePicker() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DateCalendar
+      disablePast	
         sx={{
           "& .MuiDayCalendar-weekDayLabel": { color: "white" },
           "&.MuiDateCalendar-root": {
