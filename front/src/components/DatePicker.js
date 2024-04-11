@@ -2,15 +2,12 @@ import * as React from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+import updateLocale from 'dayjs/plugin/updateLocale';
 import dayjs from "dayjs";
 import "dayjs/locale/es";
-import updateLocale from 'dayjs/plugin/updateLocale';
-dayjs.locale("es");
-dayjs.extend(updateLocale);
-dayjs.updateLocale('es',{
-  weekStart: 0,
-});
 
+dayjs.locale("es");
+dayjs.extend(updateLocale).updateLocale('es', { weekStart: 0 });
 
 export default function DatePicker() {
   return (
