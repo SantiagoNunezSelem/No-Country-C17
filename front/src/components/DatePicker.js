@@ -4,7 +4,13 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import dayjs from "dayjs";
 import "dayjs/locale/es";
+import updateLocale from 'dayjs/plugin/updateLocale';
 dayjs.locale("es");
+dayjs.extend(updateLocale);
+dayjs.updateLocale('es',{
+  weekStart: 0,
+});
+
 
 export default function DatePicker() {
   return (
