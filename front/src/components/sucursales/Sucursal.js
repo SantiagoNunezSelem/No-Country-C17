@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image"
-import BotonReservarCita from './BotonReservarCita'
+import BotonReservarCita from '../BotonReservarCita'
 
 function Sucursal( {titulo, img, texto} ) {
 
@@ -13,7 +13,7 @@ function Sucursal( {titulo, img, texto} ) {
 
         <p className="text-center my-5 text-white">{texto}</p>
 
-        <BotonReservarCita/>
+        <BotonReservarCita url="#"/>
 
     </div>
     )

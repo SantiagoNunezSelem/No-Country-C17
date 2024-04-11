@@ -1,5 +1,5 @@
 import React from 'react'
-import Sucursal from "@/components/Sucursal"
+import Sucursal from "@/components/sucursales/Sucursal"
 
 import sucursal1 from "@/img/sucursal1.png"
 import sucursal2 from "@/img/sucursal2.png"
