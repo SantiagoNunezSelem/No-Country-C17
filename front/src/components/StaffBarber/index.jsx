@@ -20,8 +20,8 @@ const StaffBarber = () => {
     ]
       
     return(
-        <div className="block w-full"> 
-            <div className="p-8 text-center w-3/4 m-auto">
+        <div className="block w-full" id="staff"> 
+            <div className="p-4 text-center w-3/4 m-auto">
                 <p className="text-white text-5xl font-medium p-4">SATFF</p>
                 <p className={`text-white p-4 text-white  text-opacity-70`}>En "Estilo Clásico", no solo ofrecemos servicios de barbería, sino una experiencia excepcional que refleja nuestra pasión por el arte del cuidado capilar masculino. Nos complace presentar a nuestro talentoso equipo de barberos, quienes combinan habilidad, experiencia y dedicación para brindar un servicio excepcional a nuestros clientes.</p>
             </div>

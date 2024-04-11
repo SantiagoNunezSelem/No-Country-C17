@@ -40,7 +40,7 @@ function NavBar() {
             <Link href='#'>Sucursales</Link>
           </li>
           <li>
-            <Link href='#'>Staff</Link>
+            <Link href='#staff'>Staff</Link>
           </li>
           <li>
             <Link href='#'>Contacto</Link>
