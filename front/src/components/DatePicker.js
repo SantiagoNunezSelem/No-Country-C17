@@ -2,22 +2,28 @@ import * as React from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import updateLocale from 'dayjs/plugin/updateLocale';
+import updateLocale from "dayjs/plugin/updateLocale";
 import dayjs from "dayjs";
 import "dayjs/locale/es";
 
 dayjs.locale("es");
-dayjs.extend(updateLocale).updateLocale('es', { weekStart: 0 });
+dayjs.extend(updateLocale).updateLocale("es", { weekStart: 0 });
 
 export default function DatePicker() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DateCalendar
         sx={{
-          "& .MuiDayCalendar-weekDayLabel": {color: "white",},
+          "& .MuiDayCalendar-weekDayLabel": { color: "white" },
           "&.MuiDateCalendar-root": {
             border: "1px solid white",
             borderRadius: "8px",
+          },
+          "& .MuiDateCalendar-viewTransitionContainer": {
+            pt:"0.5rem"
+          },
+          "& .MuiPickersDay-root:first-of-type, & .MuiPickersDay-root:last-child": {
+            color: "#7B7B7B", 
           },
         }}
         slotProps={{
@@ -36,11 +42,11 @@ export default function DatePicker() {
           },
           previousIconButton: {
             size: "large",
-            sx: { color: "white" ,},
+            sx: { color: "white" },
           },
           nextIconButton: {
             size: "large",
-            sx: { color: "white" ,},
+            sx: { color: "white" },
           },
           day: {
             sx: {
