@@ -11,11 +11,10 @@ function Footer() {
             </div>
             <div id="footer-links" className="hidden md:flex justify-center w-full md:w-3/5 m-auto mt-5 md:mt-0 space-x-5 md:space-x-16">
                 <Link href="#">Inicio</Link>
-                <Link href="#">Servicios</Link>
-                <Link href="#">Sucursales</Link>
-                <Link href="#">Staff</Link>
+                <Link href="#service-section">Servicios</Link>
+                <Link href="#sucursales-section">Sucursales</Link>
+                <Link href="#staff">Staff</Link>
                 <Link href="#">Contacto</Link>
-                <Link href="#">Reservar una cita</Link>
             </div>
             <div className="flex justify-center w-full md:w-1/5 m-auto space-x-5 mt-5 md:mt-0">
                 <Image src={require("../img/contact-icons/linkedin.png")} alt=""/>

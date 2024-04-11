@@ -34,10 +34,10 @@ function NavBar() {
             <Link href='#'>Inicio</Link>
           </li>
           <li>
-            <Link href='#'>Servicios</Link>
+            <Link href='#service-section'>Servicios</Link>
           </li>
           <li>
-            <Link href='#'>Sucursales</Link>
+            <Link href='#sucursales-section'>Sucursales</Link>
           </li>
           <li>
             <Link href='#staff'>Staff</Link>
@@ -46,7 +46,7 @@ function NavBar() {
             <Link href='#'>Contacto</Link>
           </li>
           <li>
-            <Link href='#'>Reservar una cita</Link>
+            <Link href='#sucursales-section'>Reservar una cita</Link>
           </li>
         </ul>
       </div>
