@@ -31,19 +31,19 @@ function NavBar() {
       >
         <ul className='flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-16 md:pr-20 md:pl-2 md:mt-0'>
           <li>
-            <Link href='#'>Inicio</Link>
+            <Link href='/#'>Inicio</Link>
           </li>
           <li>
-            <Link href='#service-section'>Servicios</Link>
+            <Link href='/#service-section'>Servicios</Link>
           </li>
           <li>
-            <Link href='#sucursales-section'>Sucursales</Link>
+            <Link href='/#sucursales-section'>Sucursales</Link>
           </li>
           <li>
-            <Link href='#staff'>Staff</Link>
+            <Link href='/#staff'>Staff</Link>
           </li>
           <li>
-            <Link href='#'>Contacto</Link>
+            <Link href='/#'>Contacto</Link>
           </li>
         </ul>
       </div>
