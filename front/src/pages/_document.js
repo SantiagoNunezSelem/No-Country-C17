@@ -12,14 +12,10 @@ export default function Document() {
         
       
       <body>
-        <header>
-          <NavBar/>
-        </header>
+        <NavBar/>
         <Main />
-        <NextScript />
-      <footer>
+        <NextScript/>
         <Footer/>
-      </footer>
       </body>
     </Html>
   );
