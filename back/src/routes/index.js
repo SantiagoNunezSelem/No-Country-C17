@@ -9,6 +9,7 @@ router.use(logger('tiny'))
 
 router.use('/employed', require( './employed.js' ))
 router.use('/services', require( './services.js' ))
+router.use('/sucursales', require('./sucursal.js'))
 
 module.exports = router
 

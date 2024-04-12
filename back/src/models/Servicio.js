@@ -15,8 +15,12 @@ module.exports = (sequelize) => {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false
         },
-        des:{
+        descripcion:{
             type: DataTypes.TEXT,
+            allowNull: true
+        },
+        imagen:{
+            type: DataTypes.STRING,
             allowNull: true
         }
     })

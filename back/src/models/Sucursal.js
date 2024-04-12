@@ -15,9 +15,13 @@ module.exports = (sequelize) => {
             type:  DataTypes.TEXT, //GEOMETRY("POINT")
             allowNull: false
         },
-        desc:{
+        descripcion:{
             type: DataTypes.TEXT,
             allowNull: true
+        },
+        imagen: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     })
 }

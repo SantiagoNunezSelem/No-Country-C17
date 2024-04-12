@@ -8,10 +8,38 @@ const {
 
 // console.log(DB_USER)
 
-const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
-    host: DB_HOST,
-    dialect: 'mysql', // Puedes cambiarlo si estás usando otro dialecto
-  });
+const sequelize =
+  process.env.NODE_ENV === "production"
+    ? new Sequelize({
+        database: DB_NAME,
+        dialect: "mysql",
+        host: DB_HOST,
+        port: PORT,
+        username: DB_USER,
+        password: DB_PASSWORD,
+        pool: {
+          max: 3,
+          min: 1,
+          idle: 10000,
+        },
+        dialectOptions: {
+          ssl: {
+            require: true,
+            rejectUnauthorized: false,
+          },
+          keepAlive: true,
+        },
+        ssl: true,
+      })
+    : new Sequelize(
+      `mysql://root:${DB_PASSWORD}${DB_HOST}:${PORT}/${DB_NAME}`,
+      { logging: false, native: false }
+    );
+
+// const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+//     host: DB_HOST,
+//     dialect: 'mysql', // Puedes cambiarlo si estás usando otro dialecto
+//   });
 
 const basename = path.basename(__filename);
 
@@ -38,9 +66,9 @@ const {Empleado, Servicio, Sucursal, Turno, Usuario} = sequelize.models
 Empleado.belongsTo(Sucursal, {as: "sucursal"})
 Empleado.hasMany(Turno, {as: 'turnos'})
 Turno.hasOne(Usuario , {as : 'usuario'})
-// Usuario.hasOne(Turno,{as :'turno'})
-Servicio.belongsToMany(Turno, {through: "serviTurno"})
-Turno.belongsToMany(Servicio, {through: "serviTurno"})
+Usuario.hasMany(Turno,{ as:'turnos' })
+Servicio.belongsToMany(Turno, {through: "turnoId"})
+Turno.belongsToMany(Servicio, {through: "servicioId"})
 
 module.exports = {
     ...sequelize.models,
