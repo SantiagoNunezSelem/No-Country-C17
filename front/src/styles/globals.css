@@ -159,3 +159,73 @@ nav #container-logo {
   border-bottom: solid 3px #ffffff36;
 }
 
+#contacto{
+  display: grid;
+  gap: 30px;
+  grid-template-columns: auto;
+  grid-template-rows: 1;
+  background-color: #292929;
+  padding: 60px;
+  margin-bottom: 0px;
+  padding-bottom: 200px;
+}
+#contacto-title{
+  color: white !important;
+  padding-bottom: 10px;
+  font-family: "Koulen", sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  font-style: normal;
+}
+#contacto-text{
+  color: #D9D9D9;
+  font-family: 'koulen', sans-serif;/*Por alguna razon no funciona*/
+  font-weight: lighter;
+  font-style: normal;
+  grid-column: 1;
+}
+#contacto-img{
+  padding-right: 300px;
+  margin-top: 50px;
+  grid-column: 2;
+  background-image: url("../img/contactoImage.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#contacto input, #contacto textarea{
+  border-bottom: 1px solid #D9D9D9;
+  margin-bottom: 5px;
+  width: 100%;
+}
+#button{
+  background-color:#F84646;
+  color: white !important;
+  box-shadow: 0 5px #474545;
+  font-size: 22px;
+  height: 45px;
+  width: 120px !important;
+  border-bottom: none !important;
+  margin-top: 15px;
+  border-radius: 4px;
+  text-align: center;
+  position: absolute;
+}
+#button:hover{
+  background-color: #811313;
+}
+#button:active{
+  background-color: #811313;
+  box-shadow: 0 5px #474545;
+  transform: translateY(4px);
+}
+
+#toast{
+  background-color: #333;
+}
+
+#button:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none !important;
+}
