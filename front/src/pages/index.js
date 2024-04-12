@@ -34,7 +34,7 @@ export default function Home() {
       
       <StaffBarber />
 
-      <section>
+      <section id='contacto-section'>
         <Contacto/>
       </section>
 

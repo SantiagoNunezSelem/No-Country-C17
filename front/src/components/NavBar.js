@@ -43,7 +43,7 @@ function NavBar() {
             <Link href='/#staff'>Staff</Link>
           </li>
           <li>
-            <Link href='/#'>Contacto</Link>
+            <Link href='/#contacto-section'>Contacto</Link>
           </li>
         </ul>
       </div>
