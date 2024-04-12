@@ -32,9 +32,15 @@ const sequelize =
         ssl: true,
       })
     : new Sequelize(
-      `mysql://root:${DB_PASSWORD}${DB_HOST}:${PORT}/${DB_NAME}`,
+      `mysql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${PORT}/${DB_NAME}`,
       { logging: false, native: false }
     );
+
+    // new Sequelize(
+    //   `mysql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${PORT}/${DB_NAME}`,
+    //   { logging: false, native: false }
+    // );
+
 
 // const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
 //     host: DB_HOST,
