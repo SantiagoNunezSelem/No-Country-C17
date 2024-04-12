@@ -14,7 +14,7 @@ function NavBar() {
 
   return (
     <nav className='flex flex-col md:flex-row items-center justify-between w-full py-6 md:py-12'>
-      <div id='container-logo' className='flex justify-center md:justify-start'>
+      <div id='container-logo' className='flex justify-center md:justify-center'>
         <Image src={require('../img/logo.png')} alt='Barbershop' />
       </div>
       <button
@@ -31,22 +31,19 @@ function NavBar() {
       >
         <ul className='flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-16 md:pr-20 md:pl-2 md:mt-0'>
           <li>
-            <Link href='#'>Inicio</Link>
+            <Link href='/#'>Inicio</Link>
           </li>
           <li>
-            <Link href='#'>Servicios</Link>
+            <Link href='/#service-section'>Servicios</Link>
           </li>
           <li>
-            <Link href='#'>Sucursales</Link>
+            <Link href='/#sucursales-section'>Sucursales</Link>
           </li>
           <li>
-            <Link href='#staff'>Staff</Link>
+            <Link href='/#staff'>Staff</Link>
           </li>
           <li>
-            <Link href='#'>Contacto</Link>
-          </li>
-          <li>
-            <Link href='#'>Reservar una cita</Link>
+            <Link href='/#'>Contacto</Link>
           </li>
         </ul>
       </div>
