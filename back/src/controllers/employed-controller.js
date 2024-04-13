@@ -19,7 +19,7 @@ const getAllEmployed = async(req, res, next) => {
 }
 
 const getOneEmployed = async (req, res, next) => {
-
+ 
 }
 
 const AddNewEmployed = async (req, res, next) => {

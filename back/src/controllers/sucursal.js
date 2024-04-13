@@ -25,10 +25,26 @@ const addSucursal = async(req, res, next) => {
     }
 }
 
+const getByIdSucursal  = async (req,res,next)=>{
+    let id= req.params.id;
+    try{
+        let sucursal =  await Sucursal.findByPk(id);
+        !sucursal? res.status(404).send("La sucursal no existe") : res.send(sucursal)
+    }catch(error){{
+        next(error)
+    }}
+    
+}
+
 const deleteAllSucurasl = async(req, res, next)=>{
 
     try{
-        await Sucursal.destroy({ where: {}, truncate: true })
+        let allSucursal = await Sucursal.getAll()
+
+        allSucursal.forEach(async (element) => {
+            await  Sucursal.destroy(element.id)
+        });
+
         let data = await Sucursal.findAndCountAll()
         res.send(data)
 
@@ -38,4 +54,4 @@ const deleteAllSucurasl = async(req, res, next)=>{
 }
 
 
-module.exports={getAllSucursales, addSucursal, deleteAllSucurasl}; 
+module.exports={getAllSucursales, addSucursal, deleteAllSucurasl,getByIdSucursal}; 
