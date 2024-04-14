@@ -13,7 +13,7 @@ function NavBar() {
   };
 
   return (
-    <nav className='flex flex-col md:flex-row items-center justify-between w-full py-6 md:py-12'>
+    <nav className='flex flex-col md:flex-row items-center justify-between w-full py-6 md:py-8'>
       <div id='container-logo' className='flex justify-center md:justify-center'>
         <Image src={require('../img/logo.png')} alt='Barbershop' />
       </div>
@@ -43,7 +43,7 @@ function NavBar() {
             <Link href='/#staff'>Staff</Link>
           </li>
           <li>
-            <Link href='/#'>Contacto</Link>
+            <Link href='/#contacto-section'>Contacto</Link>
           </li>
         </ul>
       </div>

@@ -3,18 +3,16 @@ import Image from "next/image";
 import { BsTrash } from 'react-icons/bs';
 
 
+/// ESTE CODIGO ES DE DAMIAN SOLA
 
 function ServiceCard({ titulo, img, texto, precio, addService }) {
 
     const [add, setAdd] = useState(false);
 
-    // console.llog(service)
-
     const handleClick = () => {
         setAdd(!add)
         addService(titulo)
     }
-
 
     return (
         <div className="flex flex-col items-center mb-4">
@@ -28,9 +26,6 @@ function ServiceCard({ titulo, img, texto, precio, addService }) {
                 <p className="text-center my-2 text-white">Precio: <span className="font-koulen text-red-500 text-xl font-normal leading-[25px]">{precio}</span></p>
             </div>
             {add ? <Eliminar handleClick={handleClick}/> : <Agregar  handleClick={handleClick}/>}
-            {/* <button onClick={handleClick} className='bg-salmon text-white p-2 rounded-md'>
-            { add ? "Eliminar Servicio" : "+ Agregar Servicio"}
-        </button> */}
         </div>
     )
 }
