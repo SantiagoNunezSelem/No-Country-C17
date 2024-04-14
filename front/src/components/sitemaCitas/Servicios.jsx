@@ -1,9 +1,17 @@
 import { servicios } from '@/lib/data';
 import { motion } from 'framer-motion';
+import  React, { useEffect, useState } from  "react";
 import Servicios from '@/components/servicios/services';
 import BotonAgregarServicio from '@/components/sitemaCitas/seleccionarServicios-Seccion/BotonAgregarServicio';
 
 const CitaServios = () => {
+
+    const [service, setService] = useState([]) ///DAMIAN SOLA AGREGO ESTO
+    ////MEDIANTE USECONTEX T PASAMOS LA INFORMACIÓN A TODAS LAS VISTAS QUE LO NECESITEN
+
+    const handleButton = (id) => {
+        service.includes(id) ?  setService(service.filter((i)=> i !== id)) : setService([...service,id])
+    }
     return(
              <div className="flex flex-wrap justify-center mt-10 mb-2">
                 {
@@ -17,10 +25,10 @@ const CitaServios = () => {
                         <Servicios
                             img={servicio.imagePath}
                             titulo={servicio.title}
-                            precio={servicio.precio}
+                            precio={servicio.precio} 
                         />
                         <div className="flex justify-center w-full">
-                            <BotonAgregarServicio/>
+                            <BotonAgregarServicio  addService={handleButton} serviId={servicio.title}/> {/*cambiar depues por id*/}
                         </div>
                     </motion.div>
                     ))

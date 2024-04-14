@@ -16,7 +16,8 @@ const Reservar = ({paramas}) => {
         user: "",
         employed: "",
         startDate: "",
-        finishDate: ""
+        finishDate: "",
+        servicios: []
     })
 
     const [step, setStep] = useState(1)
@@ -40,12 +41,12 @@ const Reservar = ({paramas}) => {
 
     return (
         <div className="w-full">
-            <NavBarCitas numPaso={step} setNumPaso={setNumPaso}/>
+            <NavBarCitas numPaso={step} setNumPaso={setNumPaso} />
             <p>{step}</p>
             {step === 1 && <CitaServios/> } {/* CODIGO CREADO POR SANTIAGO */}
              
             <div className='flex justify-end w-11/12'>
-                <BotonSiguiente next={handleNextButton}/>
+                <BotonSiguiente next={handleNextButton} />
             </div>
         </div>
         )
