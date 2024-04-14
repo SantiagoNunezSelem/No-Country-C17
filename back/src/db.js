@@ -6,7 +6,6 @@ const {
   DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, PORT
 } = process.env;
 
-// console.log(DB_USER)
 
 const sequelize =
   process.env.NODE_ENV === "production"
@@ -70,6 +69,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 const {Empleado, Servicio, Sucursal, Turno, Usuario} = sequelize.models
 
 Empleado.belongsTo(Sucursal, {as: "sucursal"})
+Sucursal.hasMany(Empleado, {as: "empleados"})
 Empleado.hasMany(Turno, {as: 'turnos'})
 Turno.hasOne(Usuario , {as : 'usuario'})
 Usuario.hasMany(Turno,{ as:'turnos' })
