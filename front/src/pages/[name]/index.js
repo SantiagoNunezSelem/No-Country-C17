@@ -41,10 +41,13 @@ const Reservar = ({paramas}) => {
 
     return (
         <div className="w-full">
+
+            <div id="separador-nav"></div>
+
             <NavBarCitas numPaso={step} setNumPaso={setNumPaso} />
             <p>{step}</p>
             {step === 1 && <CitaServios/> } {/* CODIGO CREADO POR SANTIAGO */}
-             
+            
             <div className='flex justify-end w-11/12'>
                 <BotonSiguiente next={handleNextButton} />
             </div>
