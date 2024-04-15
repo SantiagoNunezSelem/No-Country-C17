@@ -15,7 +15,7 @@ export default function DatePicker() {
 
   const handleDateSelection = (date) => {
     setSelectedDate(date);
-    console.log(date.$d.getDate(),date.$d.getFullYear(),date.$d.getMonth());
+    console.log(date.$d.getDate(), date.$d.getFullYear(), date.$d.getMonth());
   };
 
   return (

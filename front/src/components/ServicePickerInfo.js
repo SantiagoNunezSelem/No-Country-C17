@@ -1,15 +1,21 @@
 import React from "react";
 import { Box, IconButton, Typography, Grid } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import Image from "next/image";
 
 const ServiciosReservados = () => {
   const serviciosReservadosMock = [
-    { nombre: "CORTE", duracion: 30, precio: "$20" },
-    { nombre: "AFEITAR", duracion: 20, precio: "$15" },
-    { nombre: "BARBA Y BIGOTE", duracion: 45, precio: "$30" },
-    { nombre: "PERSONALIZADO", duracion: 45, precio: "$30" },
+    {
+      nombre: "CORTE",
+      duracion: 30,
+      precio: "$20",
+      profesional: "Andres Montes",
+    },
+    {
+      nombre: "AFEITADO",
+      duracion: 20,
+      precio: "$15",
+      profesional: "Andres Montes",
+    },
   ];
 
   const eliminarServicio = (index) => {
@@ -25,33 +31,60 @@ const ServiciosReservados = () => {
           borderRadius={2}
           p={2}
           mb={1}
-          mr={2}
-          display="flex"
-          flexDirection="column"
-          alignItems="stretch"
+          minWidth={"370px"}
+          minHeight={"135px"}
         >
-          <Grid container justifyContent="space-between" alignItems="center">
-            <Typography variant="subtitle1" sx={{ color: "#F84646" }}>
-              SERVICIO:
-            </Typography>
-            {servicio.nombre}
-            <IconButton
-              sx={{ color: "white" }}
-              onClick={() => eliminarServicio(index)}
-            >
-              <DeleteIcon />
-            </IconButton>
-          </Grid>
-          <Grid container justifyContent="space-between">
-            <Typography variant="body2">
-              <AccessTimeIcon fontSize="small" />
-              {servicio.duracion} min.
-              <MonetizationOnIcon
-                fontSize="small"
-                sx={{ color: "#F84646", ml: "0.5rem" }}
+          <Grid container justifyContent="center" alignItems="center">
+            <Grid item xs={6}>
+              <Typography variant="subtitle1" sx={{ color: "#F84646" }}>
+                SERVICIO:
+              </Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography>{servicio.nombre}</Typography>
+            </Grid>
+
+            <Grid item xs={6}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Image
+                  src={require("../img/servicios-icons/Timer.png")}
+                  alt="Timer"
+                />
+                <Typography variant="body2" sx={{ ml: "0.5rem" }}>
+                  {servicio.duracion} min.
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item xs={2}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Image
+                  src={require("../img/servicios-icons/Money.png")}
+                  alt="Money"
+                />
+                <Typography sx={{ ml: "0.5rem" }}>{servicio.precio}</Typography>
+              </div>
+            </Grid>
+            <Grid item xs={4} container justifyContent="flex-end">
+              <IconButton
+                sx={{ color: "white" }}
+                onClick={() => eliminarServicio(index)}
+              >
+                <Image
+                  src={require("../img/servicios-icons/Trash.png")}
+                  alt="Eliminar"
+                />
+              </IconButton>
+            </Grid>
+
+            <Grid item xs={6}>
+              <Image
+                src={require("../img/servicios-icons/Profesional.png")}
+                alt="Profesional"
               />
-              {servicio.precio}
-            </Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography>{servicio.profesional}</Typography>
+            </Grid>
           </Grid>
         </Box>
       ))}
@@ -60,7 +93,6 @@ const ServiciosReservados = () => {
 };
 
 export default ServiciosReservados;
-
 
 // import HourPicker from "@/components/HourPicker";
 // import DatePicker from "@/components/DatePicker";
