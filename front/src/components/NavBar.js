@@ -15,7 +15,7 @@ function NavBar() {
   return (
     <nav className='flex flex-col md:flex-row items-center justify-between w-full py-6 md:py-8'>
       <div id='container-logo' className='flex justify-center md:justify-center'>
-        <Image src={require('../img/logo.png')} alt='Barbershop' />
+      <Link href='/#'><Image src={require('../img/logo.png')} alt='Barbershop' /></Link>
       </div>
       <button
         className='menu-button md:hidden'
@@ -30,9 +30,6 @@ function NavBar() {
         className={`nav md:flex md:h-auto ${showMenu ? 'block' : 'hidden md:block'}`}
       >
         <ul className='flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-16 md:pr-20 md:pl-2 md:mt-0'>
-          <li>
-            <Link href='/#'>Inicio</Link>
-          </li>
           <li>
             <Link href='/#service-section'>Servicios</Link>
           </li>

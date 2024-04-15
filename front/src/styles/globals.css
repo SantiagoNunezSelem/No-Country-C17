@@ -53,6 +53,10 @@ header {
 nav {
   position: fixed;
   z-index: 10;
+  background-color: #171717;
+  opacity: 65%;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
 }
 
 nav ul{
@@ -236,4 +240,10 @@ nav #container-logo {
   color: #666;
   cursor: not-allowed;
   transform: none !important;
+}
+
+#tarjeta-reserva{
+  border: 1px;
+  border-radius: 4px;
+  border-color: white;
 }
