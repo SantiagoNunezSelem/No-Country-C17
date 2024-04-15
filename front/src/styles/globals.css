@@ -53,21 +53,23 @@ header {
 nav {
   position: fixed;
   z-index: 10;
-  background-color: #171717;
-  opacity: 65%;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
+  background-color: rgb(0 0 0 / 20%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 nav ul{
   font-size: 21px;
   font-weight: 400;
   color:white;
+  opacity: 100% !important;
   align-items: center;
+  transition: 0.3s;
 }
 
 nav ul:nth-child(n) :hover {
   color:#F84646;
+  transition: 0.3s;
 }
 
 #separador-nav {
