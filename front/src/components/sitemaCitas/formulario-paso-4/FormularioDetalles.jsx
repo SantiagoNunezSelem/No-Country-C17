@@ -18,7 +18,7 @@ const FormularioDetalles = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Reserva de Corte de Pelo</h2>
+      <h2>Ingrese Sus Datos</h2>
       <InputField
         label="Nombre"
         value={nombre}
