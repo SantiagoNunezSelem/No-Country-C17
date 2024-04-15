@@ -159,6 +159,14 @@ nav #container-logo {
   border-bottom: solid 3px #ffffff36;
 }
 
+#nav-bar-citas p {
+  color:#ffffff60;
+}
+
+#nav-bar-citas .activo p {
+  color:#ffffff;
+}
+
 #contacto{
   display: grid;
   gap: 30px;
