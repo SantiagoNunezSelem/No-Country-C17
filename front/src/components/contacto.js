@@ -2,9 +2,6 @@ import React, {useRef, useState, useEffect} from 'react';
 import { useForm } from 'react-hook-form';
 import toast, {Toaster} from 'react-hot-toast';
 
-//// DAMIAN SOLA METIO MANO.  ////
-//// CAMBIE TODAS LAS class POR className PORQUE ROMPIA TODO////
-
 function Contacto() {
   
   const {register, handleSubmit}=useForm({
