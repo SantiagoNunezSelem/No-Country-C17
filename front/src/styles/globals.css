@@ -50,7 +50,7 @@ header {
   position: relative;
 }
 
-header nav {
+nav {
   position: fixed;
   z-index: 10;
 }
