@@ -54,7 +54,6 @@ function Contacto() {
       />
     </div>
       <div id='contacto'>
-        <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"></link>
         <div id='contacto-text' className='sm:w-full'>
           <h1 id='contacto-title'>CONTACTO</h1>
           <h2>

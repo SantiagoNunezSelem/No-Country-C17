@@ -191,9 +191,9 @@ nav #container-logo {
   font-size: 60px;
   font-style: normal;
 }
-#contacto-text{
+#contacto-text, #staff-text{
   color: #D9D9D9;
-  font-family: 'koulen', sans-serif;/*Por alguna razon no funciona*/
+  font-family: 'Koulen', sans-serif;
   font-weight: lighter;
   font-style: normal;
   grid-column: 1;
