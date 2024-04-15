@@ -14,7 +14,7 @@ function Footer() {
                 <Link href="/#service-section">Servicios</Link>
                 <Link href="/#sucursales-section">Sucursales</Link>
                 <Link href="/#staff">Staff</Link>
-                <Link href="/#">Contacto</Link>
+                <Link href="/#contacto">Contacto</Link>
             </div>
             <div className="flex justify-center w-full md:w-1/5 m-auto space-x-5 mt-5 md:mt-0">
                 <Image src={require("../img/contact-icons/linkedin.png")} alt=""/>
