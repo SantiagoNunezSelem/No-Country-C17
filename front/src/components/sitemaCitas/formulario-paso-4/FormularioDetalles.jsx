@@ -1,52 +1,118 @@
 import React, { useState } from 'react';
-import InputField from './InputField';
-import TextField from './TextField';
+import { InputField, TextAreaField } from './FormFields';
+
 
 const FormularioDetalles = () => {
-  const [nombre, setNombre] = useState('');
-  const [apellido, setApellido] = useState('');
-  const [email, setEmail] = useState('');
-  const [telefono, setTelefono] = useState('');
-  const [observaciones, setObservaciones] = useState('');
+    const [formData, setFormData] = useState({
+        nombre: '',
+        apellido: '',
+        email: '',
+        telefono: '',
+        observaciones: ''
+    });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí puedes procesar los datos como desees (por ejemplo, enviar a una API)
-    console.log({ nombre, apellido, email, telefono, observaciones });
-    // Puedes agregar lógica adicional, como enviar datos a través de una API
-  };
+    const [errors, setErrors] = useState({});
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <h2>Ingrese Sus Datos</h2>
-      <InputField
-        label="Nombre"
-        value={nombre}
-        onChange={setNombre}
-      />
-      <InputField
-        label="Apellido"
-        value={apellido}
-        onChange={setApellido}
-      />
-      <InputField
-        label="Email"
-        value={email}
-        onChange={setEmail}
-      />
-      <InputField
-        label="Teléfono"
-        value={telefono}
-        onChange={setTelefono}
-      />
-      <TextField
-        label="Observaciones"
-        value={observaciones}
-        onChange={setObservaciones}
-      />
-      <button type="submit">Enviar Reserva</button>
-    </form>
-  );
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+
+        // Validación en tiempo real para el campo de correo electrónico
+        if (name === 'email') {
+            const isValidEmail = /\S+@\S+\.\S+/.test(value);
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                email: isValidEmail ? '' : 'Por favor, introduce un email válido'
+            }));
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Validaciones al enviar el formulario
+        const formErrors = validateForm(formData);
+
+        // Si hay errores, establecer el estado de errores y detener el envío del formulario
+        if (Object.keys(formErrors).length > 0) {
+            setErrors(formErrors);
+            return;
+        }
+
+        // Si no hay errores, proceder con el envío del formulario
+        console.log(formData);
+        // Aquí puedes realizar cualquier acción necesaria con los datos del formulario
+
+        // Limpiar el formulario después de enviar
+        clearForm();
+    };
+
+    return (
+        <div className="w-full flex justify-center">
+            <div className="w-full lg:w-3/4 p-4">
+                <h2>Ingrese Sus Datos</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="flex mb-6">
+                        <div className="w-1/2 pr-4">
+                            <InputField
+                                label="Nombre"
+                                name="nombre"
+                                value={formData.nombre}
+                                onChange={handleInputChange}
+                                error={errors.nombre}
+                                inputClassName="p-3 text-base"
+                            />
+                        </div>
+                        <div className="w-1/2 pl-4">
+                            <InputField
+                                label="Apellido"
+                                name="apellido"
+                                value={formData.apellido}
+                                onChange={handleInputChange}
+                                error={errors.apellido}
+                                inputClassName="p-3 text-base"
+                            />
+                        </div>
+                    </div>
+                    <div className="flex mb-6">
+                        <div className="w-1/2 pr-4">
+                            <InputField
+                                label="Email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                error={errors.email}
+                                inputClassName="p-3 text-base"
+                            />
+                        </div>
+                        <div className="w-1/2 pl-4">
+                            <InputField
+                                label="Teléfono"
+                                name="telefono"
+                                value={formData.telefono}
+                                onChange={handleInputChange}
+                                error={errors.telefono}
+                                inputClassName="p-3 text-base"
+                            />
+                        </div>
+                    </div>
+                    <TextAreaField
+                        label="Observaciones"
+                        name="observaciones"
+                        value={formData.observaciones}
+                        onChange={handleInputChange}
+                        inputClassName="p-3 text-base"
+                    />
+                    <div className="flex justify-end mt-6">
+                       <button></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
 };
 
 export default FormularioDetalles;
