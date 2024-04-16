@@ -53,7 +53,7 @@ const FormularioDetalles = () => {
     return (
         <div className="w-full flex justify-center">
             <div className="w-full lg:w-3/4 p-4">
-                <h2>Ingrese Sus Datos</h2>
+               
                 <form onSubmit={handleSubmit}>
                     <div className="flex mb-6">
                         <div className="w-1/2 pr-4">

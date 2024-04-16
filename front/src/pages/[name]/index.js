@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBarCitas from '@/components/sitemaCitas/NavBarCitas';
 import BotonSiguiente from '@/components/sitemaCitas/BotonSiguiente';
 import CitaServicios from "@/components/sitemaCitas/Servicios";
-import DatosConfirmar from "@/components/sitemaCitas/formulario-paso-4/FormularioDetalles";
+import DatosConfirmar from "@/components/sitemaCitas/formulario-paso-4/index";
 import BotonRegresar from "@/components/sitemaCitas/BotonRegresar";
 
 const Reservar = ({ params }) => {
