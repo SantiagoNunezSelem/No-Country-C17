@@ -1,6 +1,6 @@
 import React from 'react';
 import FormCitas from './FormularioDetalles';
-import ServiciosSummary from './';
+import ServiciosSummary from './servicesSummary';
 
 const ReservarCita_2 = () => {
     return (
@@ -12,7 +12,11 @@ const ReservarCita_2 = () => {
                     <h2 className="text-2xl font-bold mb-4 text-salmon">Ingrese sus Datos</h2>
                     <FormCitas />
                 </div>
-                
+                {/* Parte derecha: Resumen de Servicios y Total a Pagar */}
+            <div className="w-full lg:w-1/2 pb-8 pl-4">
+            <h2 className="text-2xl font-bold mb-4 text-salmon">Resumen De Servicios</h2>
+                <ServiciosSummary/>
+            </div>
                
             </div>
         </div>
