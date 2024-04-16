@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="w-full">
       <div id="home-img" className="text-center py-12">
-        <div className="absolute top-1/2 left-3/4 transform -translate-x-1/2 -translate-y-1/2 flex flex-col">
+        <div className="absolute top-1/2 left-2/4 sm:left-3/4 transform -translate-x-1/2 -translate-y-1/2 flex flex-col">
           <h1 className="font-koulen text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl mb-7">
             Tu Barberia  <br className="hidden sm:inline" />Profesional
           </h1>
