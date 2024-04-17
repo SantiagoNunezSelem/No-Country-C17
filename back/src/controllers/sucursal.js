@@ -4,7 +4,7 @@ const getAllSucursales = async(req, res, next) => {
     let{nombre} = req.query;
 
     try{
-        const data = nombre ? await Sucursal.findOne({where :{nombre: nombre}}) : await Sucursal.findAndCountAll({include:['empleados']})
+        const data = nombre ? await Sucursal.findOne({where :{nombre: nombre}}) : await Sucursal.findAndCountAll()
         data ? res.send(data) : res.send({msg:'No se encontraron resultados'})
 
     }catch(error){
