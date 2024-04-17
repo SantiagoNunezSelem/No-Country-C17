@@ -61,15 +61,15 @@ function Contacto() {
             <p className='min-w-fit text-justify'>Por favor, completa el siguiente formulario para reservar tu cita con uno de nuestros talentosos barberos.</p>
             <p className='min-w-fit text-justify pb-10'>¡Esperamos recibirte pronto en nuestra barberia!</p>
           </h2>
-          <form onSubmit={handleSubmit(onSubmit)} class='text-justify pl-50'>
+          <form onSubmit={handleSubmit(onSubmit)} className='text-justify pl-50'>
             <ul>
-              <li><label for="name" className='mt-20px'>Nombre: </label></li>
+              <li><label htmlFor="name" className='mt-20px'>Nombre: </label></li>
               <li><input {...register('name')} minLength="4" id="name" type="text" pattern="[a-zA-Z ]*" className='text-white bg-neutral-800 h-10 invalid:text-rose-400' onChange={handleInputChange} /></li>
 
-              <li><label for="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">Correo: </label></li>
+              <li><label htmlFor="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">Correo: </label></li>
               <li><input {...register('email')} id="email" type="email" minLength="6" className='text-white  bg-neutral-800 h-10 invalid:text-rose-400' onChange={handleInputChange} /></li>
 
-              <li><label for="message">Tu mensaje: </label></li>
+              <li><label htmlFor="message">Tu mensaje: </label></li>
               <li><textarea {...register('message')} id="message" type="text" minLength="8" className='text-white bg-neutral-800' onChange={handleInputChange}/></li>
 
               <li><input id="button" type="submit" disabled={isDisabled} onClick={clickCounter}/></li>
