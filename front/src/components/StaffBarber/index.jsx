@@ -1,23 +1,47 @@
 'use Client'
 import React, { useEffect, useState } from "react";
-import Carousel from "./Carousel"
+import Carousel from "./Carousel";
+import axios from "axios";
+import { config } from "dotenv";
+const {RESEND_API_KEY} = process.env;
 
+const dotenv = config()
+
+const getBarbers = async() => {
+    let url = "http://localhost:48925/"
+    const  barberLista = await axios.get(`${url}employed`)
+    return barberLista
+}
+
+const getSucursal = async() => {
+    let url = "http://localhost:48925/"
+    const  sucursalist = await axios.get(`${url}sucursales`)
+    return sucursalist;
+}
 
 const StaffBarber = () => {
+
+    const [barbers, setBarbers] = useState([]);
+    const [sucursal,  setSucursal] = useState([]);
+
+    let getBarb = async () => {
+        let list = await getBarbers()
+        setBarbers(list.data.rows)
+    }
+
+    let getSuc = async () => {
+        let list = await getSucursal()
+        console.log(list.data.rows)
+        setSucursal(list.data.rows)
+    }
+
+
+    useEffect(() => {
+        getBarb()
+        getSuc()
+    },[])
     
     
-    let barbers = [
-        {name: "Juan", img:"https://i.pinimg.com/474x/b8/91/fb/b891fb0046f2a92b99754d061710c1dc.jpg", id:"0"},
-        {name: "Pedro", img:"https://www.shutterstock.com/image-photo/passport-photo-serious-brazilian-young-600nw-1956224953.jpg",  id:"1"},
-        {name: "Diego", img:"https://i.pinimg.com/474x/b8/91/fb/b891fb0046f2a92b99754d061710c1dc.jpg",  id:"2"},
-        {name: "Simon", img:"https://www.shutterstock.com/image-photo/passport-photo-serious-brazilian-young-600nw-1956224953.jpg",  id:"3"},
-        {name: "federico", img:"https://i.pinimg.com/474x/b8/91/fb/b891fb0046f2a92b99754d061710c1dc.jpg", id:"4"},
-        {name: "Ricardo", img:"https://www.shutterstock.com/image-photo/passport-photo-serious-brazilian-young-600nw-1956224953.jpg",  id:"5"},
-        {name: "santiago", img:"https://i.pinimg.com/474x/b8/91/fb/b891fb0046f2a92b99754d061710c1dc.jpg",  id:"6"},
-        {name: "hernan", img:"https://www.shutterstock.com/image-photo/passport-photo-serious-brazilian-young-600nw-1956224953.jpg",  id:"7"},
-        {name: "santiago", img:"https://i.pinimg.com/474x/b8/91/fb/b891fb0046f2a92b99754d061710c1dc.jpg",  id:"8"},
-        {name: "hernan", img:"https://www.shutterstock.com/image-photo/passport-photo-serious-brazilian-young-600nw-1956224953.jpg",  id:"9"}
-    ]
       
     return(
         <div className="block w-full" id="staff"> 
@@ -28,12 +52,12 @@ const StaffBarber = () => {
             <div className="flex p-2">
                 <select className="select-staff" >
                     <option>SELECCIONE SUCURSAL</option>
-                    {sucursals && sucursals.map(e => {
-                        <option key={e.id} value={e.id}>{e.name}</option>
+                    {sucursal && sucursal.map(e => {
+                        return <option key={e.idSucursal} value={e.idSucursal}>{e.nombre}</option>
                     })}
                 </select>
             </div>
-            <Carousel  data={barbers}/>
+            <Carousel data={barbers}/>
         </div>
     )    
 }
