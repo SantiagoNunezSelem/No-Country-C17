@@ -5,7 +5,7 @@ import BotonReservarCita from '../BotonReservarCita'
 function Sucursal( {titulo, img, texto} ) {
 
     return (
-    <div className="w-96 flex flex-col items-stretch m-5">
+    <div className="w-96 flex flex-col items-stretch p-2">
 
         <h3 id="sucursal-title" className="text-center mb-10">{titulo}</h3>
 
