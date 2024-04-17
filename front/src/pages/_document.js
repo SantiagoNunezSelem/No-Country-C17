@@ -10,11 +10,10 @@ export default function Document() {
       </Head>
       
       <body>
-        <header>
-          <NavBar/>
-        </header>
+        <NavBar/>
         <Main />
-        <NextScript />
+        <NextScript/>
+        {/* <Footer/> */}
       </body>
     </Html>
   );

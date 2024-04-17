@@ -2,7 +2,6 @@ import React, {useRef, useState, useEffect} from 'react';
 import { useForm } from 'react-hook-form';
 import toast, {Toaster} from 'react-hot-toast';
 
-
 function Contacto() {
   
   const {register, handleSubmit}=useForm({
@@ -55,13 +54,12 @@ function Contacto() {
       />
     </div>
       <div id='contacto'>
-        <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"></link>
-        <div id='contacto-text' class='sm:w-full'>
+        <div id='contacto-text' className='sm:w-full'>
           <h1 id='contacto-title'>CONTACTO</h1>
           <h2>
-            <p class='min-w-fit text-justify pb-5'>Estamos encantados de que estes interesado en nuestros servicios.</p>
-            <p class='min-w-fit text-justify'>Por favor, completa el siguiente formulario para reservar tu cita con uno de nuestros talentosos barberos.</p>
-            <p class='min-w-fit text-justify pb-10'>¡Esperamos recibirte pronto en nuestra barberia!</p>
+            <p className='min-w-fit text-justify pb-5'>Estamos encantados de que estes interesado en nuestros servicios.</p>
+            <p className='min-w-fit text-justify'>Por favor, completa el siguiente formulario para reservar tu cita con uno de nuestros talentosos barberos.</p>
+            <p className='min-w-fit text-justify pb-10'>¡Esperamos recibirte pronto en nuestra barberia!</p>
           </h2>
           <form onSubmit={handleSubmit(onSubmit)} class='text-justify pl-50'>
             <ul>
@@ -78,7 +76,7 @@ function Contacto() {
             </ul>
           </form>
         </div>
-        <div id='contacto-img' class='hidden md:block'></div>
+        <div id='contacto-img' className='hidden md:block'></div>
       </div>
     </div>
     );

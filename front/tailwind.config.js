@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         'custom-gray': '#292929',
+        'salmon': "#F84646"
       },
     },
   },

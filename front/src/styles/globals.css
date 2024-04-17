@@ -50,25 +50,31 @@ header {
   position: relative;
 }
 
-header nav {
+nav {
   position: fixed;
   z-index: 10;
+  background-color: rgb(0 0 0 / 20%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 nav ul{
   font-size: 21px;
   font-weight: 400;
   color:white;
+  opacity: 100% !important;
   align-items: center;
+  transition: 0.3s;
 }
 
 nav ul:nth-child(n) :hover {
   color:#F84646;
+  transition: 0.3s;
 }
 
 #separador-nav {
   width: 100%;
-  height: 170px;
+  height: 160px;
 }
 
 nav #container-logo {
@@ -159,6 +165,14 @@ nav #container-logo {
   border-bottom: solid 3px #ffffff36;
 }
 
+#nav-bar-citas p {
+  color:#ffffff60;
+}
+
+#nav-bar-citas .activo p {
+  color:#ffffff;
+}
+
 #contacto{
   display: grid;
   gap: 30px;
@@ -177,9 +191,9 @@ nav #container-logo {
   font-size: 60px;
   font-style: normal;
 }
-#contacto-text{
+#contacto-text, #staff-text{
   color: #D9D9D9;
-  font-family: 'koulen', sans-serif;/*Por alguna razon no funciona*/
+  font-family: 'Koulen', sans-serif;
   font-weight: lighter;
   font-style: normal;
   grid-column: 1;
@@ -228,4 +242,10 @@ nav #container-logo {
   color: #666;
   cursor: not-allowed;
   transform: none !important;
+}
+
+#tarjeta-reserva{
+  border: 1px;
+  border-radius: 4px;
+  border-color: white;
 }
