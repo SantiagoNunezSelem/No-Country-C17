@@ -37,7 +37,6 @@ const StaffBarber = () => {
 
     let getSuc = async () => {
         let list = await getSucursal()
-        console.log(list.data.rows)
         setSucursal(list.data.rows)
     }
 
