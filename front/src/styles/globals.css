@@ -249,3 +249,17 @@ nav #container-logo {
   border-radius: 4px;
   border-color: white;
 }
+
+/* seleccionar personal */
+
+#profesional-container {
+  scrollbar-width: thin; /* Ancho del scrollbar */
+  scrollbar-color: #333 #999; /* Color del thumb y track */
+  padding-right: 10px;
+}
+
+.servicios-container {
+  scrollbar-width: thin; /* Ancho del scrollbar */
+  scrollbar-color: #333 #999; /* Color del thumb y track */
+  padding-right: 10px;
+}
