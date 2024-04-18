@@ -12,10 +12,10 @@ const CitaServios = ({cargar}) => {
     const handleButton = (id) => {
         service.includes(id) ?  setService(service.filter((i)=> i !== id)) : setService([...service,id])
     }
-    useEffect(() => {
+  /*   useEffect(() => {
         cargar({ name: "servicio", value: service })
     },[service])
-
+ */
     return(
             <div className="flex flex-wrap justify-center mt-10 mb-2">
                 {
