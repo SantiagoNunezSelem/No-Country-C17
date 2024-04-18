@@ -47,10 +47,6 @@ const Reservar = ({paramas}) => {
             <NavBarCitas numPaso={step} setNumPaso={setNumPaso} />
             <p>{step}</p>
             {step === 1 && <CitaServios/> } {/* CODIGO CREADO POR SANTIAGO */}
-            {step === 2 && <p className="m-auto p-12 text-white">Seleccionar profesional</p>}
-            {step === 3 && <p className="m-auto p-12 text-white">Fijar fecha y hora</p>}
-            {step === 4 && <p className="m-auto p-12 text-white">Datos de contacto</p>}
-            {step === 5 && <p className="m-auto p-12 text-white">Resumen de la reserva</p>}
             <div className='flex justify-end w-11/12'>
                 <BotonSiguiente next={handleNextButton} />
             </div>
