@@ -13,7 +13,7 @@ const CitaServios = () => {
         service.includes(id) ?  setService(service.filter((i)=> i !== id)) : setService([...service,id])
     }
     return(
-             <div className="flex flex-wrap justify-center mt-10 mb-2">
+            <div className="flex flex-wrap justify-center mt-10 mb-2">
                 {
                     servicios.map((servicio, index) => (
                     <motion.div 
