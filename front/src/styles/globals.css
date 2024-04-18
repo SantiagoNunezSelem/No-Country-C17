@@ -249,3 +249,15 @@ nav #container-logo {
   border-radius: 4px;
   border-color: white;
 }
+
+#resumen-usuario{
+  color: #9b9b9b;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+#input-usuario{
+  color: white !important;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}

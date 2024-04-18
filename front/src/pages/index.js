@@ -43,10 +43,6 @@ export default function Home() {
         <Contacto/>
       </section>
 
-      <section id='contacto-section'>{/*probando comp, se borra luego*/}
-        <ResumenServicio/>
-      </section>
-
       <footer>
         <Footer/>
       </footer>

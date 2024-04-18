@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import NavBarCitas from '@/components/sitemaCitas/NavBarCitas'
 import BotonSiguiente from '@/components/sitemaCitas/BotonSiguiente';
 import CitaServios from "@/components/sitemaCitas/Servicios";
+import ResumenServicio from "@/components/sitemaCitas/ResumenServicio";
 // import Servicios from '@/components/servicios/services';
 // import { servicios } from '@/lib/data';
 // import { motion } from 'framer-motion';
@@ -46,7 +47,8 @@ const Reservar = ({paramas}) => {
 
             <NavBarCitas numPaso={step} setNumPaso={setNumPaso} />
             <p>{step}</p>
-            {step === 1 && <CitaServios/> } {/* CODIGO CREADO POR SANTIAGO */}
+            {step === 1 && <CitaServios/> }{/* CODIGO CREADO POR SANTIAGO */}
+            {step === 5 && <ResumenServicio/> }
             
             <div className='flex justify-end w-11/12'>
                 <BotonSiguiente next={handleNextButton} />
