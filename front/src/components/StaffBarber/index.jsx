@@ -42,7 +42,7 @@ const StaffBarber = () => {
     }
 
     let filtBarber = (id) => {
-        setShow(barbers.filter((item)=> item.sucursalIdSucursal === id))
+        id === "all" ? setShow(barbers) :setShow(barbers.filter((item)=> item.sucursalIdSucursal === id))
     }
 
 
@@ -60,7 +60,7 @@ const StaffBarber = () => {
             </div>
             <div className="flex p-2">
                 <select className="select-staff" onChange={() => filtBarber(event.target.value)} >
-                    <option>SELECCIONE SUCURSAL</option>
+                    <option value="all">SELECCIONE SUCURSAL</option>
                     {sucursal && sucursal.map(e => {
                         return <option key={e.idSucursal} value={e.idSucursal}>{e.nombre}</option>
                     })}

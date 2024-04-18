@@ -12,13 +12,7 @@ import CitaServios from "@/components/sitemaCitas/Servicios";
 
 const Reservar = ({paramas}) => {
 
-    const [reserva, setReserva] = useState({
-        user: "",
-        employed: "",
-        startDate: "",
-        finishDate: "",
-        servicios: []
-    })
+    const [reserva, setReserva] = useState({})
 
     const [step, setStep] = useState(1)
 
@@ -30,6 +24,15 @@ const Reservar = ({paramas}) => {
         console.log(num)
         setStep(num)
     }
+
+    const handleInputChange  = (e) => {
+        const  { name, value } = e;
+        setReserva({...reserva ,[name]:value})
+    }
+
+    useState(() => {
+
+    },[reserva])
 
     // return(
     //     <div className="text-white h-full">
@@ -46,7 +49,8 @@ const Reservar = ({paramas}) => {
 
             <NavBarCitas numPaso={step} setNumPaso={setNumPaso} />
             <p>{step}</p>
-            {step === 1 && <CitaServios/> } {/* CODIGO CREADO POR SANTIAGO */}
+            {step === 1 && <CitaServios cargar={handleInputChange}/> } {/* CODIGO CREADO POR SANTIAGO */}
+
             <div className='flex justify-end w-11/12'>
                 <BotonSiguiente next={handleNextButton} />
             </div>
