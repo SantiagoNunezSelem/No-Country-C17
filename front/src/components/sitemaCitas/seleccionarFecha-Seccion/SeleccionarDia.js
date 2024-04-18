@@ -10,7 +10,7 @@ import "dayjs/locale/es";
 dayjs.locale("es");
 dayjs.extend(updateLocale).updateLocale("es", { weekStart: 0 });
 
-export default function DatePicker() {
+export default function SeleccionarDia() {
   const [selectedDate, setSelectedDate] = useState(null);
 
   const handleDateSelection = (date) => {
@@ -64,9 +64,11 @@ export default function DatePicker() {
             sx: {
               "&.MuiPickersDay-root.Mui-selected": {
                 backgroundColor: "#F84646",
+                fontSize: "large",
               },
               "&.MuiPickersDay-root": {
                 color: "white",
+                fontSize: "large",
               },
               //"&.MuiPickersDay-today": {
               //border: "1px solid rgba(255, 255, 255, 0.6)",

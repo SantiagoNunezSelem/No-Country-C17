@@ -16,6 +16,12 @@ const ServiciosReservados = () => {
       precio: "$15",
       profesional: "Andres Montes",
     },
+    {
+      nombre: "BARBA Y BIGOTE",
+      duracion: 20,
+      precio: "$15",
+      profesional: "Andres Montes",
+    },
   ];
 
   const eliminarServicio = (index) => {
@@ -32,6 +38,7 @@ const ServiciosReservados = () => {
           p={2}
           mb={1}
           minWidth={"370px"}
+          maxWidth={"400px"}
           minHeight={"135px"}
         >
           <Grid container justifyContent="center" alignItems="center">
@@ -47,7 +54,7 @@ const ServiciosReservados = () => {
             <Grid item xs={6}>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Image
-                  src={require("../img/servicios-icons/Timer.png")}
+                  src={require("../../../img/servicios-icons/Timer.png")}
                   alt="Timer"
                 />
                 <Typography variant="body2" sx={{ ml: "0.5rem" }}>
@@ -58,7 +65,7 @@ const ServiciosReservados = () => {
             <Grid item xs={2}>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Image
-                  src={require("../img/servicios-icons/Money.png")}
+                  src={require("../../../img/servicios-icons/Money.png")}
                   alt="Money"
                 />
                 <Typography sx={{ ml: "0.5rem" }}>{servicio.precio}</Typography>
@@ -70,7 +77,7 @@ const ServiciosReservados = () => {
                 onClick={() => eliminarServicio(index)}
               >
                 <Image
-                  src={require("../img/servicios-icons/Trash.png")}
+                  src={require("../../../img/servicios-icons/Trash.png")}
                   alt="Eliminar"
                 />
               </IconButton>
@@ -78,7 +85,7 @@ const ServiciosReservados = () => {
 
             <Grid item xs={6}>
               <Image
-                src={require("../img/servicios-icons/Profesional.png")}
+                src={require("../../../img/servicios-icons/Profesional.png")}
                 alt="Profesional"
               />
             </Grid>

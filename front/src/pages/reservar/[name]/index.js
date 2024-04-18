@@ -5,14 +5,12 @@ import CitaServicios from "@/components/sitemaCitas/Servicios";
 import DatosConfirmar from "@/components/sitemaCitas/formulario-paso-4/index";
 import BotonRegresar from "@/components/sitemaCitas/BotonRegresar";
 
-const Reservar = ({ params }) => {
-    const [reserva, setReserva] = useState({
-        user: "",
-        employed: "",
-        startDate: "",
-        finishDate: "",
-        servicios: []
-    });
+
+
+
+const Reservar = ({paramas}) => {
+
+    const [reserva, setReserva] = useState({})
 
     const [step, setStep] = useState(1);
 

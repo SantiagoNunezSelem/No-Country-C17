@@ -4,7 +4,7 @@ const getAllSucursales = async(req, res, next) => {
     let{nombre} = req.query;
 
     try{
-        const data = nombre ? await Sucursal.findOne({where :{nombre: nombre}}) : await Sucursal.findAndCountAll({include:['empleados']})
+        const data = nombre ? await Sucursal.findOne({where :{nombre: nombre}}) : await Sucursal.findAndCountAll()
         data ? res.send(data) : res.send({msg:'No se encontraron resultados'})
 
     }catch(error){
@@ -17,7 +17,7 @@ const addSucursal = async(req, res, next) => {
 
     try{
         const newSucursal = Array.isArray(data) ? await Sucursal.bulkCreate(data) : await Sucursal.create(data)
-        console.log(newSucursal)
+        // console.log(newSucursal)
         res.send({msg: "nueva sucursal agregada"});
 
     }catch(error){

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button, Typography, Grid, Box } from "@mui/material";
 import { horasManana, horasTarde } from "@/lib/data";
 
-export default function HourPicker() {
+export default function SeleccionarHorario() {
   const [selectedHour, setSelectedHour] = useState('8:00');
 
   const handleClick = (hora) => {
