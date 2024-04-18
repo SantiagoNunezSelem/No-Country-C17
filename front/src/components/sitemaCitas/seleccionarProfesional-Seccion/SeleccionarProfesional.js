@@ -19,7 +19,7 @@ function SeleccionarProfesional() {
     return (
     <div id="seleccionar-personal">
         
-        <section className="flex flex-row w-9/12 h-5/6 m-auto mt-10 mb-2">
+        <section className="flex flex-row w-9/12 h-5/6 m-auto mt-4 mb-2">
             <div className="w-4/6 max-h-96 border-2 p-10 pt-7 mr-5 rounded-xl">
                 <h3 className="mb-2">Profesionales</h3>
                 <div id="profesional-container" className="max-h-72 overflow-y-scroll">
