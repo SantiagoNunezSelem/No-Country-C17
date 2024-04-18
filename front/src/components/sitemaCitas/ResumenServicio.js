@@ -31,7 +31,7 @@ const datosUsuarioMock={
                 <Grid container justifyContent={'center'} 
                 sx={{
                     width:'100',
-                    height:400
+                    height:'400'
                 }}
                 >
                     <Box sx={{
