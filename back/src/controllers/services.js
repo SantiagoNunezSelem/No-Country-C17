@@ -18,16 +18,13 @@ const getAllSevices = async (req, res, next) => {
 }
 
 const  createService = async (req, res, next) => {
-    let {nombre,costo,des} = req.body;
+    let data = req.body;
 
     try{
-        let newServi =await Servicio.create({
-            nombre,
-            costo,
-            des
-        });
+        let newServi = Array.isArray(data) ? await Servicio.bulkCreate(data) : await Servicio.create(data)
 
-        res.send(newServi);
+        res.send({msg:"OK, se agrego con exito"});
+
     }catch(error){
         next(error)
     }
