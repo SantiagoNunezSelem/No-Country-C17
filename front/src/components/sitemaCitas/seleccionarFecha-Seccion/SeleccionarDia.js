@@ -1,5 +1,4 @@
-import * as React from "react";
-import { useState } from "react";
+import  React, { useEffect, useState } from  "react";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
@@ -10,13 +9,17 @@ import "dayjs/locale/es";
 dayjs.locale("es");
 dayjs.extend(updateLocale).updateLocale("es", { weekStart: 0 });
 
-export default function SeleccionarDia() {
+export default function SeleccionarDia({cargar}) {
   const [selectedDate, setSelectedDate] = useState(null);
 
   const handleDateSelection = (date) => {
-    setSelectedDate(date);
-    console.log(date.$d.getDate(), date.$d.getFullYear(), date.$d.getMonth());
+    setSelectedDate(date.$d);
+    //console.log(date.$d.getDate(), date.$d.getFullYear(), date.$d.getMonth());
   };
+
+  useEffect(() => {
+    cargar({ name: "dia", value: selectedDate });
+  }, [selectedDate]);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>

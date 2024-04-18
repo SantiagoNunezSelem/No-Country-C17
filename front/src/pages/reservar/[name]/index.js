@@ -54,7 +54,7 @@ const Reservar = ({paramas}) => {
 
             {step === 1 && <CitaServios cargar={handleInputChange}/>}
             {step === 2 && <SeleccionarProfesional/>}
-            {step === 3 && <SeleccionFechaContainer/>}
+            {step === 3 && <SeleccionFechaContainer cargar={handleInputChange}/>}
             
             <div className="flex justify-end w-11/12">
                 <BotonSiguiente next={handleNextButton}/>

@@ -2,7 +2,7 @@ import React from "react";
 import { Box, IconButton, Typography, Grid } from "@mui/material";
 import Image from "next/image";
 
-const ServiciosReservados = () => {
+const ServiciosReservados = ({cargar}) => {
   const serviciosReservadosMock = [
     {
       nombre: "CORTE",

@@ -1,15 +1,17 @@
-import React from "react";
-import { useState } from "react";
+import  React, { useEffect, useState } from  "react";
 import { Button, Typography, Grid, Box } from "@mui/material";
 import { horasManana, horasTarde } from "@/lib/data";
 
-export default function SeleccionarHorario() {
-  const [selectedHour, setSelectedHour] = useState('8:00');
+export default function SeleccionarHorario({cargar}) {
+  const [selectedHour, setSelectedHour] = useState(null);
 
   const handleClick = (hora) => {
     setSelectedHour(hora);
-    console.log(selectedHour)
   };
+
+  useEffect(() => {
+    cargar({ name: "hora", value: selectedHour });
+  }, [selectedHour]);
 
   return (
     <Box sx={{ width: "300px" }}>

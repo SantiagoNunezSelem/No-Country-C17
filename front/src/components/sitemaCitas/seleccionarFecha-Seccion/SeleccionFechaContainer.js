@@ -4,7 +4,7 @@ import SeleccionarHorario from "@/components/sitemaCitas/seleccionarFecha-Seccio
 import SeleccionarDia from "@/components/sitemaCitas/seleccionarFecha-Seccion/SeleccionarDia";
 import ServiciosReservados from "@/components/sitemaCitas/seleccionarFecha-Seccion/resumenServicios";
 
-export default function SeleccionFechaContainer() {
+export default function SeleccionFechaContainer({cargar}) {
   return (
     <Grid
       container
@@ -17,13 +17,13 @@ export default function SeleccionFechaContainer() {
       }}
     >
       <Grid item xs="auto">
-        <SeleccionarDia></SeleccionarDia>
+        <SeleccionarDia cargar={cargar}></SeleccionarDia>
       </Grid>
       <Grid item xs="auto">
-        <SeleccionarHorario></SeleccionarHorario>
+        <SeleccionarHorario cargar={cargar}></SeleccionarHorario>
       </Grid>
       <Grid item xs="auto">
-        <ServiciosReservados></ServiciosReservados>
+        <ServiciosReservados cargar={cargar}></ServiciosReservados>
       </Grid>
     </Grid>
   );
