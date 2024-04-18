@@ -56,6 +56,40 @@ export  const servicios =[
     }
     
 ];
+
+export const profesionales = [
+    {
+        nombre:"Nombre1",
+        apellido:"Apellido1",
+        sucursal:"flores"
+    },
+    {
+        nombre:"Nombre2",
+        apellido:"Apellido2",
+        sucursal:"flores"
+    },
+    {
+        nombre:"Nombre3",
+        apellido:"Apellido3",
+        sucursal:"flores"
+    },
+    {
+        nombre:"Nombre4",
+        apellido:"Apellido4",
+        sucursal:"flores"
+    },
+    {
+        nombre:"Nombre5",
+        apellido:"Apellido5",
+        sucursal:"flores"
+    },
+    {
+        nombre:"Nombre6",
+        apellido:"Apellido6",
+        sucursal:"flores"
+    }
+]
+
 export const socialMedia = [
 
     {

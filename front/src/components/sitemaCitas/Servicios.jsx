@@ -17,7 +17,7 @@ const CitaServios = ({cargar}) => {
     },[service])
 
     return(
-             <div className="flex flex-wrap justify-center mt-10 mb-2">
+            <div className="flex flex-wrap justify-center mt-10 mb-2">
                 {
                     servicios.map((servicio, index) => (
                     <motion.div 
