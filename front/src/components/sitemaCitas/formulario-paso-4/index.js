@@ -1,6 +1,8 @@
 import React from 'react';
 import FormCitas from './FormularioDetalles';
-import ServiciosSummary from './servicesSummary';
+import IconsComponent from './resumen-servicios';
+
+
 
 const ReservarCita_2 = () => {
     return (
@@ -13,19 +15,14 @@ const ReservarCita_2 = () => {
                     <FormCitas />
                 </div>
                 {/* Parte derecha: Resumen de Servicios y Total a Pagar */}
-                <div className="w-full lg:w-1/2 pb-8 pl-4"> {/* Add paddingLeft for spacing */}
+                <div className="w-full lg:w-1/2 pb-8 pl-5"> {/* Add paddingLeft for spacing */}
                     {/* Sección de Resumen de Servicios */}
                     <div className="mb-8">
                         <h2 className="text-2xl font-bold mb-4 text-custom-red">Resumen de Servicios</h2>
-                        <ServiciosSummary />
+                    <IconsComponent/>
                     </div>
                     
-                    {/* Sección de Total a Pagar */}
-                    <div className="border border-gray-300 rounded-lg p-4">
-                        <h2 className="text-xl font-bold mb-4">Total a Pagar</h2>
-                        <p className="text-white text-lg font-medium">$XX.XX</p>
-                        {/* Aquí puedes mostrar el monto total a pagar */}
-                    </div>
+                    
                     
                 </div>
                
