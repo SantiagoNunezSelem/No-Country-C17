@@ -10,7 +10,7 @@ import "dayjs/locale/es";
 dayjs.locale("es");
 dayjs.extend(updateLocale).updateLocale("es", { weekStart: 0 });
 
-export default function DatePicker() {
+export default function SeleccionarDia() {
   const [selectedDate, setSelectedDate] = useState(null);
 
   const handleDateSelection = (date) => {
