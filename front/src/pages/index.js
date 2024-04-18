@@ -6,6 +6,7 @@ import StaffBarber from "@/components/StaffBarber";
 import BotonReservarCita from "@/components/BotonReservarCita";
 import Contacto from "@/components/contacto";
 import Footer from "@/components/Footer";
+import ResumenServicio from "@/components/sitemaCitas/ResumenServicio"; //usado como entorno de prueba
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,10 @@ export default function Home() {
 
       <section id='contacto-section'>
         <Contacto/>
+      </section>
+
+      <section id='contacto-section'>{/*probando comp, se borra luego*/}
+        <ResumenServicio/>
       </section>
 
       <footer>

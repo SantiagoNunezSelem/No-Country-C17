@@ -1,21 +1,24 @@
 import { Container } from 'postcss';
 import React from 'react';
+import { Box, IconButton, Typography, Grid } from "@mui/material";
+import ServiciosReservados from '../ServicePickerInfo';
 
+let tarjetaResumenReserva= ServiciosReservados()
 function ResumenServicio(){
-    let serviceCard=(label)=>{
-        <Container flex id='tarjeta-reserva'>
-            <div>
-                <h1>Servicio</h1>
-                <h2>{label}</h2>
-                <ul>
-                    <li><img src='front\src\img\Calendar.png'/></li>
-                    <li><img src='front\src\img\time.png'/></li>
-                    <li><img src='front\src\img\money.png'/></li>
-                </ul>
-
-            </div> 
-        </Container>       
-    }
+    return(
+        <div>
+            <Typography id='titulo-resumen-reserva' justifyContent='center' alignContent="center" variant='subtitle1' sx={{color:"#F84646"}}>Tus Servicios Reservados</Typography>
+            <Box  sx={{
+                display:'flex',
+                flexDirection: 'column',
+                }}
+                >
+                <div>
+                    {tarjetaResumenReserva}
+                </div>
+            </Box>
+        </div>
+        );
 }
 
 export default ResumenServicio;
