@@ -84,7 +84,7 @@ const IconsComponent = () => {
         <div className="flex items-center">
           {/* Icono de la hora */}
           {iconsCitas.map((icon) => {
-            if (icon.alt === 'icon time') {
+            if (icon.alt === 'icon timer') {
               return (
                 <span key={icon.id} className="mr-2">
                   <Image src={icon.icon} alt={icon.alt} width={icon.width} height={icon.height} />
