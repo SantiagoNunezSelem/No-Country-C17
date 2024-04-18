@@ -5,15 +5,28 @@ import Image from "next/image"
 import NavBarCitas from '@/components/sitemaCitas/NavBarCitas'
 import trashIcon from "@/img/reservar-cita-icons/trash.png"
 import moneyIcon from "@/img/reservar-cita-icons/money.png"
+import primerProfesionalDisponible from "@/img/reservar-cita-icons/primerProfesionalDisponible.png"
 import { profesionales } from '@/lib/data';
 import { servicios as dataServicios } from '@/lib/data';
 
 function SeleccionarProfesional() {
     const [servicios,setServicios] = useState(dataServicios)
 
+    const [seleccionado,setSeleccionado] = useState("primerProfesional")
+
     const borrarServicio = (nombre) => {
         const data = servicios.filter(servicio => servicio.title !== nombre)
         setServicios(data)
+    }
+
+    const handleClick = (id) => {
+        const prevSeleccionado = document.getElementById(seleccionado)
+        prevSeleccionado.classList.remove("seleccionado")
+
+        const newSeleccionado = document.getElementById(id)
+        newSeleccionado.classList.add("seleccionado")
+
+        setSeleccionado(id)
     }
 
     return (
@@ -23,11 +36,16 @@ function SeleccionarProfesional() {
             <div className="w-4/6 max-h-96 border-2 p-10 pt-7 mr-5 rounded-xl">
                 <h3 className="mb-2">Profesionales</h3>
                 <div id="profesional-container" className="max-h-72 overflow-y-scroll">
+
+                    <div id="primerProfesional" className="flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl seleccionado" onClick={() => handleClick("primerProfesional")}>
+                        <Image src={primerProfesionalDisponible} width={40} height={40} style={{borderRadius:"100%"}}/>
+                        <p className="self-center text-lg">Primer Profesional Disponible</p>
+                    </div>
                     {
-                        profesionales.map(p => {
+                        profesionales.map((p,index) => {
                             return(
-                            <div className="flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl">
-                                <Image src={require("../../../img/profesional.jpg")} width={60} height={60} style={{borderRadius:"100%"}}/>
+                            <div id={index} className="flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl" onClick={() => handleClick(index)}>
+                                <Image src={require("../../../img/profesional.jpg")} width={40} height={40} style={{borderRadius:"100%"}}/>
                                 <p className="self-center text-lg">{p.nombre} {p.apellido}</p>
                             </div>
                             )
