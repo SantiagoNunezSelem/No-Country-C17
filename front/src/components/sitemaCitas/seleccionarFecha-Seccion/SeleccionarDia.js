@@ -64,9 +64,11 @@ export default function SeleccionarDia() {
             sx: {
               "&.MuiPickersDay-root.Mui-selected": {
                 backgroundColor: "#F84646",
+                fontSize: "large",
               },
               "&.MuiPickersDay-root": {
                 color: "white",
+                fontSize: "large",
               },
               //"&.MuiPickersDay-today": {
               //border: "1px solid rgba(255, 255, 255, 0.6)",

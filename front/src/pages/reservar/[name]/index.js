@@ -4,6 +4,7 @@ import NavBarCitas from '@/components/sitemaCitas/NavBarCitas'
 import BotonSiguiente from '@/components/sitemaCitas/BotonSiguiente';
 import CitaServios from "@/components/sitemaCitas/Servicios";
 import SeleccionarProfesional from "@/components/sitemaCitas/seleccionarProfesional-Seccion/SeleccionarProfesional"
+import SeleccionFechaContainer from "@/components/sitemaCitas/seleccionarFecha-Seccion/SeleccionFechaContainer";
 // import Servicios from '@/components/servicios/services';
 // import { servicios } from '@/lib/data';
 // import { motion } from 'framer-motion';
@@ -53,6 +54,7 @@ const Reservar = ({paramas}) => {
 
             {step === 1 && <CitaServios cargar={handleInputChange}/>}
             {step === 2 && <SeleccionarProfesional/>}
+            {step === 3 && <SeleccionFechaContainer/>}
             
             <div className="flex justify-end w-11/12">
                 <BotonSiguiente next={handleNextButton}/>

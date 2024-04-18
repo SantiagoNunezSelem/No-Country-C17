@@ -6,14 +6,23 @@ import ServiciosReservados from "@/components/sitemaCitas/seleccionarFecha-Secci
 
 export default function SeleccionFechaContainer() {
   return (
-    <Grid container>
-      <Grid item xs={4}>
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      spacing={12}
+      sx={{
+        padding: "1rem"
+      }}
+    >
+      <Grid item xs="auto">
         <SeleccionarDia></SeleccionarDia>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs="auto">
         <SeleccionarHorario></SeleccionarHorario>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs="auto">
         <ServiciosReservados></ServiciosReservados>
       </Grid>
     </Grid>
