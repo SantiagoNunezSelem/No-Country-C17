@@ -50,12 +50,11 @@ const Reservar = ({paramas}) => {
             {step === 1 && <CitaServios/> }{/* CODIGO CREADO POR SANTIAGO */}
             {step === 5 && <ResumenServicio/> }
             
-            <div className='flex justify-end w-11/12'>
+            <div className='flex justify-end w-11/12 object-position: right bottom 	position: absolute'>
                 <BotonSiguiente next={handleNextButton} />
             </div>
         </div>
         )
-
 }
 
 export default Reservar
