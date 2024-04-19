@@ -1,29 +1,34 @@
-import React from 'react'
+import React from 'react';
 
 function logIn() {
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(e)
+    }
+
     return (
-    <div id="log-in" className="w-full h-full">
-        <div id="separador-nav"></div>
+        <div id="log-in" className="flex flex-col items-center justify-center w-full h-screen">
+            <h3 className='text-center text-white text-2xl font-semibold p-4'>ADMINISTRACION</h3>
+            <div className="flex flex-col items-center justify-center w-72 p-4 rounded-lg">
+                <form onSubmit={() =>handleSubmit(e)} className="flex flex-col items-center justify-center w-full">
 
-        <h3 className='text-center text-white text-2xl font-semibold p-4'>ADMINISTRACION</h3>
-        <div className="w-full h-full m-auto">
-            
-            <form action="/login" method="post">
+                    <div className="flex flex-col mb-5 w-full">
+                        <label htmlFor="usuario" className="mb-2 text-salmon">Usuario:</label>
+                        <input type="text" id="usuario" name="usuario" required className="px-3 py-2 border border-gray-300 rounded-lg w-full" />
+                    </div>
 
-                <div className="flex flex-col items-center justify-center w-72 mb-5">
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" id="usuario" name="usuario" required/>
-                </div>
-                <div className="flex flex-col items-center justify-center w-72 mb-5">
-                    <label for="contraseña">Contraseña:</label>
-                    <input type="password" id="contraseña" name="contraseña" required/>
-                </div>
-                
+                    <div className="flex flex-col mb-5 w-full">
+                        <label htmlFor="contraseña" className="mb-2 text-salmon">Contraseña:</label>
+                        <input type="password" id="contraseña" name="contraseña" required className="px-3 py-2 border border-gray-300 rounded-lg w-full" />
+                    </div>
 
-            </form>
+                    <button type="submit" className="w-56 text-white font-bold py-2 my-4 px-4 rounded bg-salmon">Iniciar sesión</button>
+
+                </form>
+            </div>
         </div>
-    </div>
-    )
+    );
 }
 
-export default logIn
+export default logIn;
