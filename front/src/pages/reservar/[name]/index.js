@@ -2,10 +2,10 @@
 import React, { useState } from "react"
 import NavBarCitas from '@/components/sitemaCitas/NavBarCitas'
 import BotonSiguiente from '@/components/sitemaCitas/BotonSiguiente';
-import CitaServios from "@/components/sitemaCitas/Servicios";
-import DatosConfirmar from "@/components/sitemaCitas/formulario-paso-4/index"
-import SeleccionarProfesional from "@/components/sitemaCitas/seleccionarProfesional-Seccion/SeleccionarProfesional"
-import SeleccionFechaContainer from "@/components/sitemaCitas/seleccionarFecha-Seccion/SeleccionFechaContainer";
+import CitaServicios from "@/components/sitemaCitas/Paso1-SeleccionarServicios/Servicios";
+import DatosConfirmar from "@/components/sitemaCitas/Paso4-DatosContacto/index"
+import SeleccionarProfesional from "@/components/sitemaCitas/Paso2-SeleccionarProfesional/SeleccionarProfesional"
+import SeleccionFechaContainer from "@/components/sitemaCitas/Paso3-SeleccionarFecha/SeleccionFechaContainer";
 import BotonRegresar from "@/components/sitemaCitas/BotonRegresar";
 
 
@@ -36,14 +36,6 @@ const Reservar = ({ paramas }) => {
 
     }, [reserva])
 
-
-    //     <div className="text-white h-full">
-    //        <p>SISTEMA DE CITAS</p>
-    //        <ServiceSelect/>
-    //     </div>
-    // )
-    //  CODIGO DAMIAN SOLA
-
     return (
         <div className="w-full">
 
@@ -51,9 +43,9 @@ const Reservar = ({ paramas }) => {
 
             <NavBarCitas numPaso={step} setNumPaso={setNumPaso} />
             {/* Render different components based on the current step */}
-            {step === 1 && <CitaServios />}
-            {step === 2 && <SeleccionarProfesional />}
-            {step === 3 && <SeleccionFechaContainer cargar={handleInputChange} />}
+            {step === 1 && <CitaServicios cargar={handleInputChange}/>}
+            {step === 2 && <SeleccionarProfesional/>}
+            {step === 3 && <SeleccionFechaContainer cargar={handleInputChange}/>}
             {step === 4 && <DatosConfirmar />}
             <div className='flex justify-between items-end w-11/12'>
 
