@@ -251,6 +251,27 @@ nav #container-logo {
   border-color: white;
 }
 
+/* seleccionar personal */
+
+#profesional-container {
+  scrollbar-width: thin; /* Ancho del scrollbar */
+  scrollbar-color: #333 #999; /* Color del thumb y track */
+  padding-right: 10px;
+}
+
+#profesional-container div {
+  border: none 0px;
+  background-color: #232323;
+}
+
+#seleccionar-personal .seleccionado {
+  border: solid #F84646 1px;
+}
+
+.servicios-container {
+  scrollbar-width: thin; /* Ancho del scrollbar */
+  scrollbar-color: #333 #999; /* Color del thumb y track */
+  padding-right: 10px;
 #resumen-usuario{
   color: #9b9b9b;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;

@@ -4,7 +4,7 @@ import  React, { useEffect, useState } from  "react";
 import Servicios from '@/components/servicios/services';
 import BotonAgregarServicio from '@/components/sitemaCitas/seleccionarServicios-Seccion/BotonAgregarServicio';
 
-const CitaServios = () => {
+const CitaServios = ({cargar}) => {
 
     const [service, setService] = useState([]) ///DAMIAN SOLA AGREGO ESTO
     ////MEDIANTE USECONTEX T PASAMOS LA INFORMACIÓN A TODAS LAS VISTAS QUE LO NECESITEN
@@ -12,8 +12,12 @@ const CitaServios = () => {
     const handleButton = (id) => {
         service.includes(id) ?  setService(service.filter((i)=> i !== id)) : setService([...service,id])
     }
+  /*   useEffect(() => {
+        cargar({ name: "servicio", value: service })
+    },[service])
+ */
     return(
-             <div className="flex flex-wrap justify-center mt-10 mb-2">
+            <div className="flex flex-wrap justify-center mt-10 mb-2">
                 {
                     servicios.map((servicio, index) => (
                     <motion.div 

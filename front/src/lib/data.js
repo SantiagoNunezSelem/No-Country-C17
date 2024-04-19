@@ -56,6 +56,40 @@ export  const servicios =[
     }
     
 ];
+
+export const profesionales = [
+    {
+        nombre:"Nombre1",
+        apellido:"Apellido1",
+        sucursal:"flores"
+    },
+    {
+        nombre:"Nombre2",
+        apellido:"Apellido2",
+        sucursal:"flores"
+    },
+    {
+        nombre:"Nombre3",
+        apellido:"Apellido3",
+        sucursal:"flores"
+    },
+    {
+        nombre:"Nombre4",
+        apellido:"Apellido4",
+        sucursal:"flores"
+    },
+    {
+        nombre:"Nombre5",
+        apellido:"Apellido5",
+        sucursal:"flores"
+    },
+    {
+        nombre:"Nombre6",
+        apellido:"Apellido6",
+        sucursal:"flores"
+    }
+]
+
 export const socialMedia = [
 
     {
@@ -84,6 +118,36 @@ export const socialMedia = [
     },
 
 ]
+export const iconsCitas = [
+    {
+      id: 1,
+      icon: '/Money.png',
+      alt: 'icon money',
+      width: 24, // Ancho deseado de la imagen en píxeles
+      height: 24, // Altura deseada de la imagen en píxeles
+    },
+    {
+      id: 2,
+      icon: '/Profesional.png',
+      alt: 'icon profesional',
+      width: 24,
+      height: 24,
+    },
+    {
+      id: 3,
+      icon: '/time.png',
+      alt: 'icon timer',
+      width: 24,
+      height: 24,
+    },
+    {
+      id: 4,
+      icon: '/Calendar.png',
+      alt: 'icon calendar',
+      width: 24,
+      height: 24,
+    },
+  ];
 
 export const horasManana = ['8:00', '8:30', '9:00', '9:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30'];
 export const horasTarde = ['14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30'];
