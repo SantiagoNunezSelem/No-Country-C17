@@ -3,15 +3,11 @@ import React, { useState } from "react"
 import NavBarCitas from '@/components/sitemaCitas/NavBarCitas'
 import BotonSiguiente from '@/components/sitemaCitas/BotonSiguiente';
 import CitaServios from "@/components/sitemaCitas/Servicios";
+import ResumenServicio from "@/components/sitemaCitas/ResumenReserva";
 import DatosConfirmar from "@/components/sitemaCitas/formulario-paso-4/index"
 import SeleccionarProfesional from "@/components/sitemaCitas/seleccionarProfesional-Seccion/SeleccionarProfesional"
 import SeleccionFechaContainer from "@/components/sitemaCitas/seleccionarFecha-Seccion/SeleccionFechaContainer";
 import BotonRegresar from "@/components/sitemaCitas/BotonRegresar";
-import ResumenServicio from "@/components/sitemaCitas/ResumenServicio";
-// import Servicios from '@/components/servicios/services';
-// import { servicios } from '@/lib/data';
-// import { motion } from 'framer-motion';
-// import BotonAgregarServicio from '@/components/sitemaCitas/seleccionarServicios-Seccion/BotonAgregarServicio';
 
 
 
@@ -38,9 +34,8 @@ const Reservar = ({ paramas }) => {
     }
 
     useState(() => {
-
-    }, [reserva])
-
+        }, [reserva])
+    
 
     //     <div className="text-white h-full">
     //        <p>SISTEMA DE CITAS</p>
@@ -60,11 +55,11 @@ const Reservar = ({ paramas }) => {
             {step === 2 && <SeleccionarProfesional />}
             {step === 3 && <SeleccionFechaContainer cargar={handleInputChange} />}
             {step === 4 && <DatosConfirmar />}
-            {step === 5 && <ResumenServicio/> }
-            
-            <div className='flex justify-end w-11/12 object-position: right bottom 	position: absolute'>
+            <div className='flex justify-between items-end w-11/12'>
+
 
                 {step > 1 && (
+
                     <BotonRegresar
                         onClick={handlePrevButton}
                         className="mr-auto"
@@ -72,11 +67,18 @@ const Reservar = ({ paramas }) => {
                 )}
 
 
-                <BotonSiguiente next={handleNextButton} />
+            <BotonSiguiente next={handleNextButton} />
 
+                {step === 1 && <CitaServios cargar={handleInputChange}/>}
+                {step === 2 && <SeleccionarProfesional/>}
+                {step === 3 && <SeleccionFechaContainer/>}
+                {step === 5 && <ResumenServicio/> }
+        
+                <div className="flex justify-end w-11/12 position: absolute object-position: right bottom">
+                    <BotonSiguiente next={handleNextButton}/>
+                </div>
             </div>
         </div>
         )
-}
-
+    }
 export default Reservar

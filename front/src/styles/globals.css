@@ -272,6 +272,8 @@ nav #container-logo {
   scrollbar-width: thin; /* Ancho del scrollbar */
   scrollbar-color: #333 #999; /* Color del thumb y track */
   padding-right: 10px;
+}
+
 #resumen-usuario{
   color: #9b9b9b;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
