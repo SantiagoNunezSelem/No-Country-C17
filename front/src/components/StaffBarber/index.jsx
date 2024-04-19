@@ -3,23 +3,9 @@ import React, { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 import axios from "axios";
 import { config } from "dotenv";
-// const {REACT_APP_API_KEY} = process.env;
-// config()
- 
-const apiKey = "http://localhost:48925/"
-
-const getBarbers = async() => {
-    const  barberLista = await axios.get(`${apiKey}employed`)
-    return barberLista
-}
-
-const getSucursal = async() => {
-    const  sucursalist = await axios.get(`${apiKey}sucursales`)
-    return sucursalist;
-}
+import { GetSucursal, GetBarbers } from "@/actions/Querys";
 
 const StaffBarber = () => {
-
 
     const [barbers, setBarbers] = useState([]);
     const [show, setShow] = useState([])
@@ -27,13 +13,13 @@ const StaffBarber = () => {
     
     
     let getBarb = async () => {
-        let list = await getBarbers()
+        let list = await GetBarbers()
         setBarbers(list.data.rows)
         setShow(list.data.rows)
     }
 
     let getSuc = async () => {
-        let list = await getSucursal()
+        let list = await GetSucursal()
         setSucursal(list.data.rows)
     }
 
