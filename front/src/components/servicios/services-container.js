@@ -1,35 +1,28 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import Servicios from './services';
 import { servicios as hardCodeService} from '@/lib/data';
 import { motion } from 'framer-motion';
-import axios from 'axios';
-const apiKey = "http://localhost:48925/"
-
-
-const getServicios = async () => {
-    try {
-        const  barberLista = await axios.get(`${apiKey}services`)
-        if (!barberLista) return hardCodeService; 
-        return barberLista
-    }catch(e){
-        console.log(e)
-        return hardCodeService
-    }
-}
+import Loading from '@/loading.png';
+import Image from 'next/image';
+import {GetServicios} from "@/actions/Querys"
 
 function ServicesContainer() {
 
-  const [serviApi, setServiApi] = React.useState([])
+  const [serviApi, setServiApi] = useState([])
+  const [loading, setLoading] = useState(true)
+
 
 
   const getServ = async () => {
-    let servicios = await  getServicios()
-    setServiApi(servicios.data.rows);
+    let servicios = await GetServicios()
+    setLoading(false)
+    servicios === "AxiosError" ?  setServiApi(hardCodeService) : setServiApi(servicios.data.rows)
 }
 
-React.useEffect(() => {
+  useEffect(() => {
     getServ()
   },[])
+
   return (
     <div className="flex flex-wrap justify-center mb-2">
       {/* Mapear los datos de servicios y renderizar un componente Servicios para cada uno */}
@@ -48,6 +41,10 @@ React.useEffect(() => {
           />
         </motion.div>
       ))}
+      {loading &&  <div>
+                <Image src={Loading} alt="loading..."  className="w-24 h-full animate-spin"/>
+                <p className='text-white'>cargando...</p>
+            </div>}
     </div>
   );
 }

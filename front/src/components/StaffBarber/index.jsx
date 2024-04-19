@@ -1,19 +1,23 @@
 'use Client'
 import React, { useEffect, useState } from "react";
 import Carousel from "./Carousel";
-import axios from "axios";
-import { config } from "dotenv";
 import { GetSucursal, GetBarbers } from "@/actions/Querys";
+import Loading from '@/loading.png';
+import Image from "next/image";
+
 
 const StaffBarber = () => {
 
     const [barbers, setBarbers] = useState([]);
     const [show, setShow] = useState([])
     const [sucursal,  setSucursal] = useState([]);
+    const [loading, setLoading] = useState(true)
+
     
     
     let getBarb = async () => {
         let list = await GetBarbers()
+        setLoading(false)
         setBarbers(list.data.rows)
         setShow(list.data.rows)
     }
@@ -48,7 +52,13 @@ const StaffBarber = () => {
                     })}
                 </select>
             </div>
+            {loading ?  <div className="m-auto text-center justify-center">
+                <Image src={Loading} alt="loading..."  className="w-24 h-full animate-spin"/>
+                <p className='text-white'>cargando...</p>
+            </div>: 
             <Carousel data={show}/>
+            }
+            
         </div>
     )    
 }

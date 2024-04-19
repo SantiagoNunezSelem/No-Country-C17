@@ -272,3 +272,13 @@ nav #container-logo {
   scrollbar-color: #333 #999; /* Color del thumb y track */
   padding-right: 10px;
 }
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(400deg);
+  }
+}
