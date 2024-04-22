@@ -24,7 +24,11 @@ const CitaServios = ({cargar}) => {
         cargar({ name: "servicio", value: service })
     },[service])
 
+    console.log(service)
+
     return(
+        
+
         <div className="flex flex-wrap justify-center mt-10 mb-2">
             {
                servicios && servicios.map((servicio, index) => (  // le puse &&, en caso de ser false que no renderice y rompa
