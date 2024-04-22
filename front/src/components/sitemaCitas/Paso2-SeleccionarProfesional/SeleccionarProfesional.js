@@ -1,16 +1,17 @@
 "use client"
 
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Image from "next/image"
 import NavBarCitas from '@/components/sitemaCitas/NavBarCitas'
 import trashIcon from "@/img/reservar-cita-icons/trash.png"
 import moneyIcon from "@/img/reservar-cita-icons/money.png"
 import primerProfesionalDisponible from "@/img/reservar-cita-icons/primerProfesionalDisponible.png"
-import { profesionales } from '@/lib/data';
-import { servicios as dataServicios } from '@/lib/data';
+import {GetBarbers} from "@/actions/Querys"
+import {servicios as dataServicios} from "@/lib/data"
 
-function SeleccionarProfesional() {
+function SeleccionarProfesional( {cargar,infoReserva} ) {
     const [servicios,setServicios] = useState(dataServicios)
+    const [profesionales,setProfesionales] = useState()
 
     const [idSeleccionado,setIdSeleccionado] = useState("primerProfesional")
 
@@ -29,6 +30,16 @@ function SeleccionarProfesional() {
         setIdSeleccionado(id)
     }
 
+    const getProfesionales = async () => {
+        let data = await GetBarbers()
+        setProfesionales(data.data.rows);
+    }
+
+    useEffect(() => {
+        getProfesionales()
+        
+    },[])
+
     return (
     <div id="seleccionar-personal">
         
@@ -42,10 +53,13 @@ function SeleccionarProfesional() {
                         <p className="self-center text-lg">Primer Profesional Disponible</p>
                     </div>
                     {
-                        profesionales.map((p,index) => {
+                        profesionales && profesionales.map((p,index) => {
                             return(
                             <div id={index} className="flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl" onClick={() => handleClick(index)}>
-                                <Image src={require("../../../img/profesional.jpg")} width={40} height={40} style={{borderRadius:"100%"}}/>
+                                <Image src={p.imagen} width={40} height={40} 
+                                layout="fixed" 
+                                objectFit="contain"
+                                style={{borderRadius:"100%"}}/>
                                 <p className="self-center text-lg">{p.nombre} {p.apellido}</p>
                             </div>
                             )
@@ -68,7 +82,7 @@ function SeleccionarProfesional() {
                         </div>
                     </div>
                     <div className="self-center">
-                        {servicios.length > 1 &&
+                        {servicios && servicios.length > 1 &&
                             <Image src={trashIcon} width={30} height={30} className='hover:cursor-pointer' onClick={() => borrarServicio(p.title)}/>
                         }
                     </div>
