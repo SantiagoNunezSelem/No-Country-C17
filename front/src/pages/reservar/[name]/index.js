@@ -6,6 +6,7 @@ import CitaServicios from "@/components/sitemaCitas/Paso1-SeleccionarServicios/S
 import DatosConfirmar from "@/components/sitemaCitas/Paso4-DatosContacto/index"
 import SeleccionarProfesional from "@/components/sitemaCitas/Paso2-SeleccionarProfesional/SeleccionarProfesional"
 import SeleccionFechaContainer from "@/components/sitemaCitas/Paso3-SeleccionarFecha/SeleccionFechaContainer";
+import ResumenReserva from "@/components/sitemaCitas/ResumenReserva";
 import BotonRegresar from "@/components/sitemaCitas/BotonRegresar";
 
 
@@ -47,28 +48,19 @@ const Reservar = ({ paramas }) => {
             {step === 2 && <SeleccionarProfesional/>}
             {step === 3 && <SeleccionFechaContainer cargar={handleInputChange}/>}
             {step === 4 && <DatosConfirmar />}
+            {step === 5 && <ResumenReserva />}
             <div className='flex justify-between items-end w-11/12'>
 
 
                 {step > 1 && (
-
                     <BotonRegresar
                         onClick={handlePrevButton}
-                        className="mr-auto"
+                        className="object-position: left bottom position: absolute"
                     />
                 )}
 
 
-            <BotonSiguiente next={handleNextButton} />
-
-                {step === 1 && <CitaServios cargar={handleInputChange}/>}
-                {step === 2 && <SeleccionarProfesional/>}
-                {step === 3 && <SeleccionFechaContainer/>}
-                {step === 5 && <ResumenServicio/> }
-        
-                <div className="flex justify-end w-11/12 position: absolute object-position: right bottom">
-                    <BotonSiguiente next={handleNextButton}/>
-                </div>
+            <BotonSiguiente next={handleNextButton} className='flex justify-end w-11/12 object-position: right bottom 	position: absolute'/>
             </div>
         </div>
         )
