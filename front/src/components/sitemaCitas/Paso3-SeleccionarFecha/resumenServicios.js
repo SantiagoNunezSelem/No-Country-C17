@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, IconButton, Typography, Grid } from "@m
 
-const ServiciosReservados = ({cargar}) => {
+const ServiciosReservados = () => {
   const serviciosReservadosMock = [
     {
       nombre: "CORTE",
