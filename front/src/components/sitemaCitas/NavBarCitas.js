@@ -31,7 +31,6 @@ function NavBarCitas( {numPaso,  setNumPaso} ) {
                 <div className='circle-icon' onClick={() => setNumPaso(5)}>5</div>
                 <p>Resumen de la reserva</p>
             </div>
-
         </div>
     </div>
     )

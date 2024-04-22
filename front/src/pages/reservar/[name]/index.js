@@ -1,5 +1,6 @@
 
 import React, { useState } from "react"
+import { Box, Grid } from "@mui/material"
 import NavBarCitas from '@/components/sitemaCitas/NavBarCitas'
 import BotonSiguiente from '@/components/sitemaCitas/BotonSiguiente';
 import CitaServicios from "@/components/sitemaCitas/Paso1-SeleccionarServicios/Servicios";
@@ -49,7 +50,14 @@ const Reservar = ({ paramas }) => {
             {step === 3 && <SeleccionFechaContainer cargar={handleInputChange} infoReserva={reserva}/>}
             {step === 4 && <DatosConfirmar />}
             {step === 5 && <ResumenReserva />}
-            <div className='flex justify-between items-end w-11/12'>
+            <Box id='global-citas-style' sx={{ 
+                width:'full',
+                marginX:{xs:4, md:24},
+                justifyItems:'center',
+                justifyContent:'space-between',
+                display:'flex',
+                position: 'bottom absolute'
+            }}>
 
 
                 {step > 1 && (
@@ -60,8 +68,10 @@ const Reservar = ({ paramas }) => {
                 )}
 
 
-            <BotonSiguiente next={handleNextButton} className='flex justify-end w-11/12 object-position: right bottom 	position: absolute'/>
+            <div>
+                <BotonSiguiente next={handleNextButton} />
             </div>
+            </Box>
         </div>
         )
     }

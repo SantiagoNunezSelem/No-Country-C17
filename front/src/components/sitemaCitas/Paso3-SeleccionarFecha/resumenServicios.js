@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, IconButton, Typography, Grid } from "@m
+import { Box, IconButton, Typography, Grid } from "@mui/material";
+import Image from "next/image";
 
 export default function ServiciosReservados(infoReserva) {
   const serviciosReservados = [];
