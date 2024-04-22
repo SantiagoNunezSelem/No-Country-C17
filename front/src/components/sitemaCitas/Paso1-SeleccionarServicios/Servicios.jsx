@@ -17,17 +17,16 @@ const CitaServios = ({ cargar }) => {
   const handleButton = (servicio) => {
     //service.includes(servicio.idServicio) ?  setService(service.filter((i)=> i.idServicio !== servicio.idServicio)) : setService([...service,servicio])
 
-      const servicioIndex = service.findIndex(
-        (item) => item.idServicio === servicio.idServicio
-      );
-      
-      if (servicioIndex !== -1) {
-        const updatedService = [...service];
-        updatedService.splice(servicioIndex, 1);
-        setService(updatedService);
-      } else {
-        setService([...service, servicio]);
-      }
+    const servicioIndex = service.findIndex(
+      (item) => item.idServicio === servicio.idServicio
+    );
+
+    servicioIndex !== -1
+      ? setService([
+          ...service.slice(0, servicioIndex),
+          ...service.slice(servicioIndex + 1),
+        ])
+      : setService([...service, servicio]);
   };
 
   useEffect(() => {
