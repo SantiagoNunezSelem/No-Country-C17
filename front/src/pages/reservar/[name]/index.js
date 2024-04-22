@@ -46,7 +46,7 @@ const Reservar = ({ paramas }) => {
             {/* Render different components based on the current step */}
             {step === 1 && <CitaServicios cargar={handleInputChange}/>}
             {step === 2 && <SeleccionarProfesional cargar={handleInputChange} infoReserva={reserva}/>}
-            {step === 3 && <SeleccionFechaContainer cargar={handleInputChange}/>}
+            {step === 3 && <SeleccionFechaContainer cargar={handleInputChange} infoReserva={reserva}/>}
             {step === 4 && <DatosConfirmar />}
             {step === 5 && <ResumenReserva />}
             <div className='flex justify-between items-end w-11/12'>
