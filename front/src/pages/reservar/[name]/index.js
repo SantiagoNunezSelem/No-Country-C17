@@ -45,7 +45,7 @@ const Reservar = ({ paramas }) => {
             <NavBarCitas numPaso={step} setNumPaso={setNumPaso} />
             {/* Render different components based on the current step */}
             {step === 1 && <CitaServicios cargar={handleInputChange}/>}
-            {step === 2 && <SeleccionarProfesional/>}
+            {step === 2 && <SeleccionarProfesional cargar={handleInputChange} infoReserva={reserva}/>}
             {step === 3 && <SeleccionFechaContainer cargar={handleInputChange}/>}
             {step === 4 && <DatosConfirmar />}
             {step === 5 && <ResumenReserva />}
