@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Sucursal from "@/components/sucursales/Sucursal"
-
 import {GetSucursal} from "@/actions/Querys"
 import Loading from '@/loading.png';
 import Image from 'next/image'
@@ -27,6 +26,7 @@ function SucursalesContainer() {
        
         {sucursal && sucursal.map(sucursal => {
             return  <Sucursal
+            key={sucursal.idSucursal}
             titulo={sucursal.nombre}
             img={sucursal.imagen}
             texto={sucursal.ubicacion}
