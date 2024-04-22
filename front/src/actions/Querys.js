@@ -19,7 +19,7 @@ export const GetBarbers = async() => {
     }catch(e){
         return e.name;
     }
-   
+
 }
 
 export const GetServicios = async () => {
