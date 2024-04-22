@@ -10,6 +10,8 @@ import {GetBarbers} from "@/actions/Querys"
 import {servicios as dataServicios} from "@/lib/data"
 
 function SeleccionarProfesional( {cargar,infoReserva} ) {
+    const reserva = infoReserva.servicio
+
     const [servicios,setServicios] = useState(dataServicios)
     const [profesionales,setProfesionales] = useState()
 
@@ -69,7 +71,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
             </div>
             <div className="flex flex-col w-2/6 max-h-96 overflow-y-scroll servicios-container">
             {
-                servicios.map(p => {
+                reserva && reserva.map(p => {
                 return(
                 <div className="flex flex-row h-fit p-7 mb-3 border-2 rounded-xl">
                     <div className="w-11/12">
@@ -82,7 +84,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                         </div>
                     </div>
                     <div className="self-center">
-                        {servicios && servicios.length > 1 &&
+                        {reserva && reserva.length > 1 &&
                             <Image src={trashIcon} width={30} height={30} className='hover:cursor-pointer' onClick={() => borrarServicio(p.title)}/>
                         }
                     </div>
