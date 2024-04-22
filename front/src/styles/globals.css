@@ -282,6 +282,8 @@ nav #container-logo {
   to {
     transform: rotate(400deg);
   }
+}
+
 #resumen-usuario{
   color: #9b9b9b;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
