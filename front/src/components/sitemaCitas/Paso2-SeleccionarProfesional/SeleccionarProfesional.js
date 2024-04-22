@@ -12,7 +12,7 @@ import { servicios as dataServicios } from '@/lib/data';
 function SeleccionarProfesional() {
     const [servicios,setServicios] = useState(dataServicios)
 
-    const [seleccionado,setSeleccionado] = useState("primerProfesional")
+    const [idSeleccionado,setIdSeleccionado] = useState("primerProfesional")
 
     const borrarServicio = (nombre) => {
         const data = servicios.filter(servicio => servicio.title !== nombre)
@@ -20,13 +20,13 @@ function SeleccionarProfesional() {
     }
 
     const handleClick = (id) => {
-        const prevSeleccionado = document.getElementById(seleccionado)
+        const prevSeleccionado = document.getElementById(idSeleccionado)
         prevSeleccionado.classList.remove("seleccionado")
 
         const newSeleccionado = document.getElementById(id)
         newSeleccionado.classList.add("seleccionado")
 
-        setSeleccionado(id)
+        setIdSeleccionado(id)
     }
 
     return (

@@ -27,31 +27,31 @@ export const links = [
 ];
 export  const servicios =[
     {
-        title:"Cabello",
-        description: "Descubre tu mejor estilo en nuestra barbería. Nuestros expertos estilistas te brindarán un corte personalizado y de calidad, adaptado a tus gustos y preferencias.",
-        imagePath:"/cabello.png",
-        precio: "$ 30.00",
+        nombre:"Cabello",
+        descripcion: "Descubre tu mejor estilo en nuestra barbería. Nuestros expertos estilistas te brindarán un corte personalizado y de calidad, adaptado a tus gustos y preferencias.",
+        imagen:"/cabello.png",
+        costo: "$ 30.00",
         alt:"icon Cabello"
     },
     {
-        title:"Afeitar",
-        description: "En nuestra barbería, disfruta de una afeitada de calidad superior. Nuestros expertos barberos utilizan técnicas tradicionales y productos premium para brindarte una experiencia excepcional.",
-        imagePath:"/afeitar.png",
-        precio: "$ 25.00",
+        nombre:"Afeitar",
+        descripcion: "En nuestra barbería, disfruta de una afeitada de calidad superior. Nuestros expertos barberos utilizan técnicas tradicionales y productos premium para brindarte una experiencia excepcional.",
+        imagen:"/afeitar.png",
+        costo: "$ 25.00",
         alt:"icon afeitar"
     },
     {
-        title:"Barba y Bigote",
-        description: "Experimenta el cuidado premium para tu barba y bigote en nuestra barbería. Nuestros especialistas te ofrecen recortes precisos y técnicas expertas para realzar tu estilo facial.",
-        imagePath:"/byb.png",
-        precio: "$ 35.00",
+        nombre:"Barba y Bigote",
+        descripcion: "Experimenta el cuidado premium para tu barba y bigote en nuestra barbería. Nuestros especialistas te ofrecen recortes precisos y técnicas expertas para realzar tu estilo facial.",
+        imagen:"/byb.png",
+        costo: "$ 35.00",
         alt:"icon ByB"
     },
     {
-        title:"Personalizado",
-        description: "Sumérgete en el lujo completo con nuestro paquete personalizado que incluye corte de cabello, afeitada, y cuidado experto de barba y bigote.",
-        imagePath:"/personalizado.png",
-        precio: " $ 80.00",
+        nombre:"Personalizado",
+        descripcion: "Sumérgete en el lujo completo con nuestro paquete personalizado que incluye corte de cabello, afeitada, y cuidado experto de barba y bigote.",
+        imagen:"/personalizado.png",
+        costo: " $ 80.00",
         alt:"icon communities"
     }
     
