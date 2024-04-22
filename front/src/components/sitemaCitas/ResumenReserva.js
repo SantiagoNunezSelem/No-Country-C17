@@ -1,8 +1,7 @@
 import {Container} from '@mui/material';
 import React from 'react';
 import { Box, IconButton, Typography, Grid, createTheme } from "@mui/material";
-import ServiciosReservados from '@/src/components/sitemaCitas/seleccionarFecha-Seccion/resumenServicios.js';
-
+import ServiciosReservados from './Paso3-SeleccionarFecha/resumenServicios';
 
 let tarjetaResumenReserva= ServiciosReservados()
 

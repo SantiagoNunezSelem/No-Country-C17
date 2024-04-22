@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, IconButton, Typography, Grid } from "@mui/material";
-import Image from "next/image";
+import { Box, IconButton, Typography, Grid } from "@m
 
 const ServiciosReservados = ({cargar}) => {
   const serviciosReservadosMock = [
