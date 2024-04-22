@@ -22,14 +22,14 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
         setServicios(data)
     }
 
-    const handleClick = (id) => {
+    const handleClick = (id,p) => {
         const prevSeleccionado = document.getElementById(idSeleccionado)
         prevSeleccionado.classList.remove("seleccionado")
 
         const newSeleccionado = document.getElementById(id)
         newSeleccionado.classList.add("seleccionado")
 
-        setIdSeleccionado(id)
+        setIdSeleccionado(p)
     }
 
     const getProfesionales = async () => {
@@ -39,8 +39,8 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
 
     useEffect(() => {
         getProfesionales()
-        
-    },[])
+        cargar({ name: "profesional", value: idSeleccionado });
+    },[idSeleccionado])
 
     return (
     <div id="seleccionar-personal">
@@ -57,7 +57,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                     {
                         profesionales && profesionales.map((p,index) => {
                             return(
-                            <div id={index} className="flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl" onClick={() => handleClick(index)}>
+                            <div id={index} className="flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl" onClick={() => handleClick(index,p)}>
                                 <Image src={p.imagen} width={40} height={40} 
                                 layout="fixed" 
                                 objectFit="contain"
