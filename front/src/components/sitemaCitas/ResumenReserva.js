@@ -1,7 +1,7 @@
 import {Container} from '@mui/material';
 import React from 'react';
 import { Box, IconButton, Typography, Grid, createTheme } from "@mui/material";
-import ServiciosReservados from '@/src/components/sitemaCitas/seleccionarFecha-Seccion/resumenServicios.js';
+import ServiciosReservados from '@/components/sitemaCitas/Paso3-SeleccionarFecha/resumenServicios';
 
 
 let tarjetaResumenReserva= ServiciosReservados()
@@ -17,9 +17,9 @@ const datosUsuarioMock={
     }
 
     return(
-         <Container sx={{
+        <Container sx={{
             position:'top'
-         }}>
+        }}>
             <div><Box width={'full'}>
                 <Typography variant="h5"
                 sx={{
