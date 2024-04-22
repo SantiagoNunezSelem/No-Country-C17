@@ -68,8 +68,7 @@ const Reservar = ({ paramas }) => {
                 )}
 
 
-            <div>
-                <BotonSiguiente next={handleNextButton} />
+            <BotonSiguiente next={handleNextButton} texto={step === 5 ? "Finalizar" : "Siguiente"} className='flex justify-end w-11/12 object-position: right bottom 	position: absolute'/>
             </div>
             </Box>
         </div>
