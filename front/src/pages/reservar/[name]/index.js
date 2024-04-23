@@ -20,7 +20,7 @@ const Reservar = ({ paramas }) => {
     const [step, setStep] = useState(1)
 
     const [errorSeccion,setErrorSeccion] = useState({error:false,mensaje:""}) //error=true, no puede pasar a la siguiente seccion
-    
+
     const siguienteStep = () => {
         step < 5 && setStep(step + 1)
     }
@@ -59,7 +59,7 @@ const Reservar = ({ paramas }) => {
 
             <NavBarCitas numPaso={step} setNumPaso={setNumPaso} />
             
-            {errorSeccion.error == true && <ErrorSistemaCitas mensaje={errorSeccion.mensaje}/>}
+            {errorSeccion.error == true && <ErrorSistemaCitas mensaje={errorSeccion.mensaje} handleStateError={setErrorSeccion}/>}
 
             {/* Render different components based on the current step */}
             {step === 1 && <CitaServicios cargar={handleInputChange}/>}
