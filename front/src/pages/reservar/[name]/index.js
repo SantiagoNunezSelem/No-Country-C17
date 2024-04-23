@@ -2,6 +2,7 @@
 import React, { useState } from "react"
 import { Box, Grid } from "@mui/material"
 import NavBarCitas from '@/components/sitemaCitas/NavBarCitas'
+import ErrorSistemaCitas from "@/components/sitemaCitas/ErrorSistemaCitas";
 import BotonSiguiente from '@/components/sitemaCitas/BotonSiguiente';
 import CitaServicios from "@/components/sitemaCitas/Paso1-SeleccionarServicios/Servicios";
 import DatosConfirmar from "@/components/sitemaCitas/Paso4-DatosContacto/index"
@@ -18,12 +19,29 @@ const Reservar = ({ paramas }) => {
 
     const [step, setStep] = useState(1)
 
-    const handleNextButton = () => {
+    const [errorSeccion,setErrorSeccion] = useState({error:false,mensaje:""}) //error=true, no puede pasar a la siguiente seccion
+    
+    const siguienteStep = () => {
         step < 5 && setStep(step + 1)
     }
+
+    const verSiHayError = () => {
+        if(step === 1 && reserva.servicio.length === 0){
+            setErrorSeccion({error:true,mensaje:"Debe seleccionar al menos un servicio"})
+        }
+        else{
+            siguienteStep()
+        }
+    }
+
+    const handleNextButton = async () => {
+        verSiHayError();
+    }
+
     const handlePrevButton = () => {
         step > 1 && setStep(step - 1); // Implemento la lógica para retroceder al paso anterior
     };
+
     const setNumPaso = (num) => {
         console.log(num)
         setStep(num)
@@ -34,16 +52,15 @@ const Reservar = ({ paramas }) => {
         setReserva({ ...reserva, [name]: value })
     }
 
-    useState(() => {
-
-    }, [reserva])
-
     return (
         <div className="w-full">
 
             <div id="separador-nav"></div>
 
             <NavBarCitas numPaso={step} setNumPaso={setNumPaso} />
+            
+            {errorSeccion.error == true && <ErrorSistemaCitas mensaje={errorSeccion.mensaje}/>}
+
             {/* Render different components based on the current step */}
             {step === 1 && <CitaServicios cargar={handleInputChange}/>}
             {step === 2 && <SeleccionarProfesional cargar={handleInputChange} infoReserva={reserva}/>}
