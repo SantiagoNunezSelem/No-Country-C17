@@ -78,7 +78,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                                     width={40}
                                     height={40} 
                                     style={{borderRadius:"100%"}}
-                                />
+                                /> 
                                 <p className="self-center text-lg">{p.nombre} {p.apellido}</p>
                             </div>
                             )
