@@ -4,7 +4,7 @@ import React,{useState,useEffect} from 'react'
 import Image from "next/image"
 import trashIcon from "@/img/reservar-cita-icons/trash.png"
 import moneyIcon from "@/img/reservar-cita-icons/money.png"
-import primerProfesionalDisponible from "@/img/reservar-cita-icons/primerProfesionalDisponible.png"
+import imgPrimerProfesionalDisponible from "@/img/reservar-cita-icons/primerProfesionalDisponible.png"
 import {GetBarbers} from "@/actions/Querys"
 
 function SeleccionarProfesional( {cargar,infoReserva} ) {
@@ -13,10 +13,12 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
 
     const [profesionales,setProfesionales] = useState()
 
-		//Si es el primer profesional deberiamos pasar el objeto profesional con 
-		//los props vacios y nombre:"primerProfesional". Despues en la seccion de fijar la 
-		//fecha tenemos que elegir a un profesional de los que se encuenten disponibles y completar la info
-    const [profesionalSelec,setProfesionalSelec] = useState("primerProfesional")
+    const [primerProfesionalDisponible,setPrimerProfesionalDisponible] = useState()
+
+    //Si selecciona el primer profesional disponible deberiamos pasar el objeto profesional con 
+    //los atributos vacios y nombre:"primerProfesional". Despues en la seccion de fijar la 
+    //fecha tenemos que elegir a un profesional de los que se encuenten disponibles y completar la info
+    const [profesionalSelec,setProfesionalSelec] = useState()
 
     const borrarServicio = (servicioElim) => {
         const data = servicios.filter(servicio => servicio.idServicio !== servicioElim.idServicio)
@@ -26,6 +28,17 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
     const getProfesionales = async () => {
         let data = await GetBarbers()
         setProfesionales(data.data.rows);
+
+        //Setear objeto primer profesional disponible (permite pasar un objeto profesional con toda su estructura)
+        const primerProfeDis = {... data.data.rows[0]}
+        for (let key in primerProfeDis) {
+            // Establecer el valor de cada atributo en null
+            primerProfeDis[key] = null;
+        }
+        primerProfeDis.nombre = "primerProfesional"
+
+        setPrimerProfesionalDisponible(primerProfeDis)
+        setProfesionalSelec(primerProfeDis)
     }
 
     useEffect(() => {
@@ -47,12 +60,13 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
             <div className="w-4/6 max-h-96 border-2 p-10 pt-7 mr-5 rounded-xl">
                 <h3 className="mb-2">Profesionales</h3>
                 <div id="profesional-container" className="max-h-72 overflow-y-scroll">
-                    <div className={`flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl
-                        ${profesionalSelec === "primerProfesional" ? "seleccionado" : ""}`}
-                        onClick={() => setProfesionalSelec("primerProfesional")}
+                    {profesionalSelec &&
+                        <div className={`flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl
+                        ${profesionalSelec.nombre === "primerProfesional" ? "seleccionado" : ""}`}
+                        onClick={() => setProfesionalSelec(primerProfesionalDisponible)}
 					>
                         <Image 
-                            src={primerProfesionalDisponible}
+                            src={imgPrimerProfesionalDisponible}
                             alt="loading.."
                             id="primerProfesional" 
                             width={40}
@@ -61,8 +75,9 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
 						/>
                         <p className="self-center text-lg">Primer Profesional Disponible</p>
                     </div>
+                    }
                     {
-                        profesionales && profesionales.map((p,index) => {
+                        profesionales && profesionales.map(p => {
                             return(
                             <div key={p.idEmpleado} 
                                 className={`flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl
