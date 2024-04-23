@@ -60,7 +60,7 @@ const Reservar = ({ paramas }) => {
             }}>
 
 
-               {step === 1 && (
+                {step === 1 && (
                     <a href="/"><BotonHome
                         className="object-position: left bottom position: absolute"
                         /></a>  
