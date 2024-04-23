@@ -32,15 +32,13 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
         getProfesionales()
     },[])
 
-		useEffect(() => {
-			cargar({ name: "profesional", value: profesionalSelec })
-		},[profesionalSelec])
+    useEffect(() => {
+        cargar({ name: "profesional", value: profesionalSelec })
+    },[profesionalSelec])
 
-		useEffect(() => {
-			cargar({ name: "servicio", value: servicios })
-		},[servicios])
-
-		servicios
+    useEffect(() => {
+        cargar({ name: "servicio", value: servicios })
+    },[servicios])
 
     return (
     <div id="seleccionar-personal">
@@ -50,30 +48,35 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                 <h3 className="mb-2">Profesionales</h3>
                 <div id="profesional-container" className="max-h-72 overflow-y-scroll">
                     <div className={`flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl
-											${profesionalSelec === "primerProfesional" ? "seleccionado" : ""}`}
-											onClick={() => setProfesionalSelec("primerProfesional")}
-										>
+                        ${profesionalSelec === "primerProfesional" ? "seleccionado" : ""}`}
+                        onClick={() => setProfesionalSelec("primerProfesional")}
+					>
                         <Image 
-													src={primerProfesionalDisponible} 
-													id="primerProfesional" 
-													width={40}
-													height={40}
-													style={{borderRadius:"100%"}}
-												/>
+                            src={primerProfesionalDisponible}
+                            alt="loading.."
+                            id="primerProfesional" 
+                            width={40}
+                            height={"auto"}
+                            style={{borderRadius:"100%"}}
+						/>
                         <p className="self-center text-lg">Primer Profesional Disponible</p>
                     </div>
                     {
                         profesionales && profesionales.map((p,index) => {
                             return(
-                            <div id={p.idEmpleado} 
-															className={`flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl
-															${profesionalSelec.idEmpleado === p.idEmpleado ? "seleccionado" : ""}`}
-															onClick={() => setProfesionalSelec(p)}
-														>
-                                <Image src={p.imagen} width={40} height={40} 
-                                layout="fixed" 
-                                objectFit="contain"
-                                style={{borderRadius:"100%"}}/>
+                            <div key={p.idEmpleado} 
+                                className={`flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl
+                                ${profesionalSelec.idEmpleado === p.idEmpleado ? "seleccionado" : ""}`}
+                                onClick={() => setProfesionalSelec(p)}
+							>
+                                <Image 
+                                    src={p.imagen}
+                                    alt="loading.."
+                                    id={p.idEmpleado}
+                                    width={40}
+                                    height={40} 
+                                    style={{borderRadius:"100%"}}
+                                /> 
                                 <p className="self-center text-lg">{p.nombre} {p.apellido}</p>
                             </div>
                             )
@@ -85,19 +88,19 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
             {
                 servicios && servicios.map(s => {
                 return(
-                <div id={s.idServicio} className="flex flex-row h-fit p-7 mb-3 border-2 rounded-xl">
+                <div key={s.idServicio} className="flex flex-row h-fit p-7 mb-3 border-2 rounded-xl">
                     <div className="w-11/12">
                         <div className="flex flex-row gap-3 mb-1">
                             <h4>Servicio:</h4><p>{s.nombre}</p>
                         </div>
                         <div className='flex'>
-                            <Image src={moneyIcon} className="mr-3 self-center" width={26}/>
+                            <Image src={moneyIcon} alt="loading.." className="mr-3 self-center" width={26} height={26}/>
                             {s.costo}
                         </div>
                     </div>
                     <div className="self-center">
                         {servicios && servicios.length > 1 &&
-                            <Image src={trashIcon} width={30} height={30} className='hover:cursor-pointer' onClick={() => borrarServicio(s)}/>
+                            <Image src={trashIcon} alt="loading.." width={30} height={30} className='hover:cursor-pointer' onClick={() => borrarServicio(s)}/>
                         }
                     </div>
                 </div>
