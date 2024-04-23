@@ -244,8 +244,54 @@ nav #container-logo {
   transform: none !important;
 }
 
+/*Resumen reserva*/
 #tarjeta-reserva{
   border: 1px;
   border-radius: 4px;
   border-color: white;
+}
+
+/* seleccionar personal */
+
+#profesional-container {
+  scrollbar-width: thin; /* Ancho del scrollbar */
+  scrollbar-color: #333 #999; /* Color del thumb y track */
+  padding-right: 10px;
+}
+
+#profesional-container div {
+  border: none 0px;
+  background-color: #232323;
+}
+
+#seleccionar-personal .seleccionado {
+  border: solid #F84646 1px;
+}
+
+.servicios-container {
+  scrollbar-width: thin; /* Ancho del scrollbar */
+  scrollbar-color: #333 #999; /* Color del thumb y track */
+  padding-right: 10px;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(400deg);
+  }
+}
+
+#resumen-usuario{
+  color: #9b9b9b;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+#input-usuario{
+  color: white !important;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+  font-size: 18px;
 }
