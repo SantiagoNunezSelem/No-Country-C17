@@ -48,7 +48,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
         <section className="flex flex-row w-9/12 h-5/6 m-auto mt-4 mb-2">
             <div className="w-4/6 max-h-96 border-2 p-10 pt-7 mr-5 rounded-xl">
                 <h3 className="mb-2">Profesionales</h3>
-                <div key="profesional-container" className="max-h-72 overflow-y-scroll">
+                <div id="profesional-container" className="max-h-72 overflow-y-scroll">
                     <div className={`flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl
                         ${profesionalSelec === "primerProfesional" ? "seleccionado" : ""}`}
                         onClick={() => setProfesionalSelec("primerProfesional")}
@@ -58,7 +58,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                             alt="loading.."
                             id="primerProfesional" 
                             width={40}
-                            height={40}
+                            height={"auto"}
                             style={{borderRadius:"100%"}}
 						/>
                         <p className="self-center text-lg">Primer Profesional Disponible</p>
@@ -71,10 +71,12 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                                 ${profesionalSelec.idEmpleado === p.idEmpleado ? "seleccionado" : ""}`}
                                 onClick={() => setProfesionalSelec(p)}
 							>
-                                <Image src={p.imagen} width={40} height={40} 
+                                <Image 
+                                    src={p.imagen}
                                     alt="loading.."
-                                    layout="fixed" 
-                                    objectFit="contain"
+                                    id={p.idEmpleado}
+                                    width={40}
+                                    height={40} 
                                     style={{borderRadius:"100%"}}
                                 />
                                 <p className="self-center text-lg">{p.nombre} {p.apellido}</p>
@@ -94,7 +96,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                             <h4>Servicio:</h4><p>{s.nombre}</p>
                         </div>
                         <div className='flex'>
-                            <Image src={moneyIcon} alt="loading.." className="mr-3 self-center" width={26}/>
+                            <Image src={moneyIcon} alt="loading.." className="mr-3 self-center" width={26} height={26}/>
                             {s.costo}
                         </div>
                     </div>
