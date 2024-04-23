@@ -166,11 +166,18 @@ nav #container-logo {
 }
 
 #nav-bar-citas p {
+  text-align: center;
   color:#ffffff60;
 }
 
 #nav-bar-citas .activo p {
   color:#ffffff;
+}
+
+@media (max-width: 650px) {
+  #nav-bar-citas .no-activo {
+    display: none;
+  }
 }
 
 #contacto{
