@@ -4,9 +4,10 @@ const router = Router()
 const {getAllTurnos, addTurno, deleteTurno, getByIdTurno} = require('./../controllers/turnos')
 
 router.get('/' , getAllTurnos)
-router.post('/', addTurno )
-router.delete('/all', deleteTurno)
-router.get('/:id', getByIdTurno)
+router.get( '/:id', getByIdTurno )
+router.post( '/' , addTurno )
+//router.put( '/:id' , updateService )
+router.delete( '/:id' , deleteTurno )
 
 
 module.exports = router

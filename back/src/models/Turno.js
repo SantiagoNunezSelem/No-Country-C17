@@ -1,6 +1,3 @@
-const { DataTypes } = require("sequelize");
-const Servicio = require('./Servicio');
-
 // module.exports = (sequelize) => {
 //     sequelize.define('turno', {
 //         idTurno:{
@@ -22,6 +19,9 @@ const Servicio = require('./Servicio');
 //     })
 // }
 
+const { DataTypes } = require("sequelize");
+const Servicio = require('./Servicio');
+
 module.exports = (sequelize) => {
   const Turno = sequelize.define("turno", {
     idTurno: {
@@ -39,10 +39,10 @@ module.exports = (sequelize) => {
     },
   });
 
-//   Turno.associate = (models) => {
-//     Turno.belongsToMany(models.Servicio, {
-//       through: "turnoServicio",
-//       foreignKey: "turnoId",
-//     });
-//   };
+  // Turno.associate = (models) => {
+  //   Turno.belongsToMany(models.Servicio, {
+  //     through: "turnoServicio",
+  //     foreignKey: "turnoId",
+  //   });
+  // };
 };
