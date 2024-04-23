@@ -51,7 +51,7 @@ const deleteUser = async (req, res) => {
       where: {  idUsuario: id  },
     });
     if (deleted) {
-      res.status(204).send({ sucess: true, message: "Usuario eliminado" });
+      res.status(200).send({ sucess: true, message: "Usuario eliminado" });
     } else {
       res.status(404).json({ sucess: false, message: "Usuario no encontrado" });
     }
