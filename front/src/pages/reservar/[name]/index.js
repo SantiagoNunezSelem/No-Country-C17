@@ -9,7 +9,7 @@ import SeleccionarProfesional from "@/components/sitemaCitas/Paso2-SeleccionarPr
 import SeleccionFechaContainer from "@/components/sitemaCitas/Paso3-SeleccionarFecha/SeleccionFechaContainer";
 import ResumenReserva from "@/components/sitemaCitas/ResumenReserva";
 import BotonRegresar from "@/components/sitemaCitas/BotonRegresar";
-
+import { BotonHome } from "@/components/sitemaCitas/BotonRegresar";
 
 
 const Reservar = ({ paramas }) => {
@@ -60,6 +60,12 @@ const Reservar = ({ paramas }) => {
             }}>
 
 
+               {step === 1 && (
+                    <a href="/"><BotonHome
+                        className="object-position: left bottom position: absolute"
+                        /></a>  
+                )}
+
                 {step > 1 && (
                     <BotonRegresar
                         onClick={handlePrevButton}
@@ -68,7 +74,7 @@ const Reservar = ({ paramas }) => {
                 )}
 
 
-            <BotonSiguiente next={handleNextButton} texto={step === 5 ? "Finalizar" : "Siguiente"} className='flex justify-end w-11/12 object-position: right bottom 	position: absolute'/></Box>
+            <BotonSiguiente next={handleNextButton} texto={step === 5 ? "Finalizar" : "Siguiente"} className='flex justify-end w-11/12 object-position: right bottom position: absolute'/></Box>
             </div> 
         )
     }
