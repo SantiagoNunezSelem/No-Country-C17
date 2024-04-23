@@ -40,7 +40,7 @@ export default function ServiciosReservados(infoReserva) {
                     alt="Timer"
                   />
                   <Typography variant="body2" sx={{ ml: "0.5rem" }}>
-                    {servicio.duracion} min.
+                    30 min.
                   </Typography>
                 </div>
               </Grid>
@@ -74,7 +74,10 @@ export default function ServiciosReservados(infoReserva) {
                 />
               </Grid>
               <Grid item xs={6}>
-                <Typography>{servicio.profesional}</Typography>
+                <Typography>
+                  {infoReserva.infoReserva.profesional.nombre}{" "}
+                  {infoReserva.infoReserva.profesional.apellido}
+                </Typography>
               </Grid>
             </Grid>
           </Box>
