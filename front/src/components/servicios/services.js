@@ -7,7 +7,7 @@ function Servicios({ titulo, img, texto, precio }) {
     return (
         <div className="flex flex-col items-center mb-4">
         <div className="rounded-full overflow-hidden mb-4" style={{ width: "230px", height: "230px" }}>
-            <img src={img} alt={`servicios-${titulo}`} width={400} height={400} className="transition-transform duration-300 transform-gpu hover:scale-110" />
+            <img src={img} alt={`servicios-${titulo}`} width={600} height={600} className="transition-transform duration-300 transform-gpu hover:scale-110" />
         </div>
         <h3 className="text-center mb-2 font-manrope font-bold text-2xl">{titulo}</h3>
         <div className="text-center">
