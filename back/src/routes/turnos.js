@@ -6,7 +6,7 @@ const {getAllTurnos, addTurno, deleteTurno, getByIdTurno} = require('./../contro
 router.get('/' , getAllTurnos)
 router.get( '/:id', getByIdTurno )
 router.post( '/' , addTurno )
-//router.put( '/:id' , updateService )
+//router.put( '/:id' , updateTurno )
 router.delete( '/:id' , deleteTurno )
 
 
