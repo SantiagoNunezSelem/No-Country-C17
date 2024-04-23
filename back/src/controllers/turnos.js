@@ -37,18 +37,17 @@ const addTurno = async (req, res) => {
 const deleteTurno = async (req, res) => {
     const { id } = req.params;
     try {
-        const turno = await Turno.destroy({ where: { idTurno: id } });
+        const turno = await Turno.findByPk(id);
         if (!turno) {
             res.status(404).json({sucess: false, message: "El turno no fue encontrado" });
             return;
         }
-        await turno.destroy(); 
+        await Turno.destroy({ where: { idTurno: id } });
         res.status(200).json({sucess: true, message: "El turno ha sido eliminado correctamente" });
     } catch (error) {
         res.status(500).json({sucess: false, message: "Error al eliminar el turno" });
     }
 };
-
 
 const getByIdTurno = async (req, res) => {
     const { idTurno } = req.params;
