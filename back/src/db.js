@@ -73,8 +73,8 @@ Sucursal.hasMany(Empleado, {as: "empleados"})
 Empleado.hasMany(Turno, {as: 'turnos'})
 Turno.hasOne(Usuario , {as : 'usuario'})
 Usuario.hasMany(Turno,{ as:'turnos' })
-Servicio.belongsToMany(Turno, {through: "servicio-turno"})
-Turno.belongsToMany(Servicio, {through: "turno-servivio"})
+Servicio.belongsToMany(Turno, {through: "turno-servicio"})
+Turno.belongsToMany(Servicio, {through: "turno-servicio"})
 
 module.exports = {
     ...sequelize.models,

@@ -33,7 +33,7 @@ const addTurno = async (req, res) => {
 
     res
       .status(201)
-      .json({ sucess: true, message: "Turno creado exitosamente" });
+      .json({ sucess: true, message: "Turno creado exitosamente", idTurno: nuevoTurno.idTurno }); //aca ver que devolver
   } catch (error) {
     console.log(error)
     res.status(500).json({ sucess: false, message: "Error al crear el turno" });
