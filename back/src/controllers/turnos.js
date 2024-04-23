@@ -2,11 +2,12 @@ const { Turno, Servicio } = require("./../db");
 
 const getAllTurnos = async (req, res) => {
   try {
-    const turnos = await Turno.findAll({ include: Servicio });
+    const turnos = await Turno.findAll({ include:[ {model: Servicio , as:"servicios"} ]});
     res
       .status(200)
       .json({ sucess: true, message: "All turnos", turnos: turnos });
   } catch (error) {
+    console.log(error)
     res
       .status(500)
       .json({ sucess: false, message: "Error al obtener todos los turnos" });
@@ -19,18 +20,22 @@ const updateTurno = async (req, res) => {
 };
 
 const addTurno = async (req, res) => {
-  try {
-    const { servicios, profesional, dia, hora } = req.body;
-    const nuevoTurno = await Turno.create({ profesional, dia, hora });
+  let data = req.body
 
-    if (servicios && servicios.length > 0) {
-      await nuevoTurno.addServicios(servicios);
-    }
+  try {
+    const nuevoTurno = await Turno.create(data) /// asi funciona joya 
+    await nuevoTurno.addServicios(data.idServicio) // cuidado con data.idServicio en lugar de data.servicios. 
+    
+    // const { servicios, profesional, dia, hora } = req.body;
+    // if (servicios && servicios.length > 0) {
+    //   await nuevoTurno.addServicios(servicios);
+    // }
 
     res
       .status(201)
       .json({ sucess: true, message: "Turno creado exitosamente" });
   } catch (error) {
+    console.log(error)
     res.status(500).json({ sucess: false, message: "Error al crear el turno" });
   }
 };
@@ -60,9 +65,10 @@ const deleteTurno = async (req, res) => {
 };
 
 const getByIdTurno = async (req, res) => {
-  const { idTurno } = req.params;
+  const { id } = req.params;
+  console.log(id);
   try {
-    const turno = await Turno.findByPk(idTurno, { include: Servicio });
+    const turno = await Turno.findByPk(id, { include: Servicio });
     if (!turno) {
       res.status(404).json({ sucess: false, message: "Turno no encontrado" });
       return;
