@@ -32,15 +32,13 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
         getProfesionales()
     },[])
 
-		useEffect(() => {
-			cargar({ name: "profesional", value: profesionalSelec })
-		},[profesionalSelec])
+    useEffect(() => {
+        cargar({ name: "profesional", value: profesionalSelec })
+    },[profesionalSelec])
 
-		useEffect(() => {
-			cargar({ name: "servicio", value: servicios })
-		},[servicios])
-
-		servicios
+    useEffect(() => {
+        cargar({ name: "servicio", value: servicios })
+    },[servicios])
 
     return (
     <div id="seleccionar-personal">
