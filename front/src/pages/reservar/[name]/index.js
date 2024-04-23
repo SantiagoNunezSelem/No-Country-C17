@@ -28,14 +28,16 @@ const Reservar = ({ paramas }) => {
     const verSiHayError = () => {
         if(step === 1 && reserva.servicio.length === 0){
             setErrorSeccion({error:true,mensaje:"Debe seleccionar al menos un servicio"})
-        }
-        else{
-            siguienteStep()
+            return true
         }
     }
 
-    const handleNextButton = async () => {
-        verSiHayError();
+    const handleNextButton = () => {
+        const stateError = verSiHayError()
+
+        if(!stateError){
+            siguienteStep()
+        }
     }
 
     const handlePrevButton = () => {
