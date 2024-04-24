@@ -1,4 +1,4 @@
-const {Empleado} = require('../db')
+const {Empleado, Turno, Sucursal} = require('../db')
 
 const getAllEmployed = async(req, res, next) => {
     let {nombre} = req.query;
@@ -20,7 +20,16 @@ const getAllEmployed = async(req, res, next) => {
 }
 
 const getOneEmployed = async (req, res, next) => {
- 
+  let {id} = req.params;
+
+  try{
+    let empleado;
+    id ? empleado =  await  Empleado.findByPk(id, {include:["sucursal","turnos"]}) : res.send({mensaje: "no se encontro el empleado"})
+    res.send(empleado)
+
+    }catch(error){
+        next(error)
+  }
 }
 
 const AddNewEmployed = async (req, res, next) => {

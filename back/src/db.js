@@ -71,8 +71,9 @@ const {Empleado, Servicio, Sucursal, Turno, Usuario} = sequelize.models
 Empleado.belongsTo(Sucursal, {as: "sucursal"})
 Sucursal.hasMany(Empleado, {as: "empleados"})
 Empleado.hasMany(Turno, {as: 'turnos'})
-Turno.hasOne(Usuario , {as : 'usuario'})
+Turno.belongsTo(Empleado, {as : 'empleado'})
 Usuario.hasMany(Turno,{ as:'turnos' })
+Turno.belongsTo(Usuario , {as : 'usuario'})
 Servicio.belongsToMany(Turno, {through: "turno-servicio"})
 Turno.belongsToMany(Servicio, {through: "turno-servicio"})
 

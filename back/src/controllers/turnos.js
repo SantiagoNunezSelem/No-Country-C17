@@ -1,11 +1,11 @@
-const { Turno, Servicio } = require("./../db");
+const { Turno, Servicio, Empleado, Usuario} = require("./../db");
 
 const getAllTurnos = async (req, res) => {
   try {
-    const turnos = await Turno.findAll({ include:[ {model: Servicio , as:"servicios"} ]});
+    const {count, rows} = await Turno.findAndCountAll({ include:[ "servicios" ]}); //lo cambie para que me pase la cantida dde turnos
     res
       .status(200)
-      .json({ sucess: true, message: "All turnos", turnos: turnos });
+      .json({ sucess: true, message: "All turnos", cantidad: count, turnos: rows});
   } catch (error) {
     console.log(error)
     res
@@ -64,11 +64,11 @@ const deleteTurno = async (req, res) => {
   }
 };
 
-const getByIdTurno = async (req, res) => {
+const getByIdTurno = async (req, res, next) => {
   const { id } = req.params;
   console.log(id);
   try {
-    const turno = await Turno.findByPk(id, { include: Servicio });
+    const turno = await Turno.findByPk(id, {include:["servicios", "usuario","empleado"]});
     if (!turno) {
       res.status(404).json({ sucess: false, message: "Turno no encontrado" });
       return;
@@ -81,11 +81,28 @@ const getByIdTurno = async (req, res) => {
         turno: turno,
       });
   } catch (error) {
+    console.log(error)
+    next(error)
     res
       .status(500)
       .json({ sucess: false, message: "Error al obtener el turno" });
   }
 };
+
+const clearTurnos = async (req, res, next) => {
+
+  try{
+    let todosLosTurnos = await Turno.findAll()
+    todosLosTurnos.map(async t =>  await Turno.destroy( {where: t.id, truncate: "empleados"}))
+    // const deletedCount = await Turno.destroy({
+    //   where: {},  
+    //   truncate: true,  
+    // });
+    res.send("ok")
+  }catch(error){
+    next(error)
+  }
+}
 
 module.exports = {
   getAllTurnos,
@@ -93,4 +110,5 @@ module.exports = {
   addTurno,
   deleteTurno,
   getByIdTurno,
+  clearTurnos
 };

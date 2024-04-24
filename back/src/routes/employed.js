@@ -8,5 +8,6 @@ router.get( '/', getAllEmployed);
 router.post('/' , AddNewEmployed);
 router.delete( "/:id" , deleteEmployed) ;
 // router.delete('/', deleteAllEmployed)
+router.get('/:id', getOneEmployed)
 
 module.exports = router
