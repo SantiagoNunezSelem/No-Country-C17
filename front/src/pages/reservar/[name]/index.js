@@ -46,22 +46,19 @@ const Reservar = ({ paramas }) => {
 
     if (step === 5) {
       try {
-        const usuarioIdUsuario = "4bf1c860-01c0-11ef-9712-dd61d2b5cfd3";
+        const usuarioIdUsuario = "18ad5810-01d5-11ef-8767-65090dec1f9b";
         const { profesional, servicio, hora, dia } = reserva;
         const empleadoIdEmpleado = profesional.idEmpleado;
         const idServicio = servicio.map((serv) => serv.idServicio);
-        const horaInicio = new Date(dia);
-        horaInicio.setHours(hora.split(":")[0]);
-        horaInicio.setMinutes(hora.split(":")[1]);
-        const horaFin = new Date(horaInicio.getTime() + 1 * 60 * 60 * 1000);
-        const turno = "Turno de prueba Front";
+        const fecha = new Date(dia);
+        const turno = "Turno de prueba Front con cambios";
 
         const requestData = {
           usuarioIdUsuario,
           empleadoIdEmpleado,
           idServicio,
-          horaInicio,
-          horaFin,
+          fecha,
+          hora,
           turno,
         };
         addTurno( requestData )
