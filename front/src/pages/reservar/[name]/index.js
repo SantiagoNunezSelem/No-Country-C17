@@ -130,7 +130,7 @@ const Reservar = ({ paramas }) => {
           cargar={handleInputChange}
           infoReserva={reserva}
         />}
-      {step === 5 && <ResumenReserva />}
+      {step === 5 && <ResumenReserva infoReserva={reserva} />}
       <Box
         id="global-citas-style"
         sx={{
@@ -151,8 +151,7 @@ const Reservar = ({ paramas }) => {
         {step > 1 && (
           <BotonRegresar
             onClick={handlePrevButton}
-            className="object-position: left bottom position: absolute"
-          />
+            className="object-position: left bottom position: absolute" />
         )}
 
         <BotonSiguiente

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { InputField, TextAreaField } from './FormFields';
 
 
-const FormularioDetalles = () => {
+const FormularioDetalles = ({cargar}) => {
     const [formData, setFormData] = useState({
         nombre: '',
         apellido: '',
@@ -10,6 +10,10 @@ const FormularioDetalles = () => {
         telefono: '',
         observaciones: ''
     });
+
+    useEffect(() => {
+        cargar({ name: "formData", value: formData });
+      }, [formData]);
 
     const [errors, setErrors] = useState({});
 

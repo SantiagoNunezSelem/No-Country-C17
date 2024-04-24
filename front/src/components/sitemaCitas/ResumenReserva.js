@@ -1,25 +1,26 @@
 import {Container} from '@mui/material';
 import React from 'react';
-import { Box, IconButton, Typography, Grid, createTheme } from "@mui/material";
+import { Box, Typography, Grid} from "@mui/material";
 import ServiciosReservados from '@/components/sitemaCitas/Paso3-SeleccionarFecha/resumenServicios';
 
 
-let tarjetaResumenReserva= ServiciosReservados()
+function ResumenReserva({infoReserva}){
 
-function ResumenReserva(){
-
-const datosUsuarioMock={
+let tarjetaResumenReserva= ServiciosReservados({infoReserva}
+)
+/*const datosUsuarioMock={
     nombre:'usuario',
     apellido:'nuevo',
     email:'email@web',
     telefono:'+541234567890',
     comentario:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    }
+    }*/
 
     return(
         <Container sx={{
             position:'top'
         }}>
+            {console.log(infoReserva)}
             <div><Box width={'full'}>
                 <Typography variant="h5"
                 sx={{
@@ -50,13 +51,13 @@ const datosUsuarioMock={
                         <Typography variant='body1' textAlign={'justify'} p={2} lineHeight={1.5}>
                             <ul id='resumen-usuario'>
                             <li>Nombre y Apellido:</li> 
-                            <li id='input-usuario'>{datosUsuarioMock.nombre} {datosUsuarioMock.apellido}</li>
+                            <li id='input-usuario'>{infoReserva.formData.nombre} {infoReserva.formData.apellido}</li>
                             <li>email: </li>
-                            <li id='input-usuario'>{datosUsuarioMock.email}</li>
+                            <li id='input-usuario'>{infoReserva.formData.email}</li>
                             <li>Teléfono: </li>
-                            <li id='input-usuario'>{datosUsuarioMock.telefono}</li>
+                            <li id='input-usuario'>{infoReserva.formData.telefono}</li>
                             <li>Observaciones: </li>
-                            <li id='input-usuario'>{datosUsuarioMock.comentario} </li>
+                            <li id='input-usuario'>{infoReserva.formData.observaciones} </li>
                             </ul></Typography>
                         </Box>
                         </div>

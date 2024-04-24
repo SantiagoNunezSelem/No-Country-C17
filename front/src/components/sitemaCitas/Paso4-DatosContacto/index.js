@@ -20,7 +20,7 @@ const ReservarCita_2 = ({infoReserva,cargar}) => {
                 {/* Parte izquierda: Formulario de datos */}
                 <div className="w-full lg:w-2/3"> {/* Add padding Right for spacing */}
             
-                    <FormCitas />
+                    <FormCitas cargar={cargar}/>
                 </div>
                 {/* Parte derecha: Resumen de Servicios y Total a Pagar */}
                 <div className="w-full lg:w-1/3 "> {/* Add padding Left for spacing */}
