@@ -14,7 +14,7 @@ const InputField = ({ label, name, value, onChange, error }) => {
                 name={name}
                 value={value}
                 onChange={onChange}
-                className="block w-full p-3 text-lg text-gray-900 border border-gray-300 rounded-md bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full p-3 text-lg"
             />
 
             {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
@@ -24,7 +24,7 @@ const InputField = ({ label, name, value, onChange, error }) => {
 
 const TextAreaField = ({ label, name, value, onChange }) => {
     return (
-        <div className="mb-4">
+        <div id='form-fields' className="mb-4">
             <label htmlFor={name} className="block mb-2 text-sm font-medium text-salmon dark:text-salmon">
                 {label}
             </label>
@@ -33,8 +33,8 @@ const TextAreaField = ({ label, name, value, onChange }) => {
                 name={name}
                 value={value}
                 onChange={onChange}
-                rows={4}
-                className="w-full p-3 text-base text-gray-900 border border-gray-300 rounded-md bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                rows={3}
+                className="w-full p-3"
             />
         </div>
     );

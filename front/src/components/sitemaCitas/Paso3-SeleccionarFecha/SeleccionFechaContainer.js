@@ -1,10 +1,10 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import SeleccionarHorario from "@/components/sitemaCitas/seleccionarFecha-Seccion/SeleccionarHorario";
-import SeleccionarDia from "@/components/sitemaCitas/seleccionarFecha-Seccion/SeleccionarDia";
-import ServiciosReservados from "@/components/sitemaCitas/seleccionarFecha-Seccion/resumenServicios";
+import SeleccionarHorario from "@/components/sitemaCitas/Paso3-SeleccionarFecha/SeleccionarHorario";
+import SeleccionarDia from "@/components/sitemaCitas/Paso3-SeleccionarFecha/SeleccionarDia";
+import ServiciosReservados from "@/components/sitemaCitas/Paso3-SeleccionarFecha/resumenServicios";
 
-export default function SeleccionFechaContainer({cargar}) {
+export default function SeleccionFechaContainer({ cargar, infoReserva }) {
   return (
     <Grid
       container
@@ -13,7 +13,7 @@ export default function SeleccionFechaContainer({cargar}) {
       alignItems="center"
       spacing={12}
       sx={{
-        padding: "1rem"
+        padding: "1rem",
       }}
     >
       <Grid item xs="auto">
@@ -23,7 +23,7 @@ export default function SeleccionFechaContainer({cargar}) {
         <SeleccionarHorario cargar={cargar}></SeleccionarHorario>
       </Grid>
       <Grid item xs="auto">
-        <ServiciosReservados cargar={cargar}></ServiciosReservados>
+        <ServiciosReservados infoReserva={infoReserva}></ServiciosReservados>
       </Grid>
     </Grid>
   );

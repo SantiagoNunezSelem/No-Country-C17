@@ -166,11 +166,18 @@ nav #container-logo {
 }
 
 #nav-bar-citas p {
+  text-align: center;
   color:#ffffff60;
 }
 
 #nav-bar-citas .activo p {
   color:#ffffff;
+}
+
+@media (max-width: 650px) {
+  #nav-bar-citas .no-activo {
+    display: none;
+  }
 }
 
 #contacto{
@@ -244,6 +251,7 @@ nav #container-logo {
   transform: none !important;
 }
 
+/*Resumen reserva*/
 #tarjeta-reserva{
   border: 1px;
   border-radius: 4px;
@@ -273,3 +281,38 @@ nav #container-logo {
   padding-right: 10px;
 }
 
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(400deg);
+  }
+}
+
+#resumen-usuario{
+  color: #9b9b9b;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+#input-usuario{
+  color: white !important;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+#form-fields-text textarea, #form-fields-text input{
+  background-color:rgba(255, 255, 255, 0.1);
+  color: white !important;
+  border-radius: 6px;
+  border: 1px solid #8d8d8d;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+#global-citas-style{
+  border-top: 2px solid #8d8d8d;
+  padding-top: 10px;
+}

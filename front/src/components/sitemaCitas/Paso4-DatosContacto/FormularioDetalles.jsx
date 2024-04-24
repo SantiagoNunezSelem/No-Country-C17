@@ -51,12 +51,12 @@ const FormularioDetalles = () => {
     };
 
     return (
-        <div className="w-full flex justify-center">
-            <div className="w-full lg:w-3/4 p-4">
-               
+        <div className="w-full flex ">
+            <div className="w-full lg:w-3/4">
+            <h2 className="text-2xl font-medium mb-4 text-salmon">Ingrese sus Datos</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="flex mb-6">
-                        <div className="w-1/2 pr-4">
+                        <div className="w-1/2 pr-2">
                             <InputField
                                 label="Nombre"
                                 name="nombre"
@@ -66,7 +66,7 @@ const FormularioDetalles = () => {
                                 inputClassName="p-3 text-base"
                             />
                         </div>
-                        <div className="w-1/2 pl-4">
+                        <div className="w-1/2 pl-2">
                             <InputField
                                 label="Apellido"
                                 name="apellido"
@@ -78,7 +78,7 @@ const FormularioDetalles = () => {
                         </div>
                     </div>
                     <div className="flex mb-6">
-                        <div className="w-1/2 pr-4">
+                        <div className="w-1/2 pr-2">
                             <InputField
                                 label="Email"
                                 name="email"
@@ -88,9 +88,9 @@ const FormularioDetalles = () => {
                                 inputClassName="p-3 text-base"
                             />
                         </div>
-                        <div className="w-1/2 pl-4">
+                        <div className="w-1/2 pl-2">
                             <InputField
-                                label="Teléfono"
+                                label="Telefono"
                                 name="telefono"
                                 value={formData.telefono}
                                 onChange={handleInputChange}
@@ -106,7 +106,7 @@ const FormularioDetalles = () => {
                         onChange={handleInputChange}
                         inputClassName="p-3 text-base"
                     />
-                    <div className="flex justify-end mt-6">
+                    <div className="flex justify-end mt-2">
                        <button></button>
                     </div>
                 </form>

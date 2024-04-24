@@ -53,7 +53,7 @@ function Contacto() {
   }} 
       />
     </div>
-      <div id='contacto'>
+      <div id='contacto' className='justify-center'>
         <div id='contacto-text' className='sm:w-full'>
           <h1 id='contacto-title'>CONTACTO</h1>
           <h2>

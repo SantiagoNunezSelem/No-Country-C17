@@ -1,43 +1,29 @@
 'use Client'
 import React, { useEffect, useState } from "react";
 import Carousel from "./Carousel";
-import axios from "axios";
-import { config } from "dotenv";
-const {RESEND_API_KEY} = process.env;
+import { GetSucursal, GetBarbers } from "@/actions/Querys";
+import Loading from '@/loading.png';
+import Image from "next/image";
 
-const dotenv = config()
-
-const getBarbers = async() => {
-    let url = "http://localhost:48925/"
-    const  barberLista = await axios.get(`${url}employed`)
-    return barberLista
-}
-
-const getSucursal = async() => {
-    let url = "http://localhost:48925/"
-    const  sucursalist = await axios.get(`${url}sucursales`)
-    return sucursalist;
-}
 
 const StaffBarber = () => {
-
 
     const [barbers, setBarbers] = useState([]);
     const [show, setShow] = useState([])
     const [sucursal,  setSucursal] = useState([]);
-    
-    console.log(barbers)
-    
+    const [loading, setLoading] = useState(true)
 
+    
+    
     let getBarb = async () => {
-        let list = await getBarbers()
+        let list = await GetBarbers()
+        setLoading(false)
         setBarbers(list.data.rows)
         setShow(list.data.rows)
     }
 
     let getSuc = async () => {
-        let list = await getSucursal()
-        console.log(list.data.rows)
+        let list = await GetSucursal()
         setSucursal(list.data.rows)
     }
 
@@ -51,7 +37,6 @@ const StaffBarber = () => {
         getSuc()
     },[])
     
-      
     return(
         <div className="block w-full" id="staff"> 
             <div id='staff-text' className="p-4 text-center w-3/4 m-auto">
@@ -66,7 +51,13 @@ const StaffBarber = () => {
                     })}
                 </select>
             </div>
+            {loading ?  <div className="m-auto text-center justify-center">
+                <Image src={Loading} alt="loading..."  className="w-24 h-full animate-spin"/>
+                <p className='text-white'>cargando...</p>
+            </div>: 
             <Carousel data={show}/>
+            }
+            
         </div>
     )    
 }

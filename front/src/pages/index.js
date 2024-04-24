@@ -6,6 +6,7 @@ import StaffBarber from "@/components/StaffBarber";
 import BotonReservarCita from "@/components/BotonReservarCita";
 import Contacto from "@/components/contacto";
 import Footer from "@/components/Footer";
+import ResumenServicio from "@/components/sitemaCitas/ResumenReserva"; //usado como entorno de prueba
 
 const inter = Inter({ subsets: ["latin"] });
 
