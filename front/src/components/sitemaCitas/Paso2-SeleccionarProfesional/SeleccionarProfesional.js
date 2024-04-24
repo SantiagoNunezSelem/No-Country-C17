@@ -30,7 +30,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
     const getProfesionales = async () => {
         // let data = await GetBarbers()
         let data = await getSucursalById(name)
-       
+
         setProfesionales(data.empleados);
 
         //Setear objeto primer profesional disponible (permite pasar un objeto profesional con toda su estructura)
@@ -88,14 +88,14 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                                 ${profesionalSelec.idEmpleado === p.idEmpleado ? "seleccionado" : ""}`}
                                 onClick={() => setProfesionalSelec(p)}
 							>
-                                <Image 
+                                <div className="w-10 h-10">
+                                <img
                                     src={p.imagen}
                                     alt="loading.."
                                     id={p.idEmpleado}
-                                    width={40}
-                                    height={40} 
-                                    style={{borderRadius:"100%"}}
-                                /> 
+                                    className="h-full w-auto object-cover rounded-full"
+                                />
+                                </div>
                                 <p className="self-center text-lg">{p.nombre} {p.apellido}</p>
                             </div>
                             )
