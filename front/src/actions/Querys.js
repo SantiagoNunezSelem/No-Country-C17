@@ -31,3 +31,12 @@ export const GetServicios = async () => {
         return e.name;
     }
 }
+
+export const addTurno = async (dataTurno) => {
+    try {
+      const response = await axios.post(`${apiKey}turnos`, dataTurno);
+      return response;
+    } catch (error) {
+      console.error('Error en la solicitud');
+    }
+  };
