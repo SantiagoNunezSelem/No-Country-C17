@@ -37,7 +37,7 @@ function Carousel({data}) {
         {data ? data.map(e => {
           return <div key={e.idEmpleado} className="text-center block w-56 h-56">
             <div className="w-56 m-auto h-56 bg-white flex items-center justify-center rounded-full">
-              <img src={e.imagen} alt={e.nombre} className=" rounded-full object-contain h-full w-full "/>
+              <img id="prueba" src={e.imagen} alt={e.nombre} className="h-full w-full rounded-full object-cover"/>
             </div>
               <p className="text-white p-2 text-3xl font-medium ">{e.nombre.toUpperCase()}</p>
           </div>
