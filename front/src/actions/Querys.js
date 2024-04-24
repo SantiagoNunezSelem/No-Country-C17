@@ -12,6 +12,15 @@ export const GetSucursal = async() => {
     
 }
 
+export const getSucursalById = async ( id )=>{
+    try{
+        const  sucursal = await axios.get(`${apiKey}sucursales/${id}`)
+        return sucursal.data;
+    }catch(e){
+        return e.name;
+    }
+}
+
 export const GetBarbers = async() => {
     try{
         const  barberLista = await axios.get(`${apiKey}employed`)
@@ -19,7 +28,7 @@ export const GetBarbers = async() => {
     }catch(e){
         return e.name;
     }
-   
+
 }
 
 export const GetServicios = async () => {
@@ -31,3 +40,12 @@ export const GetServicios = async () => {
         return e.name;
     }
 }
+
+export const addTurno = async (dataTurno) => {
+    try {
+      const response = await axios.post(`${apiKey}turnos`, dataTurno);
+      return response;
+    } catch (error) {
+      console.error('Error en la solicitud');
+    }
+  };

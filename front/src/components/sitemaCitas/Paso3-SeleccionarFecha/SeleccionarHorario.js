@@ -3,7 +3,7 @@ import { Button, Typography, Grid, Box } from "@mui/material";
 import { horasManana, horasTarde } from "@/lib/data";
 
 export default function SeleccionarHorario({cargar}) {
-  const [selectedHour, setSelectedHour] = useState(null);
+  const [selectedHour, setSelectedHour] = useState('8:00');
 
   const handleClick = (hora) => {
     setSelectedHour(hora);

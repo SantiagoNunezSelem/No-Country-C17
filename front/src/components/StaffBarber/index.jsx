@@ -37,7 +37,6 @@ const StaffBarber = () => {
         getSuc()
     },[])
     
-      
     return(
         <div className="block w-full" id="staff"> 
             <div id='staff-text' className="p-4 text-center w-3/4 m-auto">

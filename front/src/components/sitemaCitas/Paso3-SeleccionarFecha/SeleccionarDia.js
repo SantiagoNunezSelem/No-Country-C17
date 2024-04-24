@@ -10,22 +10,21 @@ dayjs.locale("es");
 dayjs.extend(updateLocale).updateLocale("es", { weekStart: 0 });
 
 export default function SeleccionarDia({cargar}) {
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const handleDateSelection = (date) => {
-    setSelectedDate(date.$d);
-    //console.log(date.$d.getDate(), date.$d.getFullYear(), date.$d.getMonth());
-  };
+  const [selectedDate, setSelectedDate] = useState(dayjs());
 
   useEffect(() => {
     cargar({ name: "dia", value: selectedDate });
-  }, [selectedDate]);
+  }, [selectedDate, cargar]);
+
+  const handleDateSelection = (date) => {
+    setSelectedDate(date);
+  };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DateCalendar
         disablePast
-        disableHighlightToday
+        value={selectedDate}
         onChange={handleDateSelection}
         sx={{
           "& .MuiDayCalendar-weekDayLabel": { color: "white" },
