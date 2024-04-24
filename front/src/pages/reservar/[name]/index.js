@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 import { Box, Grid } from "@mui/material";
 import NavBarCitas from "@/components/sitemaCitas/NavBarCitas";
 import ErrorSistemaCitas from "@/components/sitemaCitas/ErrorSistemaCitas";
@@ -11,9 +12,11 @@ import ResumenReserva from "@/components/sitemaCitas/ResumenReserva";
 import BotonRegresar from "@/components/sitemaCitas/BotonRegresar";
 import { BotonHome } from "@/components/sitemaCitas/BotonRegresar";
 import { addTurno } from "@/actions/Querys";
+import toast, { Toaster } from "react-hot-toast";
 
 const Reservar = ({ paramas }) => {
   const [reserva, setReserva] = useState({});
+  const router = useRouter();
 
   const [step, setStep] = useState(1);
 
@@ -23,9 +26,8 @@ const Reservar = ({ paramas }) => {
   }); //error=true, no puede pasar a la siguiente seccion
 
   useEffect(() => {
-    console.log(reserva)
-
-  },[])
+    console.log(reserva);
+  }, []);
 
   const siguienteStep = () => {
     step < 5 && setStep(step + 1);
@@ -61,12 +63,18 @@ const Reservar = ({ paramas }) => {
           hora,
           turno,
         };
-        addTurno( requestData )
+        addTurno(requestData)
           .then((response) => {
             if (response.data.sucess === true) {
-              alert("Turno creado!");
+              toast.success("Turno creado!");
+              setTimeout(() => {
+                router.push('/'); 
+              }, 3000); 
             } else {
-              alert("Creación de turno no exitosa");
+              toast.error("Creación de turno no exitosa");
+              setTimeout(() => {
+                router.push('/'); 
+              }, 3000); 
             }
           })
           .catch((error) => {
@@ -123,10 +131,9 @@ const Reservar = ({ paramas }) => {
           infoReserva={reserva}
         />
       )}
-      {step === 4 && <DatosConfirmar 
-          cargar={handleInputChange}
-          infoReserva={reserva}
-        />}
+      {step === 4 && (
+        <DatosConfirmar cargar={handleInputChange} infoReserva={reserva} />
+      )}
       {step === 5 && <ResumenReserva infoReserva={reserva} />}
       <Box
         id="global-citas-style"
@@ -148,7 +155,8 @@ const Reservar = ({ paramas }) => {
         {step > 1 && (
           <BotonRegresar
             onClick={handlePrevButton}
-            className="object-position: left bottom position: absolute" />
+            className="object-position: left bottom position: absolute"
+          />
         )}
 
         <BotonSiguiente
@@ -157,6 +165,18 @@ const Reservar = ({ paramas }) => {
           className="flex justify-end w-11/12 object-position: right bottom position: absolute"
         />
       </Box>
+      <div>
+        <Toaster
+          toastOptions={{
+            className: "",
+            style: {
+              width:"275px",
+              height:"100px",
+              fontSize:"large"
+            },
+          }}
+        />
+      </div>
     </div>
   );
 };
