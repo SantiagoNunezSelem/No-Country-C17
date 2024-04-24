@@ -2,7 +2,9 @@ import React from 'react';
 import { iconsCitas } from '../../../lib/data';
 import Image from 'next/image';
 
-const IconsComponent = () => {
+const IconsComponent = ({data}) => {
+  console.log(data)
+  const {servicio, profesional, dia, hora} = data
   // Función para generar una fecha aleatoria
   const generateRandomDate = () => {
     const startDate = new Date(); // Fecha actual
@@ -22,7 +24,9 @@ const IconsComponent = () => {
       {/* Texto agrupado "SERVICIO: Cabello" */}
       <div className="mb-4 flex items-center">
         <div className="text-white font-bold mr-2">SERVICIO:</div>
-        <div className="text-white">CABELLO</div>
+        {servicio && servicio.map(s => {
+          return <div className="text-white"><p className='p-1'>{` ${s.nombre.toUpperCase()},`}</p></div>
+        })}
       </div>
       <div className="flex items-center justify-items-stretch">
         {/* Icono de dinero y precio para el servicio de Cabello */}
@@ -54,7 +58,7 @@ const IconsComponent = () => {
             }
             return null;
           })}
-          <p className="text-white">Juan Manuel Perez</p>
+          <p className="text-white">{profesional.nombre +" "+ profesional.apellido}</p>
         </div>
       </div>
       
@@ -94,7 +98,7 @@ const IconsComponent = () => {
             return null;
           })}
           {/* Hora actual */}
-          <p className="text-white">{getCurrentTime()}</p>
+          <p className="text-white">{hora}</p>
         </div>
       </div>
     </div>

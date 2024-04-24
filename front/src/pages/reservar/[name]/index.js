@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Grid } from "@mui/material";
 import NavBarCitas from "@/components/sitemaCitas/NavBarCitas";
 import ErrorSistemaCitas from "@/components/sitemaCitas/ErrorSistemaCitas";
@@ -21,6 +21,11 @@ const Reservar = ({ paramas }) => {
     error: false,
     mensaje: "",
   }); //error=true, no puede pasar a la siguiente seccion
+
+  useEffect(() => {
+    console.log(reserva)
+
+  },[])
 
   const siguienteStep = () => {
     step < 5 && setStep(step + 1);
@@ -121,7 +126,10 @@ const Reservar = ({ paramas }) => {
           infoReserva={reserva}
         />
       )}
-      {step === 4 && <DatosConfirmar />}
+      {step === 4 && <DatosConfirmar 
+          cargar={handleInputChange}
+          infoReserva={reserva}
+        />}
       {step === 5 && <ResumenReserva />}
       <Box
         id="global-citas-style"

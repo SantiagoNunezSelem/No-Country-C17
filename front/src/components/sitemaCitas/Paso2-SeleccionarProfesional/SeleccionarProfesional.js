@@ -5,9 +5,11 @@ import Image from "next/image"
 import trashIcon from "@/img/reservar-cita-icons/trash.png"
 import moneyIcon from "@/img/reservar-cita-icons/money.png"
 import imgPrimerProfesionalDisponible from "@/img/reservar-cita-icons/primerProfesionalDisponible.png"
-import {GetBarbers} from "@/actions/Querys"
+import {GetBarbers,getSucursalById} from "@/actions/Querys"
+import { useParams } from 'next/navigation'
 
 function SeleccionarProfesional( {cargar,infoReserva} ) {
+    const  {name}  = useParams();
 
     const [servicios,setServicios] = useState(infoReserva.servicio)
 
@@ -26,11 +28,13 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
     }
 
     const getProfesionales = async () => {
-        let data = await GetBarbers()
-        setProfesionales(data.data.rows);
+        // let data = await GetBarbers()
+        let data = await getSucursalById(name)
+       
+        setProfesionales(data.empleados);
 
         //Setear objeto primer profesional disponible (permite pasar un objeto profesional con toda su estructura)
-        const primerProfeDis = {... data.data.rows[0]}
+        const primerProfeDis = {... data.empleados[0]}
         for (let key in primerProfeDis) {
             // Establecer el valor de cada atributo en null
             primerProfeDis[key] = null;
