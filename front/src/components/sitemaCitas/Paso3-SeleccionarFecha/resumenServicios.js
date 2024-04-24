@@ -6,7 +6,7 @@ export default function ServiciosReservados(infoReserva) {
   const serviciosReservados = [];
 
   const eliminarServicio = (infoReserva) => {
-    console.log(serviciosReservados[index]);
+    // console.log(serviciosReservados[index]);
   };
 
   return (
