@@ -4,7 +4,9 @@ import IconsComponent from './resumen-servicios';
 import { Box, Container } from '@mui/material';
 
 
-const ReservarCita_2 = () => {
+const ReservarCita_2 = ({infoReserva,cargar}) => {
+
+
     return (
         <Container sx={{
             justifyContent:'center',
@@ -25,7 +27,7 @@ const ReservarCita_2 = () => {
                     {/* Sección de Resumen de Servicios */}
                     <div className="mb-8">
                         <h2 className="text-2xl font-bold mb-4 text-custom-red">Resumen de Servicios</h2>
-                    <IconsComponent/>
+                    <IconsComponent data={infoReserva}/>
                     </div>  
                 </div>
             </div>
