@@ -13,7 +13,7 @@ function logIn() {
 
         /* Despues lo hacemos bien con una query a la db */
         if(userName === "master" && pwd === "master")
-            window.location.href = "http://localhost:3000/"
+            window.location.href = "http://localhost:3000/admin"
         else{
             setMensajeError("Usuario o contraseña incorrectos.")
             setUsuario('');
