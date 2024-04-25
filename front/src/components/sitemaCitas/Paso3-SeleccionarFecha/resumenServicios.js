@@ -20,10 +20,9 @@ export default function ServiciosReservados(infoReserva) {
             p={2}
             mb={1}
             minWidth={"250px"}
-            maxWidth={"400px"}
             minHeight={"135px"}
           >
-            <Grid container justifyContent="center" alignItems="center"  sx={{ minWidth:"250px", maxWidth:"300px" }}>
+            <Grid container justifyContent="center" alignItems="center"  sx={{ minWidth:"250px", maxWidth:"320px" }}>
               <Grid item xs={6}>
                 <Typography variant="subtitle1" sx={{ color: "#F84646" }}>
                   SERVICIO:
