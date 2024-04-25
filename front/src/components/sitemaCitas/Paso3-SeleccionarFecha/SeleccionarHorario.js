@@ -3,7 +3,7 @@ import { Button, Typography, Grid, Box } from "@mui/material";
 import { horasManana, horasTarde } from "@/lib/data";
 
 export default function SeleccionarHorario({cargar, infoReserva}) {
-  const [selectedHour, setSelectedHour] = useState('8:00'); //no siempre va a estar disponible las 8:00
+  const [selectedHour, setSelectedHour] = useState(""); //no siempre va a estar disponible las 8:00
 
   const [turnosNoDisponibles,setTurnosNoDisponibles] = useState(["8:30","12:00","12:30","17:00","18:30"])
 
