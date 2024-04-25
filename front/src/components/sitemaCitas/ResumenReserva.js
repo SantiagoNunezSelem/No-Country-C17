@@ -6,8 +6,7 @@ import ServiciosReservados from '@/components/sitemaCitas/Paso3-SeleccionarFecha
 
 function ResumenReserva({infoReserva}){
 
-let tarjetaResumenReserva= ServiciosReservados({infoReserva}
-)
+let tarjetaResumenReserva= ServiciosReservados({infoReserva})
 /*const datosUsuarioMock={
     nombre:'usuario',
     apellido:'nuevo',
