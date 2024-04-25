@@ -11,9 +11,9 @@ const IconsComponent = ({data}) => {
     <div className="border border-white p-4 rounded-lg">
       {/* Texto agrupado "SERVICIO: Cabello" */}
       <div className="mb-4 flex items-center">
-        <div className="text-white font-bold mr-2">SERVICIO:</div>
+        <div className="text-white font-bold mr-2 text-[#F84646]">SERVICIO:</div>
         {servicio && servicio.map(s => {
-          return <div className="text-white"><p className='p-1'>{` ${s.nombre.toUpperCase()},`}</p></div>
+          return <div className="text-white"><p className='p-1'>{` ${s.nombre.toUpperCase()}`}</p></div>
         })}
       </div>
       <div className="flex items-center justify-items-stretch">
