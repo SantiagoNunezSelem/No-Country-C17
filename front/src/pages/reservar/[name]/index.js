@@ -181,7 +181,11 @@ const Reservar = ({ paramas }) => {
             style: {
               width:"275px",
               height:"100px",
-              fontSize:"large"
+              fontSize:"large",
+              border: '1px solid #713200',
+              padding: '16px',
+              color: '#fff',
+              backgroundColor: '#333'
             },
           }}
         />
