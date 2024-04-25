@@ -31,15 +31,43 @@ const  createService = async (req, res, next) => {
 }
 
 const getOneService = async (req, res, next) => {
+    try{
 
+    }catch(error){
+        next(error)
+    }
 }
 
 const  updateService = async (req, res, next) => {
+    let data = req.body
+    let id = req.params.id
 
+    try{
+        let servicio = await Servicio.findByPk(id)
+        
+        if(!servicio) res.status(404).send({mensaje: "el servicio no fue encontrado"})
+        else await Servicio.update(data,{where:{idServicio:id}})
+        res.send({msg:`Se actualizo un servicio`})
+
+    }catch(error){
+        next(error)
+    }
 }
 
 const  deleteService = async(req,res,next) =>{
+    let {id} = req.params;
 
+    try{
+        let servicio = await Servicio.findByPk(id)
+       
+        if(!servicio) res.status(404).send({mensaje: "el servicio no fue encontrado"})
+        else await Servicio.destroy({where : {idServicio:id}});
+        res.status(200).send({mensaje:"servico eliminado"})
+        
+
+    }catch(error){
+        next(error)
+    }
 }
 
 module.exports = {getAllSevices, getOneService, deleteService, updateService, createService}
