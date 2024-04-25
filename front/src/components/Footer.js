@@ -7,7 +7,7 @@ function Footer() {
     <div className="w-full bg-red-500">
         <div className="flex flex-col md:flex-row items-center justify-center pt-10 md:space-x-16">
             <div className="flex justify-center md:w-1/5 m-auto">
-                <Image src={require("../img/logo.png")} width={124} className="m-auto" alt=""/>
+                <Link href="/logIn"><Image src={require("../img/logo.png")} width={124} className="m-auto" alt=""/></Link>
             </div>
             <div id="footer-links" className="hidden md:flex justify-center w-full md:w-3/5 m-auto mt-5 md:mt-0 space-x-5 md:space-x-16">
                 <Link href="/#">Inicio</Link>
