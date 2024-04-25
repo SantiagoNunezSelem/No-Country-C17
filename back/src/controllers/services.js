@@ -31,8 +31,11 @@ const  createService = async (req, res, next) => {
 }
 
 const getOneService = async (req, res, next) => {
+    let id = req.params.id
     try{
-
+        let servicio = await Servicio.findByPk(id)
+        if(!servicio) res.status(404).send({mensaje: "el servicio no fue encontrado"})
+        else res.send({mensaje:"ok", servicio})
     }catch(error){
         next(error)
     }
