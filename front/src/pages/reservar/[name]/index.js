@@ -34,13 +34,22 @@ const Reservar = ({ paramas }) => {
   };
 
   const verSiHayError = () => {
-    if (step === 1 && reserva.servicio.length === 0) {
+    if(step === 1 && reserva.servicio.length === 0) {
       setErrorSeccion({
         error: true,
         mensaje: "Debe seleccionar al menos un servicio",
       });
       return true;
     }
+    if(step === 3 && reserva.hora === "") {
+      setErrorSeccion({
+        error:true,
+        mensaje: "Debe seleccionar una hora para el turno"
+      })
+
+      return true;
+    }
+    
   };
 
   const handleNextButton = async () => {
