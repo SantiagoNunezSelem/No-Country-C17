@@ -58,16 +58,9 @@ const IconsComponent = ({data}) => {
         {/* Contenedor para el icono del calendario y la fecha */}
         <div className="flex items-center">
           {/* Icono del calendario */}
-          {iconsCitas.map((icon) => {
-            if (icon.alt === 'icon calendar') {
-              return (
-                <span key={icon.id} className="mr-2">
-                  <Image src={icon.icon} alt={icon.alt} width={icon.width} height={icon.height} />
+          <span className="mr-2">
+                  <Image src={require("../../../img/Calendar.png")} />
                 </span>
-              );
-            }
-            return null;
-          })}
           {/* Fecha aleatoria */}
           <p className="text-white">{formattedDate}</p>
         </div>
