@@ -1,6 +1,7 @@
+'use client'
 import React, { useState } from 'react';
 
-function logIn() {
+const LogIn = () => {
 
     const [usuario, setUsuario] = useState('');
     const [contrasena, setContrasena] = useState('');
@@ -51,4 +52,4 @@ function logIn() {
     );
 }
 
-export default logIn;
+export default LogIn;

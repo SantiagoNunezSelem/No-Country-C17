@@ -13,6 +13,7 @@ import BotonRegresar from "@/components/sitemaCitas/BotonRegresar";
 import { BotonHome } from "@/components/sitemaCitas/BotonRegresar";
 import { addTurno } from "@/actions/Querys";
 import toast, { Toaster } from "react-hot-toast";
+import Link from "next/link";
 
 const Reservar = ({ paramas }) => {
   const [reserva, setReserva] = useState({});
@@ -156,9 +157,9 @@ const Reservar = ({ paramas }) => {
         }}
       >
         {step === 1 && (
-          <a href="/">
+          <Link href="/">
             <BotonHome className="object-position: left bottom position: absolute" />
-          </a>
+          </Link>
         )}
 
         {step > 1 && (

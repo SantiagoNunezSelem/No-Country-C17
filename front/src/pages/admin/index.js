@@ -62,8 +62,8 @@ function MenuAdmin() {
             
             <div className="w-2/5 min-w-80">
             {turnos !== "" &&
-                turnos.map(turno => (
-                    <div className="mb-5">
+                turnos.map((turno, index) => (
+                    <div key={index} className="mb-5">
                         <Reserva data={turno}/>
                     </div> 
                 ))

@@ -18,9 +18,9 @@ const IconsComponent = ({ data }) => {
             SERVICIO:
           </div>
           {servicio &&
-            servicio.map((s) => {
+            servicio.map((s, index) => {
               return (
-                <div className="text-white">
+                <div key={index} className="text-white">
                   <p className="p-1">{` ${s.nombre.toUpperCase()}`}</p>
                 </div>
               );
@@ -44,10 +44,10 @@ const IconsComponent = ({ data }) => {
         <div className="flex mb-4">
           {/* Icono del profesional y nombre */}
           <div className="flex items-center">
-            {iconsCitas.map((icon) => {
+            {iconsCitas.map((icon,index) => {
               if (icon.alt === "icon profesional") {
                 return (
-                  <span key={icon.id} className="mr-2">
+                  <span key={index} className="mr-2">
                     <Image
                       src={icon.icon}
                       alt={icon.alt}
