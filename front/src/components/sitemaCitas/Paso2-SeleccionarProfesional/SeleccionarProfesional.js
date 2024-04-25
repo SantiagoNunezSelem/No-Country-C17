@@ -60,8 +60,8 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
     return (
     <div id="seleccionar-personal">
         
-        <section className="sm:flex md:w-9/12 h-5/6 m-auto mt-4 mb-2 block justify-center align-center">
-            <div className=" max-h-dvh border-2 p-10 pt-7 mx-2 rounded-xl">
+        <section className="sm:flex h-5/6 m-auto mt-4 mb-2 block justify-center align-center">
+            <div className=" max-h-dvh border-2 p-4 pt-7 mx-2 md:w-7/12 rounded-xl">
                 <h3 className="mb-2">Profesionales</h3>
                 <div id="profesional-container" className="w-full max-h-dvh mb-2">
                     {profesionalSelec &&
@@ -103,7 +103,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                     }
                 </div>
             </div>
-            <div className="flex flex-col md:w-2/6 max-h-96 mx-2 mt-2 md:mt-0 servicios-container">{/*tarjeta de reserva*/}
+            <div className="flex flex-col md:w-3/12 max-h-96 mx-2 mt-2 md:mt-0 servicios-container">{/*tarjeta de reserva*/}
             {
                 servicios && servicios.map(s => {
                 return(
