@@ -30,7 +30,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
     const getProfesionales = async () => {
         // let data = await GetBarbers()
         let data = await getSucursalById(name)
-       
+
         setProfesionales(data.empleados);
 
         //Setear objeto primer profesional disponible (permite pasar un objeto profesional con toda su estructura)
@@ -60,24 +60,24 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
     return (
     <div id="seleccionar-personal">
         
-        <section className="flex flex-row w-9/12 h-5/6 m-auto mt-4 mb-2">
-            <div className="w-4/6 max-h-96 border-2 p-10 pt-7 mr-5 rounded-xl">
+        <section className="sm:flex h-5/6 m-auto mt-4 mb-2 block justify-center align-center">
+            <div className=" max-h-dvh border-2 p-4 pt-7 mx-2 md:w-7/12 rounded-xl">
                 <h3 className="mb-2">Profesionales</h3>
-                <div id="profesional-container" className="max-h-72 overflow-y-scroll">
+                <div id="profesional-container" className="w-full max-h-dvh mb-2">
                     {profesionalSelec &&
                         <div className={`flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl
                         ${profesionalSelec.nombre === "primerProfesional" ? "seleccionado" : ""}`}
                         onClick={() => setProfesionalSelec(primerProfesionalDisponible)}
 					>
-                        <Image 
+                        <Image className="h-full w-auto object-cover rounded-full my-auto"
                             src={imgPrimerProfesionalDisponible}
                             alt="loading.."
                             id="primerProfesional" 
                             width={40}
-                            height={"auto"}
+                            height={40}
                             style={{borderRadius:"100%"}}
 						/>
-                        <p className="self-center text-lg">Primer Profesional Disponible</p>
+                        <p className="self-center text-sm md:text-lg">Primer Profesional Disponible</p>
                     </div>
                     }
                     {
@@ -88,14 +88,14 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                                 ${profesionalSelec.idEmpleado === p.idEmpleado ? "seleccionado" : ""}`}
                                 onClick={() => setProfesionalSelec(p)}
 							>
-                                <Image 
+                                <div className="w-10 h-10">
+                                <img
                                     src={p.imagen}
                                     alt="loading.."
                                     id={p.idEmpleado}
-                                    width={40}
-                                    height={40} 
-                                    style={{borderRadius:"100%"}}
-                                /> 
+                                    className="h-full w-auto object-cover rounded-full"
+                                />
+                                </div>
                                 <p className="self-center text-lg">{p.nombre} {p.apellido}</p>
                             </div>
                             )
@@ -103,11 +103,11 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                     }
                 </div>
             </div>
-            <div className="flex flex-col w-2/6 max-h-96 overflow-y-scroll servicios-container">
+            <div className="flex flex-col md:w-3/12 max-h-96 mx-2 mt-2 md:mt-0 servicios-container">{/*tarjeta de reserva*/}
             {
                 servicios && servicios.map(s => {
                 return(
-                <div key={s.idServicio} className="flex flex-row h-fit p-7 mb-3 border-2 rounded-xl">
+                <div key={s.idServicio} className="flex flex-row w-full mx-1 p-7 mb-3 border-2 rounded-xl">
                     <div className="w-11/12">
                         <div className="flex flex-row gap-3 mb-1">
                             <h4>Servicio:</h4><p>{s.nombre}</p>

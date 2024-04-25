@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 import { Box, Grid } from "@mui/material";
 import NavBarCitas from "@/components/sitemaCitas/NavBarCitas";
 import ErrorSistemaCitas from "@/components/sitemaCitas/ErrorSistemaCitas";
@@ -11,9 +12,11 @@ import ResumenReserva from "@/components/sitemaCitas/ResumenReserva";
 import BotonRegresar from "@/components/sitemaCitas/BotonRegresar";
 import { BotonHome } from "@/components/sitemaCitas/BotonRegresar";
 import { addTurno } from "@/actions/Querys";
+import toast, { Toaster } from "react-hot-toast";
 
 const Reservar = ({ paramas }) => {
   const [reserva, setReserva] = useState({});
+  const router = useRouter();
 
   const [step, setStep] = useState(1);
 
@@ -23,22 +26,30 @@ const Reservar = ({ paramas }) => {
   }); //error=true, no puede pasar a la siguiente seccion
 
   useEffect(() => {
-    console.log(reserva)
-
-  },[])
+    console.log(reserva);
+  }, []);
 
   const siguienteStep = () => {
     step < 5 && setStep(step + 1);
   };
 
   const verSiHayError = () => {
-    if (step === 1 && reserva.servicio.length === 0) {
+    if(step === 1 && reserva.servicio.length === 0) {
       setErrorSeccion({
         error: true,
         mensaje: "Debe seleccionar al menos un servicio",
       });
       return true;
     }
+    if(step === 3 && reserva.hora === "") {
+      setErrorSeccion({
+        error:true,
+        mensaje: "Debe seleccionar una hora para el turno"
+      })
+
+      return true;
+    }
+    
   };
 
   const handleNextButton = async () => {
@@ -46,30 +57,33 @@ const Reservar = ({ paramas }) => {
 
     if (step === 5) {
       try {
-        const usuarioIdUsuario = "4bf1c860-01c0-11ef-9712-dd61d2b5cfd3";
+        const usuarioIdUsuario = "18ad5810-01d5-11ef-8767-65090dec1f9b";
         const { profesional, servicio, hora, dia } = reserva;
         const empleadoIdEmpleado = profesional.idEmpleado;
         const idServicio = servicio.map((serv) => serv.idServicio);
-        const horaInicio = new Date(dia);
-        horaInicio.setHours(hora.split(":")[0]);
-        horaInicio.setMinutes(hora.split(":")[1]);
-        const horaFin = new Date(horaInicio.getTime() + 1 * 60 * 60 * 1000);
-        const turno = "Turno de prueba Front";
+        const fecha = new Date(dia);
+        const turno = "Turno de prueba Front con cambios";
 
         const requestData = {
           usuarioIdUsuario,
           empleadoIdEmpleado,
           idServicio,
-          horaInicio,
-          horaFin,
+          fecha,
+          hora,
           turno,
         };
-        addTurno( requestData )
+        addTurno(requestData)
           .then((response) => {
             if (response.data.sucess === true) {
-              alert("Turno creado!");
+              toast.success("Turno creado!");
+              setTimeout(() => {
+                router.push('/'); 
+              }, 3000); 
             } else {
-              alert("Creación de turno no exitosa");
+              toast.error("Creación de turno no exitosa");
+              setTimeout(() => {
+                router.push('/'); 
+              }, 3000); 
             }
           })
           .catch((error) => {
@@ -126,11 +140,10 @@ const Reservar = ({ paramas }) => {
           infoReserva={reserva}
         />
       )}
-      {step === 4 && <DatosConfirmar 
-          cargar={handleInputChange}
-          infoReserva={reserva}
-        />}
-      {step === 5 && <ResumenReserva />}
+      {step === 4 && (
+        <DatosConfirmar cargar={handleInputChange} infoReserva={reserva} />
+      )}
+      {step === 5 && <ResumenReserva infoReserva={reserva} />}
       <Box
         id="global-citas-style"
         sx={{
@@ -161,6 +174,22 @@ const Reservar = ({ paramas }) => {
           className="flex justify-end w-11/12 object-position: right bottom position: absolute"
         />
       </Box>
+      <div>
+        <Toaster
+          toastOptions={{
+            className: "",
+            style: {
+              width:"275px",
+              height:"100px",
+              fontSize:"large",
+              border: '1px solid #713200',
+              padding: '16px',
+              color: '#fff',
+              backgroundColor: '#333'
+            },
+          }}
+        />
+      </div>
     </div>
   );
 };

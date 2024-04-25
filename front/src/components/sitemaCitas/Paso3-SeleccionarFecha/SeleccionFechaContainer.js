@@ -20,7 +20,7 @@ export default function SeleccionFechaContainer({ cargar, infoReserva }) {
         <SeleccionarDia cargar={cargar}></SeleccionarDia>
       </Grid>
       <Grid item xs="auto">
-        <SeleccionarHorario cargar={cargar}></SeleccionarHorario>
+        <SeleccionarHorario cargar={cargar} infoReserva={infoReserva}></SeleccionarHorario>
       </Grid>
       <Grid item xs="auto">
         <ServiciosReservados infoReserva={infoReserva}></ServiciosReservados>

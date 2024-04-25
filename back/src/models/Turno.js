@@ -13,12 +13,12 @@ module.exports = (sequelize) => {
       turno:{
           type: DataTypes.STRING(50)
       },
-      horaInicio:{
-          type: DataTypes.DATE, //DATE SI NO FUNCIONA
-          allowNull: false
+      fecha:{
+        type:DataTypes.DATEONLY,
+        allowNull: false
       },
-      horaFin:{
-          type: DataTypes.DATE, //DATE SI NO FUNCIONA
+      hora:{
+          type: DataTypes.TIME, //DATE SI NO FUNCIONA
           allowNull: false
       }
   })
