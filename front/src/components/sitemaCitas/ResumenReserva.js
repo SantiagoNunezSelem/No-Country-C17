@@ -63,7 +63,6 @@ let tarjetaResumenReserva= ServiciosReservados({infoReserva}
                         </div>
                     </Box>
                     <Box  sx={{
-                        pt:6,
                         xs:3,
                         md:6,
                         display:'flex',
