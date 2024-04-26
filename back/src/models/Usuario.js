@@ -41,13 +41,13 @@ module.exports = (sequelize) => {
                 },
               },
         },
-        // admin:{
-        //     type: DataTypes.BOOLEAN,
-        //     defaultValue: false
-        // },
-        // activo:{
-        //     type: DataTypes.BOOLEAN,
-        //     defaultValue: true
-        // }
+        admin:{
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        activo:{
+            type: DataTypes.BOOLEAN,
+            defaultValue: true
+        }
     } )
 }
