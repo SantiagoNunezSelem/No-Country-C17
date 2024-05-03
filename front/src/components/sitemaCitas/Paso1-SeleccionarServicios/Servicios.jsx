@@ -3,16 +3,17 @@ import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import Servicios from "@/components/servicios/services";
 import BotonAgregarServicio from "@/components/sitemaCitas/Paso1-SeleccionarServicios/BotonAgregarServicio";
-import { GetServicios } from "@/actions/Querys";
+import {servicios as serviciosData} from "@/lib/data.js"
+// import { GetServicios } from "@/actions/Querys";
 
 const CitaServios = ({ cargar }) => {
   const [service, setService] = useState([]);
-  const [servicios, setServicios] = useState();
+  const [servicios, setServicios] = useState(serviciosData);
 
-  const getServi = async () => {
-    let data = await GetServicios();
-    setServicios(data.data.rows);
-  };
+  // const getServi = async () => {
+  //   let data = await GetServicios();
+  //   setServicios(data.data.rows);
+  // };
 
   const handleButton = (servicio) => {
     //service.includes(servicio.idServicio) ?  setService(service.filter((i)=> i.idServicio !== servicio.idServicio)) : setService([...service,servicio])
@@ -28,7 +29,7 @@ const CitaServios = ({ cargar }) => {
   };
 
   useEffect(() => {
-    getServi();
+    // getServi();
     cargar({ name: "servicio", value: service });
   }, [service]);
 
