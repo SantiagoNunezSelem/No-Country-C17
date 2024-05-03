@@ -4,28 +4,29 @@ import Carousel from "./Carousel";
 import { GetSucursal, GetBarbers } from "@/actions/Querys";
 import Loading from '@/loading.png';
 import Image from "next/image";
+import {sucursales,profesionales} from "@/lib/data.js"
 
 
 const StaffBarber = () => {
 
-    const [barbers, setBarbers] = useState([]);
-    const [show, setShow] = useState([])
-    const [sucursal,  setSucursal] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const [barbers, setBarbers] = useState(profesionales);
+    const [show, setShow] = useState(profesionales)
+    const [sucursal,  setSucursal] = useState(sucursales);
+    // const [loading, setLoading] = useState(true)
 
     
     
-    let getBarb = async () => {
-        let list = await GetBarbers()
-        setLoading(false)
-        setBarbers(list.data.rows)
-        setShow(list.data.rows)
-    }
+    // let getBarb = async () => {
+    //     let list = await GetBarbers()
+    //     setLoading(false)
+    //     setBarbers(list.data.rows)
+    //     setShow(list.data.rows)
+    // }
 
-    let getSuc = async () => {
-        let list = await GetSucursal()
-        setSucursal(list.data.rows)
-    }
+    // let getSuc = async () => {
+    //     let list = await GetSucursal()
+    //     setSucursal(list.data.rows)
+    // }
 
     let filtBarber = (id) => {
         id === "all" ? setShow(barbers) :setShow(barbers.filter((item)=> item.sucursalIdSucursal === id))
@@ -33,8 +34,8 @@ const StaffBarber = () => {
 
 
     useEffect(() => {
-        getBarb()
-        getSuc()
+        // getBarb()
+        // getSuc()
     },[])
     
     return(
@@ -51,13 +52,9 @@ const StaffBarber = () => {
                     })}
                 </select>
             </div>
-            {loading ?  <div className="m-auto text-center justify-center">
-                <Image src={Loading} alt="loading..."  className="w-24 h-full animate-spin"/>
-                <p className='text-white'>cargando...</p>
-            </div>: 
+
             <Carousel data={show}/>
-            }
-            
+
         </div>
     )    
 }
