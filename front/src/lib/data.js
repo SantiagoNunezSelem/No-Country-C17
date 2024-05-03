@@ -28,10 +28,22 @@ export const links = [
 export const sucursales = [
     {
         idSucursal:"1",
-        nombre:"Floresta",
-        imagen:"",
-        ubicacion:"hola"
+        nombre:"Caballito",
+        imagen:"https://abconsultora.com/wp-content/uploads/2020/07/habilitacion-peluqueria-barberia.jpg",
+        ubicacion:"Bacacay 901, Buenos Aires, Argentina"
     },
+    {
+        idSucursal:"2",
+        nombre:"Palermo",
+        imagen:"https://buenosairesbarbershop.com/assets/img/barberia2.jpg",
+        ubicacion:"Godoy Cruz 2606, Buenos Aires, Argentina"
+    },
+    {
+        idSucursal:"3",
+        nombre:"Floresta",
+        imagen:"https://www.marialuisahuerta.com/wp-content/uploads/barberia-masculina-consejos-y-tendencias.jpg",
+        ubicacion:"Avenida Rivadavia 456, Buenos Aires, Argentina"
+    }
 ]
 
 export  const servicios =[
