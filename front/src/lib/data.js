@@ -25,6 +25,15 @@ export const links = [
         hash:  "#contacto"
     },
 ];
+export const sucursales = [
+    {
+        idSucursal:"1",
+        nombre:"Floresta",
+        imagen:"",
+        ubicacion:"hola"
+    },
+]
+
 export  const servicios =[
     {
         nombre:"Cabello",
