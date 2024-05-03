@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import Sucursal from "@/components/sucursales/Sucursal"
-import {GetSucursal} from "@/actions/Querys"
+// import {GetSucursal} from "@/actions/Querys"
 import Loading from '@/loading.png';
 import Image from 'next/image'
+import {sucursales as a} from "@/lib/data.js"
 
 function SucursalesContainer() {
 
-    
-    const [sucursal, setSucursal] = useState([])
+    const [sucursal, setSucursal] = useState(a)
     const [loading, setLoading] = useState(true)
 
-    let getSuc = async () => {
-        let list = await GetSucursal()
-        setLoading(false)
-        setSucursal(list.data.rows)
-    }
+    // let getSuc = async () => {
+    //     let list = await GetSucursal()
+    //     setLoading(false)
+    //     setSucursal(list.data.rows)
+    // }
 
     useEffect(() => {
-        getSuc()
+        // getSuc()
     },[])
 
 
     return (
     <div className="flex justify-center align-center flex-wrap">
-       
+    
         {sucursal && sucursal.map(sucursal => {
             return  <Sucursal
             key={sucursal.idSucursal}
@@ -34,10 +34,10 @@ function SucursalesContainer() {
         />
         })
         }
-        {loading &&  <div>
+        {/* {loading &&  <div>
                 <Image src={Loading} alt="loading..."  className="w-24 h-full animate-spin"/>
                 <p className='text-white'>cargando...</p>
-            </div>}
+        </div>} */}
     </div>
     )
 }
