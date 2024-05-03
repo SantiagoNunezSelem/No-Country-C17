@@ -80,35 +80,47 @@ export  const servicios =[
 
 export const profesionales = [
     {
-        nombre:"Nombre1",
-        apellido:"Apellido1",
-        sucursal:"flores"
+        nombre:"Juan",
+        apellido:"López",
+        imagen:"https://img.freepik.com/free-photo/serious-man-looking-camera_23-2147799044.jpg",
+        sucursal:"Caballito",
+        sucursalIdSucursal:"1"
     },
     {
-        nombre:"Nombre2",
-        apellido:"Apellido2",
-        sucursal:"flores"
+        nombre:"Juan",
+        apellido:"López",
+        imagen:"https://img.freepik.com/free-photo/serious-man-looking-camera_23-2147799044.jpg",
+        sucursal:"Caballito",
+        sucursalIdSucursal:"1"
     },
     {
-        nombre:"Nombre3",
-        apellido:"Apellido3",
-        sucursal:"flores"
+        nombre:"María",
+        apellido:"García",
+        imagen:"https://tienda.fotografiamardelplata.com.ar/wp-content/webpc-passthru.php?src=https://tienda.fotografiamardelplata.com.ar/wp-content/uploads/2022/03/Gimena-3-2048.jpg",
+        sucursal:"Caballito",
+        sucursalIdSucursal:"1"
     },
     {
-        nombre:"Nombre4",
-        apellido:"Apellido4",
-        sucursal:"flores"
+        nombre:"Carlos",
+        apellido:"Martínez",
+        imagen:"https://img.freepik.com/free-photo/joy-positive-emotions-feelings-concept-head-shoulders-cheerful-handsome-young-groom-with-stubble-dimples-smiling-joyfully-camera-feeling-happy-about-getting-married-today_343059-944.jpg",
+        sucursal:"Caballito",
+        sucursalIdSucursal:"1"
     },
     {
-        nombre:"Nombre5",
-        apellido:"Apellido5",
-        sucursal:"flores"
+        nombre:"Ana",
+        apellido:"Rodríguez",
+        imagen:"https://www.dzoom.org.es/wp-content/uploads/2011/09/fotos-de-carnet-paso-a-paso-en-3-minutos-734x489.jpg",
+        sucursal:"Caballito",
+        sucursalIdSucursal:"1"
     },
     {
-        nombre:"Nombre6",
-        apellido:"Apellido6",
-        sucursal:"flores"
-    }
+        nombre:"Ana",
+        apellido:"Rodríguez",
+        imagen:"https://www.dzoom.org.es/wp-content/uploads/2011/09/fotos-de-carnet-paso-a-paso-en-3-minutos-734x489.jpg",
+        sucursal:"Caballito",
+        sucursalIdSucursal:"1"
+    },
 ]
 
 export const socialMedia = [
