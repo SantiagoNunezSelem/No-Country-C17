@@ -82,13 +82,7 @@ export const profesionales = [
     {
         nombre:"Juan",
         apellido:"López",
-        imagen:"https://img.freepik.com/free-photo/serious-man-looking-camera_23-2147799044.jpg",
-        sucursal:"Caballito",
-        sucursalIdSucursal:"1"
-    },
-    {
-        nombre:"Juan",
-        apellido:"López",
+        idEmpleado:"1",
         imagen:"https://img.freepik.com/free-photo/serious-man-looking-camera_23-2147799044.jpg",
         sucursal:"Caballito",
         sucursalIdSucursal:"1"
@@ -96,6 +90,7 @@ export const profesionales = [
     {
         nombre:"María",
         apellido:"García",
+        idEmpleado:2,
         imagen:"https://tienda.fotografiamardelplata.com.ar/wp-content/webpc-passthru.php?src=https://tienda.fotografiamardelplata.com.ar/wp-content/uploads/2022/03/Gimena-3-2048.jpg",
         sucursal:"Caballito",
         sucursalIdSucursal:"1"
@@ -103,6 +98,7 @@ export const profesionales = [
     {
         nombre:"Carlos",
         apellido:"Martínez",
+        idEmpleado:3,
         imagen:"https://img.freepik.com/free-photo/joy-positive-emotions-feelings-concept-head-shoulders-cheerful-handsome-young-groom-with-stubble-dimples-smiling-joyfully-camera-feeling-happy-about-getting-married-today_343059-944.jpg",
         sucursal:"Caballito",
         sucursalIdSucursal:"1"
@@ -110,16 +106,82 @@ export const profesionales = [
     {
         nombre:"Ana",
         apellido:"Rodríguez",
+        idEmpleado:4,
         imagen:"https://www.dzoom.org.es/wp-content/uploads/2011/09/fotos-de-carnet-paso-a-paso-en-3-minutos-734x489.jpg",
         sucursal:"Caballito",
         sucursalIdSucursal:"1"
     },
     {
-        nombre:"Ana",
-        apellido:"Rodríguez",
+        nombre:"Lucía",
+        apellido:"Fernández",
+        idEmpleado:5,
         imagen:"https://www.dzoom.org.es/wp-content/uploads/2011/09/fotos-de-carnet-paso-a-paso-en-3-minutos-734x489.jpg",
-        sucursal:"Caballito",
-        sucursalIdSucursal:"1"
+        sucursal:"Palermo",
+        sucursalIdSucursal:"2"
+    },
+    {
+        nombre:"Lucía",
+        apellido:"Fernández",
+        idEmpleado:6,
+        imagen:"https://fotomanias.com.ar/wp-content/uploads/2019/03/foto-carnet-fondo-celeste.jpg",
+        sucursal:"Palermo",
+        sucursalIdSucursal:"2"
+    },
+    {
+        nombre:"Diego",
+        apellido:"Gómez",
+        idEmpleado:7,
+        imagen:"https://img.freepik.com/free-photo/worldface-american-man-white-background_53876-31195.jpg",
+        sucursal:"Palermo",
+        sucursalIdSucursal:"2"
+    },
+    {
+        nombre:"Sofía",
+        apellido:"Pérez",
+        idEmpleado:8,
+        imagen:"https://static.mygon.com/ImageAdapterV2/campaign/14010/campaign1.jpg",
+        sucursal:"Palermo",
+        sucursalIdSucursal:"2"
+    },
+    {
+        nombre:"Javier",
+        apellido:"Díaz",
+        idEmpleado:9,
+        imagen:"https://img.freepik.com/premium-photo/happy-smiling-hispanic-guy-looking-camera-isolated-white-background_262288-8517.jpg",
+        sucursal:"Palermo",
+        sucursalIdSucursal:"2"
+    },
+    {
+        nombre:"Daniel",
+        apellido:"Muñoz",
+        idEmpleado:10,
+        imagen:"https://img.freepik.com/free-photo/portrait-young-business-man-posing-with-crossed-arms_23-2149206526.jpg",
+        sucursal:"Flores",
+        sucursalIdSucursal:"3"
+    },
+    {
+        nombre:"Carmen",
+        apellido:"Ruiz",
+        idEmpleado:11,
+        imagen:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Foto_carnet_ClaraGD.jpg/1072px-Foto_carnet_ClaraGD.jpg",
+        sucursal:"Flores",
+        sucursalIdSucursal:"3"
+    },
+    {
+        nombre:"Elena",
+        apellido:"López",
+        idEmpleado:12,
+        imagen:"https://somosinfinita.com/wp-content/uploads/2023/10/LUCIANA-FLORES-1-scaled.jpg",
+        sucursal:"Flores",
+        sucursalIdSucursal:"3"
+    },
+    {
+        nombre:"Alejandro",
+        apellido:"Gutiérrez",
+        idEmpleado:13,
+        imagen:"https://img.freepik.com/free-photo/young-man-white-shirt-looking-camera-looking-happy_176474-83327.jpg",
+        sucursal:"Flores",
+        sucursalIdSucursal:"3"
     },
 ]
 
