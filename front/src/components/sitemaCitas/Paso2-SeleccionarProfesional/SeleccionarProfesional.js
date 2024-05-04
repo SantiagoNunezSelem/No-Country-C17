@@ -5,15 +5,16 @@ import Image from "next/image"
 import trashIcon from "@/img/reservar-cita-icons/trash.png"
 import moneyIcon from "@/img/reservar-cita-icons/money.png"
 import imgPrimerProfesionalDisponible from "@/img/reservar-cita-icons/primerProfesionalDisponible.png"
-import {GetBarbers,getSucursalById} from "@/actions/Querys"
+// import {GetBarbers,getSucursalById} from "@/actions/Querys"
 import { useParams } from 'next/navigation'
+import { profesionales as profesionalesData} from '@/lib/data.js'
 
 function SeleccionarProfesional( {cargar,infoReserva} ) {
     const  {name}  = useParams();
 
     const [servicios,setServicios] = useState(infoReserva.servicio)
 
-    const [profesionales,setProfesionales] = useState()
+    const [profesionales,setProfesionales] = useState(profesionalesData)
 
     const [primerProfesionalDisponible,setPrimerProfesionalDisponible] = useState()
 
@@ -29,12 +30,21 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
 
     const getProfesionales = async () => {
         // let data = await GetBarbers()
-        let data = await getSucursalById(name)
+        // let data = await getSucursalById(name)
 
-        setProfesionales(data.empleados);
+        // setProfesionales(data.empleados);
 
+        // Obtén la URL actual de la página
+        const url = window.location.href;
+
+        // Divide la URL en partes utilizando '/' como separador y toma el último elemento
+        const partesURL = url.split('/');
+        const idSucursal = partesURL[partesURL.length - 1];
+        
+        const profesionalesSucursal = profesionales.filter(p => p.sucursalIdSucursal == idSucursal)
+        setProfesionales(profesionalesSucursal)
         //Setear objeto primer profesional disponible (permite pasar un objeto profesional con toda su estructura)
-        const primerProfeDis = {... data.empleados[0]}
+        const primerProfeDis = {...profesionales[0]}
         for (let key in primerProfeDis) {
             // Establecer el valor de cada atributo en null
             primerProfeDis[key] = null;
@@ -81,7 +91,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
                     </div>
                     }
                     {
-                        profesionales && profesionales.map(p => {
+                        profesionales && primerProfesionalDisponible && profesionales.map(p => {
                             return(
                             <div key={p.idEmpleado} 
                                 className={`flex flex-row gap-5 border-2 mb-2 p-2 rounded-xl
