@@ -7,24 +7,30 @@ const IconsComponent = ({ data }) => {
   const { servicio, profesional, dia, hora } = data;
   const formattedDate = dayjs(dia).format("DD/MM/YYYY");
 
-  const totalMontoServicios = servicio.reduce((acumulador, serv) => acumulador + parseFloat(serv.costo), 0);
+  function stringANumero(costoStr) {
+    return parseFloat(costoStr.replace("$",""))
+  }
+
+  const totalMontoServicios = servicio.reduce((acumulador, serv) => acumulador + stringANumero(serv.costo), 0);
 
   return (
     <>
       <div className="border border-white p-4 rounded-lg">
         {/* Texto agrupado "SERVICIO: Cabello" */}
-        <div className="mb-4 flex items-center">
-          <div className="text-white font-bold mr-2 text-[#F84646]">
+        <div className="mb-4 flex items-top">
+          <div className="text-white font-bold mt-1 mr-2 text-[#F84646]">
             SERVICIO:
           </div>
-          {servicio &&
-            servicio.map((s, index) => {
-              return (
-                <div key={index} className="text-white">
-                  <p className="p-1">{` ${s.nombre.toUpperCase()}`}</p>
-                </div>
-              );
-            })}
+          <div className="max-width-100">
+            {servicio &&
+              servicio.map((s, index) => {
+                return (
+                  <div key={index} className="inline-block w-auto text-white">
+                    <p className="p-1">{` ${s.nombre.toUpperCase()}`}</p>
+                  </div>
+                );
+              })}
+          </div>
         </div>
         {/*<div className="flex items-center justify-items-stretch">
         
@@ -121,8 +127,9 @@ const IconsComponent = ({ data }) => {
             }
             return null;
           })}
-          {/* Precio del servicio de Cabello */}
+
           <p className="text-white">${totalMontoServicios}.00</p>
+          
         </div>
       </div>
     </>
