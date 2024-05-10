@@ -14,6 +14,7 @@ import { BotonHome } from "@/components/sitemaCitas/BotonRegresar";
 import { addTurno } from "@/actions/Querys";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
+import {profesionales} from "@/lib/data.js"
 
 const Reservar = ({ paramas }) => {
   const [reserva, setReserva] = useState({});
@@ -50,54 +51,69 @@ const Reservar = ({ paramas }) => {
 
       return true;
     }
-    
   };
+
+  function getProfesionalRandomDeSucursal(idSucursal) {
+    const profesionalesSucursal = profesionales.filter(p => p.sucursalIdSucursal == idSucursal)
+
+    // Generar un índice aleatorio
+    const indiceAleatorio = Math.floor(Math.random() * profesionalesSucursal.length);
+
+    // Obtener el profesional aleatorio entre los disponibles
+    return profesionalesSucursal[indiceAleatorio]
+  }
 
   const handleNextButton = async () => {
     const stateError = verSiHayError();
 
-    if (step === 5) {
-      try {
-        const usuarioIdUsuario = "18ad5810-01d5-11ef-8767-65090dec1f9b";
-        const { profesional, servicio, hora, dia } = reserva;
-        const empleadoIdEmpleado = profesional.idEmpleado;
-        const idServicio = servicio.map((serv) => serv.idServicio);
-        const fecha = new Date(dia);
-        const turno = "Turno de prueba Front con cambios";
-
-        const requestData = {
-          usuarioIdUsuario,
-          empleadoIdEmpleado,
-          idServicio,
-          fecha,
-          hora,
-          turno,
-        };
-        addTurno(requestData)
-          .then((response) => {
-            if (response.data.sucess === true) {
-              toast.success("Turno creado!");
-              setTimeout(() => {
-                router.push('/'); 
-              }, 3000); 
-            } else {
-              toast.error("Creación de turno no exitosa");
-              setTimeout(() => {
-                router.push('/'); 
-              }, 3000); 
-            }
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-          });
-      } catch (error) {
-        console.error("Error al crear la reserva:", error.message);
-      }
+    if(step === 3) {
+      const reservaEditada = reserva
+      reservaEditada.profesional = getProfesionalRandomDeSucursal(reserva.profesional.sucursalIdSucursal)
+      setReserva(reservaEditada)
     }
 
     if (!stateError) {
       siguienteStep();
     }
+
+    // if (step === 5) {
+    //   try {
+    //     const usuarioIdUsuario = "18ad5810-01d5-11ef-8767-65090dec1f9b";
+    //     const { profesional, servicio, hora, dia } = reserva;
+    //     const empleadoIdEmpleado = profesional.idEmpleado;
+    //     const idServicio = servicio.map((serv) => serv.idServicio);
+    //     const fecha = new Date(dia);
+    //     const turno = "Turno de prueba Front con cambios";
+
+    //     const requestData = {
+    //       usuarioIdUsuario,
+    //       empleadoIdEmpleado,
+    //       idServicio,
+    //       fecha,
+    //       hora,
+    //       turno,
+    //     };
+    //     addTurno(requestData)
+    //       .then((response) => {
+    //         if (response.data.sucess === true) {
+    //           toast.success("Turno creado!");
+    //           setTimeout(() => {
+    //             router.push('/'); 
+    //           }, 3000); 
+    //         } else {
+    //           toast.error("Creación de turno no exitosa");
+    //           setTimeout(() => {
+    //             router.push('/'); 
+    //           }, 3000); 
+    //         }
+    //       })
+    //       .catch((error) => {
+    //         console.error("Error:", error);
+    //       });
+    //   } catch (error) {
+    //     console.error("Error al crear la reserva:", error.message);
+    //   }
+    // }
   };
 
   const handlePrevButton = () => {
