@@ -13,7 +13,7 @@ const FormularioDetalles = ({cargar}) => {
 
     useEffect(() => {
         cargar({ name: "formData", value: formData });
-      }, [formData]);
+    }, [formData]);
 
     const [errors, setErrors] = useState({});
 
@@ -62,7 +62,7 @@ const FormularioDetalles = ({cargar}) => {
                     <div className="flex mb-6">
                         <div className="w-1/2 pr-2">
                             <InputField
-                                label="Nombre"
+                                label="Nombre *"
                                 name="nombre"
                                 value={formData.nombre}
                                 onChange={handleInputChange}
@@ -72,7 +72,7 @@ const FormularioDetalles = ({cargar}) => {
                         </div>
                         <div className="w-1/2 pl-2">
                             <InputField
-                                label="Apellido"
+                                label="Apellido *"
                                 name="apellido"
                                 value={formData.apellido}
                                 onChange={handleInputChange}
@@ -84,7 +84,7 @@ const FormularioDetalles = ({cargar}) => {
                     <div className="flex mb-6">
                         <div className="w-1/2 pr-2">
                             <InputField
-                                label="Email"
+                                label="Email *"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleInputChange}
@@ -94,7 +94,7 @@ const FormularioDetalles = ({cargar}) => {
                         </div>
                         <div className="w-1/2 pl-2">
                             <InputField
-                                label="Telefono"
+                                label="Telefono *"
                                 name="telefono"
                                 value={formData.telefono}
                                 onChange={handleInputChange}
