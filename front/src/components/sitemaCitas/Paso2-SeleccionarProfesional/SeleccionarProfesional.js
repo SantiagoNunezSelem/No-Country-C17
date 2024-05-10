@@ -50,6 +50,7 @@ function SeleccionarProfesional( {cargar,infoReserva} ) {
             primerProfeDis[key] = null;
         }
         primerProfeDis.nombre = "primerProfesional"
+        primerProfeDis.sucursalIdSucursal = idSucursal
 
         setPrimerProfesionalDisponible(primerProfeDis)
         setProfesionalSelec(primerProfeDis)
