@@ -276,6 +276,8 @@ nav #container-logo {
 }
 
 .servicios-container {
+  overflow: hidden;
+  overflow-y: auto;
   scrollbar-width: thin; /* Ancho del scrollbar */
   scrollbar-color: #333 #999; /* Color del thumb y track */
   padding-right: 10px;
