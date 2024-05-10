@@ -10,7 +10,7 @@ export default function ServiciosReservados(infoReserva) {
   };
 
   return (
-    <div>
+    <div className="h-96 servicios-container">
       {infoReserva &&
         infoReserva.infoReserva.servicio.map((servicio, index) => (
           <Box
@@ -49,7 +49,7 @@ export default function ServiciosReservados(infoReserva) {
                     src={require("../../../img/servicios-icons/Money.png")}
                     alt="Money"
                   />
-                  <Typography sx={{ ml: "0.5rem" }}>
+                  <Typography sx={{ ml: "0.6rem", maxWidth: "100%", width:"200px" }}>
                     {servicio.costo}
                   </Typography>
                 </div>
