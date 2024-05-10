@@ -40,7 +40,7 @@ const Reservar = ({ paramas }) => {
       setErrorSeccion({
         error: true,
         mensaje: "Debe seleccionar al menos un servicio",
-      });
+      })
       return true;
     }
     if(step === 3 && reserva.hora === "") {
@@ -48,8 +48,17 @@ const Reservar = ({ paramas }) => {
         error:true,
         mensaje: "Debe seleccionar una hora para el turno"
       })
-
       return true;
+    }
+    if(step === 4){
+      const formData = reserva.formData
+      if(formData.nombre == "" || formData.apellido == "" || formData.email == "" || formData.telefono == "" ) {
+        setErrorSeccion({
+          error:true,
+          mensaje: "Complete los campos requeridos"
+        })
+        return true;
+      }
     }
   };
 
@@ -72,8 +81,13 @@ const Reservar = ({ paramas }) => {
       setReserva(reservaEditada)
     }
 
-    if (!stateError) {
-      siguienteStep();
+    if(!stateError) {
+      siguienteStep()
+    }
+
+    if(step === 5){
+      window.alert("Turno Registrado con Exito")
+      window.location.href = "http://localhost:3000"
     }
 
     // if (step === 5) {
